@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script src="signalr.min.js"></script>
+</head>
+<body>
+
+    <ul id="message" style="color:red;"></ul>
+
+    <script>
+        $(function () {
+            //注意，这里就是项目运行起来的地址（因为有同一项目里，也可以是不同项目，但需要支持跨域）
+            var hubUrl = 'http://localhost:64348/message';
+            var hubConnection = new signalR.HubConnectionBuilder()
+                .withUrl(hubUrl)
+                .build();
+
+            hubConnection.on('NoticeOnline', data => {
+                $("#message").append("<li>" + data + "</li>");
+            });
+            hubConnection.on('NoticeOffline', data => {
+                $("#message").append("<li>" + data + "</li>");
+            });
+            //Received对应推送消息时指定的method参数值
+            hubConnection.on('Received', data => {
+                $("#message").append('<li style="color:red;">' + data + '</li>');
+            });
+            hubConnection.start();
+            //初始化分组(调用服务端hub里的InitConnection方法)
+            var initConnection = function () {
+                hubConnection.invoke("InitConnection", "Test")
+            };
+            setTimeout(initConnection, 3000);
+        });
+    </script>
+</body>
+</html>

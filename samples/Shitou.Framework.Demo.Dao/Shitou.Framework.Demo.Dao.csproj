@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Fxt.Framework.ORM\Fxt.Framework.ORM.csproj" />
+    <ProjectReference Include="..\Fxt.Framework.Demo.DataContract\Fxt.Framework.Demo.DataContract.csproj" />
+  </ItemGroup>
+
+</Project>

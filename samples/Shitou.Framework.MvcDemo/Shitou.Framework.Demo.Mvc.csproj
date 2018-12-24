@@ -1,0 +1,103 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Logs\**" />
+    <Content Remove="Logs\**" />
+    <EmbeddedResource Remove="Logs\**" />
+    <None Remove="Logs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="log4net.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Upload\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Config\log4net.config" />
+    <None Include="Views\Login\Index.cshtml" />
+    <None Include="wwwroot\lib\webuploader\README.md" />
+    <None Include="wwwroot\lib\webuploader\upload.js" />
+    <None Include="wwwroot\lib\webuploader\Uploader.swf" />
+    <None Include="wwwroot\lib\webuploader\webuploader.custom.js" />
+    <None Include="wwwroot\lib\webuploader\webuploader.custom.min.js" />
+    <None Include="wwwroot\lib\webuploader\webuploader.fis.js" />
+    <None Include="wwwroot\lib\webuploader\webuploader.flashonly.js" />
+    <None Include="wwwroot\lib\webuploader\webuploader.flashonly.min.js" />
+    <None Include="wwwroot\lib\webuploader\webuploader.html5only.js" />
+    <None Include="wwwroot\lib\webuploader\webuploader.html5only.min.js" />
+    <None Include="wwwroot\lib\webuploader\webuploader.js" />
+    <None Include="wwwroot\lib\webuploader\webuploader.min.js" />
+    <None Include="wwwroot\lib\webuploader\webuploader.noimage.js" />
+    <None Include="wwwroot\lib\webuploader\webuploader.noimage.min.js" />
+    <None Include="wwwroot\lib\webuploader\webuploader.nolog.js" />
+    <None Include="wwwroot\lib\webuploader\webuploader.nolog.min.js" />
+    <None Include="wwwroot\lib\webuploader\webuploader.withoutimage.js" />
+    <None Include="wwwroot\lib\webuploader\webuploader.withoutimage.min.js" />
+    <None Include="wwwroot\lib\zTree_v3\css\awesomeStyle\awesome.less" />
+    <None Include="wwwroot\lib\zTree_v3\css\awesomeStyle\fa.less" />
+    <None Include="wwwroot\lib\zTree_v3\demo\cn\asyncData\getNodes.php" />
+    <None Include="wwwroot\lib\zTree_v3\demo\cn\asyncData\getNodesForBigData.php" />
+    <None Include="wwwroot\lib\zTree_v3\demo\en\asyncData\getNodes.php" />
+    <None Include="wwwroot\lib\zTree_v3\demo\en\asyncData\getNodesForBigData.php" />
+    <None Include="wwwroot\lib\zTree_v3\js\jquery-1.4.4.min.js" />
+    <None Include="wwwroot\lib\zTree_v3\js\jquery.ztree.all.js" />
+    <None Include="wwwroot\lib\zTree_v3\js\jquery.ztree.all.min.js" />
+    <None Include="wwwroot\lib\zTree_v3\js\jquery.ztree.core.js" />
+    <None Include="wwwroot\lib\zTree_v3\js\jquery.ztree.core.min.js" />
+    <None Include="wwwroot\lib\zTree_v3\js\jquery.ztree.excheck.js" />
+    <None Include="wwwroot\lib\zTree_v3\js\jquery.ztree.excheck.min.js" />
+    <None Include="wwwroot\lib\zTree_v3\js\jquery.ztree.exedit.js" />
+    <None Include="wwwroot\lib\zTree_v3\js\jquery.ztree.exedit.min.js" />
+    <None Include="wwwroot\lib\zTree_v3\js\jquery.ztree.exhide.js" />
+    <None Include="wwwroot\lib\zTree_v3\js\jquery.ztree.exhide.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
+    <PackageReference Include="Pivotal.Discovery.ClientCore" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Fxt.Framework.Caching\Fxt.Framework.Caching.csproj" />
+    <ProjectReference Include="..\..\src\Fxt.Framework.Log4net\Fxt.Framework.Log4net.csproj" />
+    <ProjectReference Include="..\..\src\Fxt.Framework.ORM\Fxt.Framework.ORM.csproj" />
+    <ProjectReference Include="..\Fxt.Framework.Demo.Application\Fxt.Framework.Demo.Application.csproj" />
+    <ProjectReference Include="..\Fxt.Framework.Demo.Dao\Fxt.Framework.Demo.Dao.csproj" />
+    <ProjectReference Include="..\Fxt.Framework.Demo.DataContract\Fxt.Framework.Demo.DataContract.csproj" />
+    <ProjectReference Include="..\Fxt.Framework.Demo.Model\Fxt.Framework.Demo.Model.csproj" />
+    <ProjectReference Include="..\Fxt.Framework.Demo.Service\Fxt.Framework.Demo.Service.csproj" />
+    <ProjectReference Include="..\Fxt.Framework.Demo.Utils\Fxt.Framework.Demo.Utils.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Config\log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Config\RedisSettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\Shared\NoFound.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Template\TableFieldAdd.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Template\TableTemplateAdd.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
+</Project>

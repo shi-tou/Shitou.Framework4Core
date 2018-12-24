@@ -1,0 +1,15 @@
+E:\test-demo\Fxt-Framework\test\RabbitMQ_P\bin\Release\netcoreapp2.1\rabbitmqsettings.json
+E:\test-demo\Fxt-Framework\test\RabbitMQ_P\bin\Release\netcoreapp2.1\RabbitMQ_P.deps.json
+E:\test-demo\Fxt-Framework\test\RabbitMQ_P\bin\Release\netcoreapp2.1\RabbitMQ_P.runtimeconfig.json
+E:\test-demo\Fxt-Framework\test\RabbitMQ_P\bin\Release\netcoreapp2.1\RabbitMQ_P.runtimeconfig.dev.json
+E:\test-demo\Fxt-Framework\test\RabbitMQ_P\bin\Release\netcoreapp2.1\RabbitMQ_P.dll
+E:\test-demo\Fxt-Framework\test\RabbitMQ_P\bin\Release\netcoreapp2.1\RabbitMQ_P.pdb
+E:\test-demo\Fxt-Framework\test\RabbitMQ_P\bin\Release\netcoreapp2.1\Fxt.Framework.RabbitMQ.dll
+E:\test-demo\Fxt-Framework\test\RabbitMQ_P\bin\Release\netcoreapp2.1\Fxt.Framework.RabbitMQ.pdb
+E:\test-demo\Fxt-Framework\test\RabbitMQ_P\obj\Release\netcoreapp2.1\RabbitMQ_P.csprojAssemblyReference.cache
+E:\test-demo\Fxt-Framework\test\RabbitMQ_P\obj\Release\netcoreapp2.1\RabbitMQ_P.csproj.CoreCompileInputs.cache
+E:\test-demo\Fxt-Framework\test\RabbitMQ_P\obj\Release\netcoreapp2.1\RabbitMQ_P.AssemblyInfoInputs.cache
+E:\test-demo\Fxt-Framework\test\RabbitMQ_P\obj\Release\netcoreapp2.1\RabbitMQ_P.AssemblyInfo.cs
+E:\test-demo\Fxt-Framework\test\RabbitMQ_P\obj\Release\netcoreapp2.1\RabbitMQ_P.csproj.CopyComplete
+E:\test-demo\Fxt-Framework\test\RabbitMQ_P\obj\Release\netcoreapp2.1\RabbitMQ_P.dll
+E:\test-demo\Fxt-Framework\test\RabbitMQ_P\obj\Release\netcoreapp2.1\RabbitMQ_P.pdb

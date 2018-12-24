@@ -1,0 +1,12 @@
+﻿{
+  "RedisConfig": {
+    //主机
+    "Server": "localhost",
+    //端口
+    "Port": "6379",
+    //密码
+    "Password": "",
+    //缓存key前缘
+    "CacheKeyPrefix": "Test_"
+  }
+}

@@ -1,0 +1,53 @@
+﻿
+@model TableFieldInfo
+
+<body>
+    <form id="TableFieldAdd" class="layui-form layui-form-pane"
+          asp-controller="Template" asp-action="TableFieldAdd"
+          data-ajax="true"
+          data-ajax-mode="replace"
+          data-ajax-update="#"
+          data-ajax-method="Post"
+          data-ajax-success="Callback">
+        <table class="post-form">
+            <tr>
+                <th style="width: 100px;">字段类型：</th>
+                <td>
+                    @Html.DropDownList("FieldType", ViewData["FieldTypeList"] as SelectList)
+                    <input type="hidden" id="TableTemplateID" name="TableTemplateID" value="@ViewBag.TableTemplateID" />
+                </td>
+            </tr>
+            <tr>
+                <th>标题：</th>
+                <td>
+                    <input id="Title" name="Title" lay-verify="required" lay-msg="请输入标题" class="layui-input" type="text" value="@Model.Title">
+                </td>
+            </tr>
+            <tr>
+                <th>字段名：</th>
+                <td>
+                    <input id="FieldName" name="FieldName" lay-verify="required" lay-msg="请输入字段名" class="layui-input" type="text" value="@Model.FieldName">
+                </td>
+            </tr>
+            <tr>
+                <th>可选值：</th>
+                <td>
+                    <input id="FieldValues" name="FieldValues" class="layui-input" type="text" value="@Model.FieldValues">
+                </td>
+            </tr>
+            <tr>
+                <th>默认值：</th>
+                <td>
+                    <input id="DefaultValue" name="DefaultValue" class="layui-input" type="text" value="@Model.DefaultValue">
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <button id="post_btn" type="submit" class="layui-btn" lay-submit="" lay-filter="post">保 存</button>
+                    <a href="javascript:void(0)" onclick="parent.CloseWindow();" class="layui-btn layui-btn-normal">返回列表</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>

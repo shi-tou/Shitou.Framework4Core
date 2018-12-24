@@ -1,0 +1,15 @@
+E:\test-demo\Fxt-Framework\ConsoleApp1\bin\Debug\netcoreapp2.0\rabbitmqsettings.json
+E:\test-demo\Fxt-Framework\ConsoleApp1\bin\Debug\netcoreapp2.0\ConsoleApp_C.deps.json
+E:\test-demo\Fxt-Framework\ConsoleApp1\bin\Debug\netcoreapp2.0\ConsoleApp_C.runtimeconfig.json
+E:\test-demo\Fxt-Framework\ConsoleApp1\bin\Debug\netcoreapp2.0\ConsoleApp_C.runtimeconfig.dev.json
+E:\test-demo\Fxt-Framework\ConsoleApp1\bin\Debug\netcoreapp2.0\ConsoleApp_C.dll
+E:\test-demo\Fxt-Framework\ConsoleApp1\bin\Debug\netcoreapp2.0\ConsoleApp_C.pdb
+E:\test-demo\Fxt-Framework\ConsoleApp1\bin\Debug\netcoreapp2.0\Fxt.Framework.RabbitMQ.dll
+E:\test-demo\Fxt-Framework\ConsoleApp1\bin\Debug\netcoreapp2.0\Fxt.Framework.RabbitMQ.pdb
+E:\test-demo\Fxt-Framework\ConsoleApp1\obj\Debug\netcoreapp2.0\ConsoleApp_C.csprojAssemblyReference.cache
+E:\test-demo\Fxt-Framework\ConsoleApp1\obj\Debug\netcoreapp2.0\ConsoleApp_C.csproj.CoreCompileInputs.cache
+E:\test-demo\Fxt-Framework\ConsoleApp1\obj\Debug\netcoreapp2.0\ConsoleApp_C.AssemblyInfoInputs.cache
+E:\test-demo\Fxt-Framework\ConsoleApp1\obj\Debug\netcoreapp2.0\ConsoleApp_C.AssemblyInfo.cs
+E:\test-demo\Fxt-Framework\ConsoleApp1\obj\Debug\netcoreapp2.0\ConsoleApp_C.csproj.CopyComplete
+E:\test-demo\Fxt-Framework\ConsoleApp1\obj\Debug\netcoreapp2.0\ConsoleApp_C.dll
+E:\test-demo\Fxt-Framework\ConsoleApp1\obj\Debug\netcoreapp2.0\ConsoleApp_C.pdb

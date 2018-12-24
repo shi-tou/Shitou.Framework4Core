@@ -1,0 +1,11 @@
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.SignalR\bin\Release\netcoreapp2.0\Fxt.Framework.SignalR.deps.json
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.SignalR\bin\Release\netcoreapp2.0\Fxt.Framework.SignalR.runtimeconfig.json
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.SignalR\bin\Release\netcoreapp2.0\Fxt.Framework.SignalR.runtimeconfig.dev.json
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.SignalR\bin\Release\netcoreapp2.0\Fxt.Framework.SignalR.dll
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.SignalR\bin\Release\netcoreapp2.0\Fxt.Framework.SignalR.pdb
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.SignalR\obj\Release\netcoreapp2.0\Fxt.Framework.SignalR.csprojAssemblyReference.cache
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.SignalR\obj\Release\netcoreapp2.0\Fxt.Framework.SignalR.csproj.CoreCompileInputs.cache
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.SignalR\obj\Release\netcoreapp2.0\Fxt.Framework.SignalR.AssemblyInfoInputs.cache
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.SignalR\obj\Release\netcoreapp2.0\Fxt.Framework.SignalR.AssemblyInfo.cs
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.SignalR\obj\Release\netcoreapp2.0\Fxt.Framework.SignalR.dll
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.SignalR\obj\Release\netcoreapp2.0\Fxt.Framework.SignalR.pdb

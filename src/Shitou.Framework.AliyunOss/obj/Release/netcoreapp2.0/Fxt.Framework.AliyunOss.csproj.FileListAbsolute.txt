@@ -1,0 +1,8 @@
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.AliyunOss\bin\Release\netcoreapp2.0\Fxt.Framework.AliyunOss.deps.json
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.AliyunOss\bin\Release\netcoreapp2.0\Fxt.Framework.AliyunOss.dll
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.AliyunOss\bin\Release\netcoreapp2.0\Fxt.Framework.AliyunOss.pdb
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.AliyunOss\obj\Release\netcoreapp2.0\Fxt.Framework.AliyunOss.csproj.CoreCompileInputs.cache
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.AliyunOss\obj\Release\netcoreapp2.0\Fxt.Framework.AliyunOss.AssemblyInfoInputs.cache
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.AliyunOss\obj\Release\netcoreapp2.0\Fxt.Framework.AliyunOss.AssemblyInfo.cs
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.AliyunOss\obj\Release\netcoreapp2.0\Fxt.Framework.AliyunOss.dll
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.AliyunOss\obj\Release\netcoreapp2.0\Fxt.Framework.AliyunOss.pdb

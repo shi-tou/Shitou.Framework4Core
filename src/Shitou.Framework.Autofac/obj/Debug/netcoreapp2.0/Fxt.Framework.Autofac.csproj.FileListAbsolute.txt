@@ -1,0 +1,9 @@
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.Autofac\bin\Debug\netcoreapp2.0\Fxt.Framework.Autofac.deps.json
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.Autofac\bin\Debug\netcoreapp2.0\Fxt.Framework.Autofac.dll
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.Autofac\bin\Debug\netcoreapp2.0\Fxt.Framework.Autofac.pdb
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.Autofac\obj\Debug\netcoreapp2.0\Fxt.Framework.Autofac.csprojAssemblyReference.cache
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.Autofac\obj\Debug\netcoreapp2.0\Fxt.Framework.Autofac.csproj.CoreCompileInputs.cache
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.Autofac\obj\Debug\netcoreapp2.0\Fxt.Framework.Autofac.AssemblyInfoInputs.cache
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.Autofac\obj\Debug\netcoreapp2.0\Fxt.Framework.Autofac.AssemblyInfo.cs
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.Autofac\obj\Debug\netcoreapp2.0\Fxt.Framework.Autofac.dll
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.Autofac\obj\Debug\netcoreapp2.0\Fxt.Framework.Autofac.pdb

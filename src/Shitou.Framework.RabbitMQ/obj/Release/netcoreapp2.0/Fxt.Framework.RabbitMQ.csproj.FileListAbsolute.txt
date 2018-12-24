@@ -1,0 +1,9 @@
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.RabbitMQ\bin\Release\netcoreapp2.0\Fxt.Framework.RabbitMQ.deps.json
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.RabbitMQ\bin\Release\netcoreapp2.0\Fxt.Framework.RabbitMQ.dll
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.RabbitMQ\bin\Release\netcoreapp2.0\Fxt.Framework.RabbitMQ.pdb
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.RabbitMQ\obj\Release\netcoreapp2.0\Fxt.Framework.RabbitMQ.csprojAssemblyReference.cache
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.RabbitMQ\obj\Release\netcoreapp2.0\Fxt.Framework.RabbitMQ.csproj.CoreCompileInputs.cache
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.RabbitMQ\obj\Release\netcoreapp2.0\Fxt.Framework.RabbitMQ.AssemblyInfoInputs.cache
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.RabbitMQ\obj\Release\netcoreapp2.0\Fxt.Framework.RabbitMQ.AssemblyInfo.cs
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.RabbitMQ\obj\Release\netcoreapp2.0\Fxt.Framework.RabbitMQ.dll
+E:\test-demo\Fxt-Framework\src\Fxt.Framework.RabbitMQ\obj\Release\netcoreapp2.0\Fxt.Framework.RabbitMQ.pdb

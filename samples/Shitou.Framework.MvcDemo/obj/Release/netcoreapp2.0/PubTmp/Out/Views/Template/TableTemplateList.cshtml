@@ -1,0 +1,60 @@
+﻿@model Pager<TableTemplateInfo>
+@{
+    ViewBag.Title = "模板列表";
+}
+
+<div class="container">
+    <div style="padding:0px 10px;">
+        <a class="layui-btn layui-btn-sm layui-btn-normal" href="javascript:void(0);" onclick="AddOrEdit()">
+            <i class="layui-icon layui-icon-tianjia2"></i>添加表单模板
+        </a>
+    </div>
+    <table class="layui-table" id="list">
+        <thead>
+            <tr>
+                <th style="width:45px; text-align:center;">#</th>
+                <th>模板编码</th>
+                <th>模板名称</th>
+                <th>表单模板类型</th>
+                <th>创建时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{ int index = 1;}
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td style="width:45px; text-align:center;">@(index++)</td>
+                <td>@item.TemplateCode</td>
+                <td>@item.TemplateName</td>
+                <td>@(EnumUtils.GetDescription<TableTemplateType>(item.TemplateType))</td>
+                <td>@item.CreateTime</td>
+                <td>
+                    <a class="layui-btn layui-btn-normal layui-btn-xs" href="javascript:void(0)" onclick="AddOrEdit('@item.ID')"><i class="layui-icon layui-icon-bianji"></i>编辑</a>
+                    <a class="layui-btn layui-btn-normal layui-btn-xs" href="javascript:void(0)" onclick="AddTableField('@item.ID')"><i class="layui-icon layui-icon-bianji"></i>设置表单内容</a>
+                    <a class="layui-btn layui-btn-danger layui-btn-xs" onclick="javascript:Delete('/Template/TableTemplateDelete/@item.ID');"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                    <a class="layui-btn layui-btn-normal layui-btn-xs" href="javascript:void(0)" onclick="Preview('@item.ID')"><i class="layui-icon layui-icon-bianji"></i>预览</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    @Html.Partial("_Pager", Model)
+</div>
+<script>
+    function AddOrEdit(id) {
+        if (id == undefined) {
+            ShowWindow('===添加表单模板信息===', '/Template/TableTemplateAdd', 400, 280);
+        }
+        else {
+            ShowWindow('===编辑表单模板信息===', '/Template/TableTemplateAdd/' + id, 400, 280);
+        }
+    }
+    function AddTableField(id) {
+        ShowMaxWindow('===设置表单内容信息===', '/Template/TableFieldList/' + id);
+    }
+    function Preview(id) {
+        ShowMaxWindow('===预览表单===', '/Template/TablePreview/' + id);
+    }
+</script>
