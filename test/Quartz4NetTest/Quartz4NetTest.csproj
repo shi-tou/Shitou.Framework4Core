@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Fxt.Framework.Quartz4Net\Fxt.Framework.Quartz4Net.csproj" />
+    <ProjectReference Include="..\..\src\Shitou.Framework.Quartz4Net\Shitou.Framework.Quartz4Net.csproj" />
   </ItemGroup>
 
 </Project>

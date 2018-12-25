@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Fxt.Framework.ORM\Fxt.Framework.ORM.csproj" />
+    <ProjectReference Include="..\..\src\Shitou.Framework.ORM\Shitou.Framework.ORM.csproj" />
   </ItemGroup>
 
 </Project>

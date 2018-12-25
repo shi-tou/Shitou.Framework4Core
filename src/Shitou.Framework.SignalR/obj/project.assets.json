@@ -13558,11 +13558,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\test-demo\\Fxt-Framework\\src\\Fxt.Framework.SignalR\\Fxt.Framework.SignalR.csproj",
-      "projectName": "Fxt.Framework.SignalR",
-      "projectPath": "E:\\test-demo\\Fxt-Framework\\src\\Fxt.Framework.SignalR\\Fxt.Framework.SignalR.csproj",
+      "projectUniqueName": "E:\\test-demo\\Shitou.Framework4Core\\src\\Shitou.Framework.SignalR\\Shitou.Framework.SignalR.csproj",
+      "projectName": "Shitou.Framework.SignalR",
+      "projectPath": "E:\\test-demo\\Shitou.Framework4Core\\src\\Shitou.Framework.SignalR\\Shitou.Framework.SignalR.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "E:\\test-demo\\Fxt-Framework\\src\\Fxt.Framework.SignalR\\obj\\",
+      "outputPath": "E:\\test-demo\\Shitou.Framework4Core\\src\\Shitou.Framework.SignalR\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

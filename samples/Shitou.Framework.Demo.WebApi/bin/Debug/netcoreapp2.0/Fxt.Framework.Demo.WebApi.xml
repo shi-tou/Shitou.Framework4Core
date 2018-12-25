@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>Fxt.Framework.Demo.WebApi</name>
+        <name>Shitou.Framework.Demo.WebApi</name>
     </assembly>
     <members>
         <member name="T:Shitou.Framework.Demo.WebApi.AddAuthTokenHeaderParameter">

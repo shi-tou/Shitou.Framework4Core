@@ -1,0 +1,12 @@
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.SignalR\bin\Debug\netcoreapp2.0\Fxt.Framework.SignalR.xml
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.SignalR\bin\Debug\netcoreapp2.0\Shitou.Framework.SignalR.deps.json
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.SignalR\bin\Debug\netcoreapp2.0\Shitou.Framework.SignalR.runtimeconfig.json
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.SignalR\bin\Debug\netcoreapp2.0\Shitou.Framework.SignalR.runtimeconfig.dev.json
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.SignalR\bin\Debug\netcoreapp2.0\Shitou.Framework.SignalR.dll
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.SignalR\bin\Debug\netcoreapp2.0\Shitou.Framework.SignalR.pdb
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.SignalR\obj\Debug\netcoreapp2.0\Shitou.Framework.SignalR.csprojAssemblyReference.cache
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.SignalR\obj\Debug\netcoreapp2.0\Shitou.Framework.SignalR.csproj.CoreCompileInputs.cache
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.SignalR\obj\Debug\netcoreapp2.0\Shitou.Framework.SignalR.AssemblyInfoInputs.cache
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.SignalR\obj\Debug\netcoreapp2.0\Shitou.Framework.SignalR.AssemblyInfo.cs
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.SignalR\obj\Debug\netcoreapp2.0\Shitou.Framework.SignalR.dll
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.SignalR\obj\Debug\netcoreapp2.0\Shitou.Framework.SignalR.pdb

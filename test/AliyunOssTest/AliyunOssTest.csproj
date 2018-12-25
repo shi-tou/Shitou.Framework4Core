@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Fxt.Framework.AliyunOss\Fxt.Framework.AliyunOss.csproj" />
+    <ProjectReference Include="..\..\src\Shitou.Framework.AliyunOss\Shitou.Framework.AliyunOss.csproj" />
   </ItemGroup>
 
 </Project>

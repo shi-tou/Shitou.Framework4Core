@@ -7049,11 +7049,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\test-demo\\Fxt-Framework\\src\\Fxt.Framework.AliyunOss\\Fxt.Framework.AliyunOss.csproj",
-      "projectName": "Fxt.Framework.AliyunOss",
-      "projectPath": "E:\\test-demo\\Fxt-Framework\\src\\Fxt.Framework.AliyunOss\\Fxt.Framework.AliyunOss.csproj",
+      "projectUniqueName": "E:\\test-demo\\Shitou.Framework4Core\\src\\Shitou.Framework.AliyunOss\\Shitou.Framework.AliyunOss.csproj",
+      "projectName": "Shitou.Framework.AliyunOss",
+      "projectPath": "E:\\test-demo\\Shitou.Framework4Core\\src\\Shitou.Framework.AliyunOss\\Shitou.Framework.AliyunOss.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "E:\\test-demo\\Fxt-Framework\\src\\Fxt.Framework.AliyunOss\\obj\\",
+      "outputPath": "E:\\test-demo\\Shitou.Framework4Core\\src\\Shitou.Framework.AliyunOss\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

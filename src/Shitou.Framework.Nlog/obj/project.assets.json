@@ -1570,11 +1570,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\test-demo\\Fxt-Framework\\src\\Fxt.Framework.Nlog\\Fxt.Framework.Nlog.csproj",
-      "projectName": "Fxt.Framework.Nlog",
-      "projectPath": "E:\\test-demo\\Fxt-Framework\\src\\Fxt.Framework.Nlog\\Fxt.Framework.Nlog.csproj",
+      "projectUniqueName": "E:\\test-demo\\Shitou.Framework4Core\\src\\Shitou.Framework.Nlog\\Shitou.Framework.Nlog.csproj",
+      "projectName": "Shitou.Framework.Nlog",
+      "projectPath": "E:\\test-demo\\Shitou.Framework4Core\\src\\Shitou.Framework.Nlog\\Shitou.Framework.Nlog.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "E:\\test-demo\\Fxt-Framework\\src\\Fxt.Framework.Nlog\\obj\\",
+      "outputPath": "E:\\test-demo\\Shitou.Framework4Core\\src\\Shitou.Framework.Nlog\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

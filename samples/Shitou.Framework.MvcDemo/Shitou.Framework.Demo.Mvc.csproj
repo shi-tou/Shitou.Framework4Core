@@ -71,15 +71,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Fxt.Framework.Caching\Fxt.Framework.Caching.csproj" />
-    <ProjectReference Include="..\..\src\Fxt.Framework.Log4net\Fxt.Framework.Log4net.csproj" />
-    <ProjectReference Include="..\..\src\Fxt.Framework.ORM\Fxt.Framework.ORM.csproj" />
-    <ProjectReference Include="..\Fxt.Framework.Demo.Application\Fxt.Framework.Demo.Application.csproj" />
-    <ProjectReference Include="..\Fxt.Framework.Demo.Dao\Fxt.Framework.Demo.Dao.csproj" />
-    <ProjectReference Include="..\Fxt.Framework.Demo.DataContract\Fxt.Framework.Demo.DataContract.csproj" />
-    <ProjectReference Include="..\Fxt.Framework.Demo.Model\Fxt.Framework.Demo.Model.csproj" />
-    <ProjectReference Include="..\Fxt.Framework.Demo.Service\Fxt.Framework.Demo.Service.csproj" />
-    <ProjectReference Include="..\Fxt.Framework.Demo.Utils\Fxt.Framework.Demo.Utils.csproj" />
+    <ProjectReference Include="..\..\src\Shitou.Framework.Caching\Shitou.Framework.Caching.csproj" />
+    <ProjectReference Include="..\..\src\Shitou.Framework.Log4net\Shitou.Framework.Log4net.csproj" />
+    <ProjectReference Include="..\Shitou.Framework.Demo.Application\Shitou.Framework.Demo.Application.csproj" />
+    <ProjectReference Include="..\Shitou.Framework.Demo.DataContract\Shitou.Framework.Demo.DataContract.csproj" />
+    <ProjectReference Include="..\Shitou.Framework.Demo.Service\Shitou.Framework.Demo.Service.csproj" />
   </ItemGroup>
 
   <ItemGroup>

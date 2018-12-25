@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Fxt.Framework.Demo.Model\Fxt.Framework.Demo.Model.csproj" />
+    <ProjectReference Include="..\Shitou.Framework.Demo.Model\Shitou.Framework.Demo.Model.csproj" />
   </ItemGroup>
 
 </Project>

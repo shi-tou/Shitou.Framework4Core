@@ -2147,7 +2147,7 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Fxt.Framework.AliyunOss/1.0.0": {
+      "Shitou.Framework.AliyunOss/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
@@ -2159,10 +2159,10 @@
           "aliyun.oss.sdk.core": "2.5.3"
         },
         "compile": {
-          "bin/placeholder/Fxt.Framework.AliyunOss.dll": {}
+          "bin/placeholder/Shitou.Framework.AliyunOss.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Fxt.Framework.AliyunOss.dll": {}
+          "bin/placeholder/Shitou.Framework.AliyunOss.dll": {}
         }
       }
     }
@@ -7040,16 +7040,16 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "Fxt.Framework.AliyunOss/1.0.0": {
+    "Shitou.Framework.AliyunOss/1.0.0": {
       "type": "project",
-      "path": "../../src/Fxt.Framework.AliyunOss/Fxt.Framework.AliyunOss.csproj",
-      "msbuildProject": "../../src/Fxt.Framework.AliyunOss/Fxt.Framework.AliyunOss.csproj"
+      "path": "../../src/Shitou.Framework.AliyunOss/Shitou.Framework.AliyunOss.csproj",
+      "msbuildProject": "../../src/Shitou.Framework.AliyunOss/Shitou.Framework.AliyunOss.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
-      "Fxt.Framework.AliyunOss >= 1.0.0",
-      "Microsoft.NETCore.App >= 2.1.0"
+      "Microsoft.NETCore.App >= 2.1.0",
+      "Shitou.Framework.AliyunOss >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -7059,11 +7059,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\test-demo\\Fxt-Framework\\test\\AliyunOssTest\\AliyunOssTest.csproj",
+      "projectUniqueName": "E:\\test-demo\\Shitou.Framework4Core\\test\\AliyunOssTest\\AliyunOssTest.csproj",
       "projectName": "AliyunOssTest",
-      "projectPath": "E:\\test-demo\\Fxt-Framework\\test\\AliyunOssTest\\AliyunOssTest.csproj",
+      "projectPath": "E:\\test-demo\\Shitou.Framework4Core\\test\\AliyunOssTest\\AliyunOssTest.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "E:\\test-demo\\Fxt-Framework\\test\\AliyunOssTest\\obj\\",
+      "outputPath": "E:\\test-demo\\Shitou.Framework4Core\\test\\AliyunOssTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7084,8 +7084,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "E:\\test-demo\\Fxt-Framework\\src\\Fxt.Framework.AliyunOss\\Fxt.Framework.AliyunOss.csproj": {
-              "projectPath": "E:\\test-demo\\Fxt-Framework\\src\\Fxt.Framework.AliyunOss\\Fxt.Framework.AliyunOss.csproj"
+            "E:\\test-demo\\Shitou.Framework4Core\\src\\Shitou.Framework.AliyunOss\\Shitou.Framework.AliyunOss.csproj": {
+              "projectPath": "E:\\test-demo\\Shitou.Framework4Core\\src\\Shitou.Framework.AliyunOss\\Shitou.Framework.AliyunOss.csproj"
             }
           }
         }

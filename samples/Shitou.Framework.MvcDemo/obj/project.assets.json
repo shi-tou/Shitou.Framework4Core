@@ -5393,7 +5393,7 @@
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
         }
       },
-      "Fxt.Framework.Caching/1.0.0": {
+      "Shitou.Framework.Caching/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
@@ -5407,98 +5407,97 @@
           "StackExchange.Redis": "1.2.6"
         },
         "compile": {
-          "bin/placeholder/Fxt.Framework.Caching.dll": {}
+          "bin/placeholder/Shitou.Framework.Caching.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Fxt.Framework.Caching.dll": {}
+          "bin/placeholder/Shitou.Framework.Caching.dll": {}
         }
       },
-      "Fxt.Framework.Demo.Application/1.0.0": {
+      "Shitou.Framework.Demo.Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
-          "Fxt.Framework.Demo.Service": "1.0.0",
           "Microsoft.AspNetCore.All": "2.0.8",
-          "Mysql.data": "8.0.11"
+          "Mysql.data": "8.0.11",
+          "Shitou.Framework.Demo.Service": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/Fxt.Framework.Demo.Application.dll": {}
+          "bin/placeholder/Shitou.Framework.Demo.Application.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Fxt.Framework.Demo.Application.dll": {}
+          "bin/placeholder/Shitou.Framework.Demo.Application.dll": {}
         }
       },
-      "Fxt.Framework.Demo.Dao/1.0.0": {
+      "Shitou.Framework.Demo.Dao/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
-          "Fxt.Framework.Demo.DataContract": "1.0.0",
-          "Fxt.Framework.ORM": "1.0.0"
+          "Shitou.Framework.Demo.DataContract": "1.0.0",
+          "Shitou.Framework.ORM": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/Fxt.Framework.Demo.Dao.dll": {}
+          "bin/placeholder/Shitou.Framework.Demo.Dao.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Fxt.Framework.Demo.Dao.dll": {}
+          "bin/placeholder/Shitou.Framework.Demo.Dao.dll": {}
         }
       },
-      "Fxt.Framework.Demo.DataContract/1.0.0": {
+      "Shitou.Framework.Demo.DataContract/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
-          "Fxt.Framework.Demo.Model": "1.0.0"
+          "Shitou.Framework.Demo.Model": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/Fxt.Framework.Demo.DataContract.dll": {}
+          "bin/placeholder/Shitou.Framework.Demo.DataContract.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Fxt.Framework.Demo.DataContract.dll": {}
+          "bin/placeholder/Shitou.Framework.Demo.DataContract.dll": {}
         }
       },
-      "Fxt.Framework.Demo.Model/1.0.0": {
+      "Shitou.Framework.Demo.Model/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
-          "Fxt.Framework.ORM": "1.0.0"
+          "Shitou.Framework.ORM": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/Fxt.Framework.Demo.Model.dll": {}
+          "bin/placeholder/Shitou.Framework.Demo.Model.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Fxt.Framework.Demo.Model.dll": {}
+          "bin/placeholder/Shitou.Framework.Demo.Model.dll": {}
         }
       },
-      "Fxt.Framework.Demo.Service/1.0.0": {
+      "Shitou.Framework.Demo.Service/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
-          "Fxt.Framework.Demo.Dao": "1.0.0",
-          "Fxt.Framework.Demo.DataContract": "1.0.0",
-          "Fxt.Framework.Demo.Utils": "1.0.0",
-          "Fxt.Framework.ORM": "1.0.0",
-          "Microsoft.Extensions.Logging": "2.1.1"
+          "Microsoft.Extensions.Logging": "2.1.1",
+          "Shitou.Framework.Demo.Dao": "1.0.0",
+          "Shitou.Framework.Demo.DataContract": "1.0.0",
+          "Shitou.Framework.Demo.Utils": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/Fxt.Framework.Demo.Service.dll": {}
+          "bin/placeholder/Shitou.Framework.Demo.Service.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Fxt.Framework.Demo.Service.dll": {}
+          "bin/placeholder/Shitou.Framework.Demo.Service.dll": {}
         }
       },
-      "Fxt.Framework.Demo.Utils/1.0.0": {
+      "Shitou.Framework.Demo.Utils/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
           "Newtonsoft.json": "11.0.2"
         },
         "compile": {
-          "bin/placeholder/Fxt.Framework.Demo.Utils.dll": {}
+          "bin/placeholder/Shitou.Framework.Demo.Utils.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Fxt.Framework.Demo.Utils.dll": {}
+          "bin/placeholder/Shitou.Framework.Demo.Utils.dll": {}
         }
       },
-      "Fxt.Framework.Log4net/1.0.0": {
+      "Shitou.Framework.Log4net/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
@@ -5507,13 +5506,13 @@
           "log4net": "2.0.8"
         },
         "compile": {
-          "bin/placeholder/Fxt.Framework.Log4net.dll": {}
+          "bin/placeholder/Shitou.Framework.Log4net.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Fxt.Framework.Log4net.dll": {}
+          "bin/placeholder/Shitou.Framework.Log4net.dll": {}
         }
       },
-      "Fxt.Framework.ORM/1.0.0": {
+      "Shitou.Framework.ORM/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
@@ -5521,10 +5520,10 @@
           "Microsoft.Extensions.DependencyInjection": "2.1.1"
         },
         "compile": {
-          "bin/placeholder/Fxt.Framework.ORM.dll": {}
+          "bin/placeholder/Shitou.Framework.ORM.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Fxt.Framework.ORM.dll": {}
+          "bin/placeholder/Shitou.Framework.ORM.dll": {}
         }
       }
     }
@@ -14152,67 +14151,63 @@
         "windowsazure.storage.nuspec"
       ]
     },
-    "Fxt.Framework.Caching/1.0.0": {
+    "Shitou.Framework.Caching/1.0.0": {
       "type": "project",
-      "path": "../../src/Fxt.Framework.Caching/Fxt.Framework.Caching.csproj",
-      "msbuildProject": "../../src/Fxt.Framework.Caching/Fxt.Framework.Caching.csproj"
+      "path": "../../src/Shitou.Framework.Caching/Shitou.Framework.Caching.csproj",
+      "msbuildProject": "../../src/Shitou.Framework.Caching/Shitou.Framework.Caching.csproj"
     },
-    "Fxt.Framework.Demo.Application/1.0.0": {
+    "Shitou.Framework.Demo.Application/1.0.0": {
       "type": "project",
-      "path": "../Fxt.Framework.Demo.Application/Fxt.Framework.Demo.Application.csproj",
-      "msbuildProject": "../Fxt.Framework.Demo.Application/Fxt.Framework.Demo.Application.csproj"
+      "path": "../Shitou.Framework.Demo.Application/Shitou.Framework.Demo.Application.csproj",
+      "msbuildProject": "../Shitou.Framework.Demo.Application/Shitou.Framework.Demo.Application.csproj"
     },
-    "Fxt.Framework.Demo.Dao/1.0.0": {
+    "Shitou.Framework.Demo.Dao/1.0.0": {
       "type": "project",
-      "path": "../Fxt.Framework.Demo.Dao/Fxt.Framework.Demo.Dao.csproj",
-      "msbuildProject": "../Fxt.Framework.Demo.Dao/Fxt.Framework.Demo.Dao.csproj"
+      "path": "../Shitou.Framework.Demo.Dao/Shitou.Framework.Demo.Dao.csproj",
+      "msbuildProject": "../Shitou.Framework.Demo.Dao/Shitou.Framework.Demo.Dao.csproj"
     },
-    "Fxt.Framework.Demo.DataContract/1.0.0": {
+    "Shitou.Framework.Demo.DataContract/1.0.0": {
       "type": "project",
-      "path": "../Fxt.Framework.Demo.DataContract/Fxt.Framework.Demo.DataContract.csproj",
-      "msbuildProject": "../Fxt.Framework.Demo.DataContract/Fxt.Framework.Demo.DataContract.csproj"
+      "path": "../Shitou.Framework.Demo.DataContract/Shitou.Framework.Demo.DataContract.csproj",
+      "msbuildProject": "../Shitou.Framework.Demo.DataContract/Shitou.Framework.Demo.DataContract.csproj"
     },
-    "Fxt.Framework.Demo.Model/1.0.0": {
+    "Shitou.Framework.Demo.Model/1.0.0": {
       "type": "project",
-      "path": "../Fxt.Framework.Demo.Model/Fxt.Framework.Demo.Model.csproj",
-      "msbuildProject": "../Fxt.Framework.Demo.Model/Fxt.Framework.Demo.Model.csproj"
+      "path": "../Shitou.Framework.Demo.Model/Shitou.Framework.Demo.Model.csproj",
+      "msbuildProject": "../Shitou.Framework.Demo.Model/Shitou.Framework.Demo.Model.csproj"
     },
-    "Fxt.Framework.Demo.Service/1.0.0": {
+    "Shitou.Framework.Demo.Service/1.0.0": {
       "type": "project",
-      "path": "../Fxt.Framework.Demo.Service/Fxt.Framework.Demo.Service.csproj",
-      "msbuildProject": "../Fxt.Framework.Demo.Service/Fxt.Framework.Demo.Service.csproj"
+      "path": "../Shitou.Framework.Demo.Service/Shitou.Framework.Demo.Service.csproj",
+      "msbuildProject": "../Shitou.Framework.Demo.Service/Shitou.Framework.Demo.Service.csproj"
     },
-    "Fxt.Framework.Demo.Utils/1.0.0": {
+    "Shitou.Framework.Demo.Utils/1.0.0": {
       "type": "project",
-      "path": "../Fxt.Framework.Demo.Utils/Fxt.Framework.Demo.Utils.csproj",
-      "msbuildProject": "../Fxt.Framework.Demo.Utils/Fxt.Framework.Demo.Utils.csproj"
+      "path": "../Shitou.Framework.Demo.Utils/Shitou.Framework.Demo.Utils.csproj",
+      "msbuildProject": "../Shitou.Framework.Demo.Utils/Shitou.Framework.Demo.Utils.csproj"
     },
-    "Fxt.Framework.Log4net/1.0.0": {
+    "Shitou.Framework.Log4net/1.0.0": {
       "type": "project",
-      "path": "../../src/Fxt.Framework.Log4net/Fxt.Framework.Log4net.csproj",
-      "msbuildProject": "../../src/Fxt.Framework.Log4net/Fxt.Framework.Log4net.csproj"
+      "path": "../../src/Shitou.Framework.Log4net/Shitou.Framework.Log4net.csproj",
+      "msbuildProject": "../../src/Shitou.Framework.Log4net/Shitou.Framework.Log4net.csproj"
     },
-    "Fxt.Framework.ORM/1.0.0": {
+    "Shitou.Framework.ORM/1.0.0": {
       "type": "project",
-      "path": "../../src/Fxt.Framework.ORM/Fxt.Framework.ORM.csproj",
-      "msbuildProject": "../../src/Fxt.Framework.ORM/Fxt.Framework.ORM.csproj"
+      "path": "../../src/Shitou.Framework.ORM/Shitou.Framework.ORM.csproj",
+      "msbuildProject": "../../src/Shitou.Framework.ORM/Shitou.Framework.ORM.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
-      "Fxt.Framework.Caching >= 1.0.0",
-      "Fxt.Framework.Demo.Application >= 1.0.0",
-      "Fxt.Framework.Demo.Dao >= 1.0.0",
-      "Fxt.Framework.Demo.DataContract >= 1.0.0",
-      "Fxt.Framework.Demo.Model >= 1.0.0",
-      "Fxt.Framework.Demo.Service >= 1.0.0",
-      "Fxt.Framework.Demo.Utils >= 1.0.0",
-      "Fxt.Framework.Log4net >= 1.0.0",
-      "Fxt.Framework.ORM >= 1.0.0",
       "Microsoft.AspNetCore.All >= 2.0.8",
       "Microsoft.NETCore.App >= 2.0.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.3",
-      "Pivotal.Discovery.ClientCore >= 2.0.1"
+      "Pivotal.Discovery.ClientCore >= 2.0.1",
+      "Shitou.Framework.Caching >= 1.0.0",
+      "Shitou.Framework.Demo.Application >= 1.0.0",
+      "Shitou.Framework.Demo.DataContract >= 1.0.0",
+      "Shitou.Framework.Demo.Service >= 1.0.0",
+      "Shitou.Framework.Log4net >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -14222,11 +14217,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\test-demo\\Fxt-Framework\\samples\\Fxt.Framework.MvcDemo\\Fxt.Framework.Demo.Mvc.csproj",
-      "projectName": "Fxt.Framework.Demo.Mvc",
-      "projectPath": "E:\\test-demo\\Fxt-Framework\\samples\\Fxt.Framework.MvcDemo\\Fxt.Framework.Demo.Mvc.csproj",
+      "projectUniqueName": "E:\\test-demo\\Shitou.Framework4Core\\samples\\Shitou.Framework.MvcDemo\\Shitou.Framework.Demo.Mvc.csproj",
+      "projectName": "Shitou.Framework.Demo.Mvc",
+      "projectPath": "E:\\test-demo\\Shitou.Framework4Core\\samples\\Shitou.Framework.MvcDemo\\Shitou.Framework.Demo.Mvc.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "E:\\test-demo\\Fxt-Framework\\samples\\Fxt.Framework.MvcDemo\\obj\\",
+      "outputPath": "E:\\test-demo\\Shitou.Framework4Core\\samples\\Shitou.Framework.MvcDemo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -14247,32 +14242,20 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "E:\\test-demo\\Fxt-Framework\\samples\\Fxt.Framework.Demo.Application\\Fxt.Framework.Demo.Application.csproj": {
-              "projectPath": "E:\\test-demo\\Fxt-Framework\\samples\\Fxt.Framework.Demo.Application\\Fxt.Framework.Demo.Application.csproj"
+            "E:\\test-demo\\Shitou.Framework4Core\\samples\\Shitou.Framework.Demo.Application\\Shitou.Framework.Demo.Application.csproj": {
+              "projectPath": "E:\\test-demo\\Shitou.Framework4Core\\samples\\Shitou.Framework.Demo.Application\\Shitou.Framework.Demo.Application.csproj"
             },
-            "E:\\test-demo\\Fxt-Framework\\samples\\Fxt.Framework.Demo.Dao\\Fxt.Framework.Demo.Dao.csproj": {
-              "projectPath": "E:\\test-demo\\Fxt-Framework\\samples\\Fxt.Framework.Demo.Dao\\Fxt.Framework.Demo.Dao.csproj"
+            "E:\\test-demo\\Shitou.Framework4Core\\samples\\Shitou.Framework.Demo.DataContract\\Shitou.Framework.Demo.DataContract.csproj": {
+              "projectPath": "E:\\test-demo\\Shitou.Framework4Core\\samples\\Shitou.Framework.Demo.DataContract\\Shitou.Framework.Demo.DataContract.csproj"
             },
-            "E:\\test-demo\\Fxt-Framework\\samples\\Fxt.Framework.Demo.DataContract\\Fxt.Framework.Demo.DataContract.csproj": {
-              "projectPath": "E:\\test-demo\\Fxt-Framework\\samples\\Fxt.Framework.Demo.DataContract\\Fxt.Framework.Demo.DataContract.csproj"
+            "E:\\test-demo\\Shitou.Framework4Core\\samples\\Shitou.Framework.Demo.Service\\Shitou.Framework.Demo.Service.csproj": {
+              "projectPath": "E:\\test-demo\\Shitou.Framework4Core\\samples\\Shitou.Framework.Demo.Service\\Shitou.Framework.Demo.Service.csproj"
             },
-            "E:\\test-demo\\Fxt-Framework\\samples\\Fxt.Framework.Demo.Model\\Fxt.Framework.Demo.Model.csproj": {
-              "projectPath": "E:\\test-demo\\Fxt-Framework\\samples\\Fxt.Framework.Demo.Model\\Fxt.Framework.Demo.Model.csproj"
+            "E:\\test-demo\\Shitou.Framework4Core\\src\\Shitou.Framework.Caching\\Shitou.Framework.Caching.csproj": {
+              "projectPath": "E:\\test-demo\\Shitou.Framework4Core\\src\\Shitou.Framework.Caching\\Shitou.Framework.Caching.csproj"
             },
-            "E:\\test-demo\\Fxt-Framework\\samples\\Fxt.Framework.Demo.Service\\Fxt.Framework.Demo.Service.csproj": {
-              "projectPath": "E:\\test-demo\\Fxt-Framework\\samples\\Fxt.Framework.Demo.Service\\Fxt.Framework.Demo.Service.csproj"
-            },
-            "E:\\test-demo\\Fxt-Framework\\samples\\Fxt.Framework.Demo.Utils\\Fxt.Framework.Demo.Utils.csproj": {
-              "projectPath": "E:\\test-demo\\Fxt-Framework\\samples\\Fxt.Framework.Demo.Utils\\Fxt.Framework.Demo.Utils.csproj"
-            },
-            "E:\\test-demo\\Fxt-Framework\\src\\Fxt.Framework.Caching\\Fxt.Framework.Caching.csproj": {
-              "projectPath": "E:\\test-demo\\Fxt-Framework\\src\\Fxt.Framework.Caching\\Fxt.Framework.Caching.csproj"
-            },
-            "E:\\test-demo\\Fxt-Framework\\src\\Fxt.Framework.Log4net\\Fxt.Framework.Log4net.csproj": {
-              "projectPath": "E:\\test-demo\\Fxt-Framework\\src\\Fxt.Framework.Log4net\\Fxt.Framework.Log4net.csproj"
-            },
-            "E:\\test-demo\\Fxt-Framework\\src\\Fxt.Framework.ORM\\Fxt.Framework.ORM.csproj": {
-              "projectPath": "E:\\test-demo\\Fxt-Framework\\src\\Fxt.Framework.ORM\\Fxt.Framework.ORM.csproj"
+            "E:\\test-demo\\Shitou.Framework4Core\\src\\Shitou.Framework.Log4net\\Shitou.Framework.Log4net.csproj": {
+              "projectPath": "E:\\test-demo\\Shitou.Framework4Core\\src\\Shitou.Framework.Log4net\\Shitou.Framework.Log4net.csproj"
             }
           }
         }

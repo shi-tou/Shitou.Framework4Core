@@ -670,11 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\test-demo\\Fxt-Framework\\src\\Fxt.Framework.Payment\\Fxt.Framework.Payment.csproj",
-      "projectName": "Fxt.Framework.Payment",
-      "projectPath": "E:\\test-demo\\Fxt-Framework\\src\\Fxt.Framework.Payment\\Fxt.Framework.Payment.csproj",
+      "projectUniqueName": "E:\\test-demo\\Shitou.Framework4Core\\src\\Shitou.Framework.Payment\\Shitou.Framework.Payment.csproj",
+      "projectName": "Shitou.Framework.Payment",
+      "projectPath": "E:\\test-demo\\Shitou.Framework4Core\\src\\Shitou.Framework.Payment\\Shitou.Framework.Payment.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "E:\\test-demo\\Fxt-Framework\\src\\Fxt.Framework.Payment\\obj\\",
+      "outputPath": "E:\\test-demo\\Shitou.Framework4Core\\src\\Shitou.Framework.Payment\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

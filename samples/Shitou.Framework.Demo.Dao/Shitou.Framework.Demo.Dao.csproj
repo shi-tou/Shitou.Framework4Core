@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Fxt.Framework.ORM\Fxt.Framework.ORM.csproj" />
-    <ProjectReference Include="..\Fxt.Framework.Demo.DataContract\Fxt.Framework.Demo.DataContract.csproj" />
+    <ProjectReference Include="..\..\src\Shitou.Framework.ORM\Shitou.Framework.ORM.csproj" />
+    <ProjectReference Include="..\Shitou.Framework.Demo.DataContract\Shitou.Framework.Demo.DataContract.csproj" />
   </ItemGroup>
 
 </Project>

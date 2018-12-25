@@ -708,11 +708,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\test-demo\\Fxt-Framework\\samples\\Fxt.Framework.Demo.Utils\\Fxt.Framework.Demo.Utils.csproj",
-      "projectName": "Fxt.Framework.Demo.Utils",
-      "projectPath": "E:\\test-demo\\Fxt-Framework\\samples\\Fxt.Framework.Demo.Utils\\Fxt.Framework.Demo.Utils.csproj",
+      "projectUniqueName": "E:\\test-demo\\Shitou.Framework4Core\\samples\\Shitou.Framework.Demo.Utils\\Shitou.Framework.Demo.Utils.csproj",
+      "projectName": "Shitou.Framework.Demo.Utils",
+      "projectPath": "E:\\test-demo\\Shitou.Framework4Core\\samples\\Shitou.Framework.Demo.Utils\\Shitou.Framework.Demo.Utils.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "E:\\test-demo\\Fxt-Framework\\samples\\Fxt.Framework.Demo.Utils\\obj\\",
+      "outputPath": "E:\\test-demo\\Shitou.Framework4Core\\samples\\Shitou.Framework.Demo.Utils\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

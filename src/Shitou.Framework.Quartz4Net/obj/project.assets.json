@@ -5168,11 +5168,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\test-demo\\Fxt-Framework\\src\\Fxt.Framework.Quartz4Net\\Fxt.Framework.Quartz4Net.csproj",
-      "projectName": "Fxt.Framework.Quartz4Net",
-      "projectPath": "E:\\test-demo\\Fxt-Framework\\src\\Fxt.Framework.Quartz4Net\\Fxt.Framework.Quartz4Net.csproj",
+      "projectUniqueName": "E:\\test-demo\\Shitou.Framework4Core\\src\\Shitou.Framework.Quartz4Net\\Shitou.Framework.Quartz4Net.csproj",
+      "projectName": "Shitou.Framework.Quartz4Net",
+      "projectPath": "E:\\test-demo\\Shitou.Framework4Core\\src\\Shitou.Framework.Quartz4Net\\Shitou.Framework.Quartz4Net.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "E:\\test-demo\\Fxt-Framework\\src\\Fxt.Framework.Quartz4Net\\obj\\",
+      "outputPath": "E:\\test-demo\\Shitou.Framework4Core\\src\\Shitou.Framework.Quartz4Net\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

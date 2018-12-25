@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v2.1": {
       "Quartz4NetTest/1.0.0": {
         "dependencies": {
-          "Fxt.Framework.Quartz4Net": "1.0.0"
+          "Shitou.Framework.Quartz4Net": "1.0.0"
         },
         "runtime": {
           "Quartz4NetTest.dll": {}
@@ -777,7 +777,7 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
-      "Fxt.Framework.Quartz4Net/1.0.0": {
+      "Shitou.Framework.Quartz4Net/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Binder": "2.1.1",
           "Microsoft.Extensions.Configuration.Json": "2.1.1",
@@ -786,7 +786,7 @@
           "Quartz": "3.0.6"
         },
         "runtime": {
-          "Fxt.Framework.Quartz4Net.dll": {}
+          "Shitou.Framework.Quartz4Net.dll": {}
         }
       }
     }
@@ -1336,7 +1336,7 @@
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
-    "Fxt.Framework.Quartz4Net/1.0.0": {
+    "Shitou.Framework.Quartz4Net/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

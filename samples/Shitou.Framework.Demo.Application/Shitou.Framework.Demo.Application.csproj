@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Fxt.Framework.Demo.Service\Fxt.Framework.Demo.Service.csproj" />
+    <ProjectReference Include="..\Shitou.Framework.Demo.Service\Shitou.Framework.Demo.Service.csproj" />
   </ItemGroup>
 
 </Project>

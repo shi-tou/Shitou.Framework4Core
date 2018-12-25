@@ -12785,11 +12785,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\test-demo\\Fxt-Framework\\samples\\Fxt.Framework.Demo.WebApi\\Fxt.Framework.Demo.WebApi.csproj",
-      "projectName": "Fxt.Framework.Demo.WebApi",
-      "projectPath": "E:\\test-demo\\Fxt-Framework\\samples\\Fxt.Framework.Demo.WebApi\\Fxt.Framework.Demo.WebApi.csproj",
+      "projectUniqueName": "E:\\test-demo\\Shitou.Framework4Core\\samples\\Shitou.Framework.Demo.WebApi\\Shitou.Framework.Demo.WebApi.csproj",
+      "projectName": "Shitou.Framework.Demo.WebApi",
+      "projectPath": "E:\\test-demo\\Shitou.Framework4Core\\samples\\Shitou.Framework.Demo.WebApi\\Shitou.Framework.Demo.WebApi.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "E:\\test-demo\\Fxt-Framework\\samples\\Fxt.Framework.Demo.WebApi\\obj\\",
+      "outputPath": "E:\\test-demo\\Shitou.Framework4Core\\samples\\Shitou.Framework.Demo.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

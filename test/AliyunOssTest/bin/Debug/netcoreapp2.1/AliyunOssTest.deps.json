@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v2.1": {
       "AliyunOssTest/1.0.0": {
         "dependencies": {
-          "Fxt.Framework.AliyunOss": "1.0.0"
+          "Shitou.Framework.AliyunOss": "1.0.0"
         },
         "runtime": {
           "AliyunOssTest.dll": {}
@@ -1363,7 +1363,7 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
-      "Fxt.Framework.AliyunOss/1.0.0": {
+      "Shitou.Framework.AliyunOss/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Configuration": "2.1.1",
           "Microsoft.Extensions.Configuration.Binder": "2.1.1",
@@ -1373,7 +1373,7 @@
           "aliyun.oss.sdk.core": "2.5.3"
         },
         "runtime": {
-          "Fxt.Framework.AliyunOss.dll": {}
+          "Shitou.Framework.AliyunOss.dll": {}
         }
       }
     }
@@ -2168,7 +2168,7 @@
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
-    "Fxt.Framework.AliyunOss/1.0.0": {
+    "Shitou.Framework.AliyunOss/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

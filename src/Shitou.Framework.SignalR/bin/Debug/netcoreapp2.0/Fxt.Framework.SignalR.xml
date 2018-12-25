@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>Fxt.Framework.SignalR</name>
+        <name>Shitou.Framework.SignalR</name>
     </assembly>
     <members>
         <member name="T:Shitou.Framework.SignalR.Controllers.ChatController">

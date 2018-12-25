@@ -1336,7 +1336,7 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Fxt.Framework.Quartz4Net/1.0.0": {
+      "Shitou.Framework.Quartz4Net/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
@@ -1347,10 +1347,10 @@
           "Quartz": "3.0.6"
         },
         "compile": {
-          "bin/placeholder/Fxt.Framework.Quartz4Net.dll": {}
+          "bin/placeholder/Shitou.Framework.Quartz4Net.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Fxt.Framework.Quartz4Net.dll": {}
+          "bin/placeholder/Shitou.Framework.Quartz4Net.dll": {}
         }
       }
     }
@@ -5120,16 +5120,16 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "Fxt.Framework.Quartz4Net/1.0.0": {
+    "Shitou.Framework.Quartz4Net/1.0.0": {
       "type": "project",
-      "path": "../../src/Fxt.Framework.Quartz4Net/Fxt.Framework.Quartz4Net.csproj",
-      "msbuildProject": "../../src/Fxt.Framework.Quartz4Net/Fxt.Framework.Quartz4Net.csproj"
+      "path": "../../src/Shitou.Framework.Quartz4Net/Shitou.Framework.Quartz4Net.csproj",
+      "msbuildProject": "../../src/Shitou.Framework.Quartz4Net/Shitou.Framework.Quartz4Net.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
-      "Fxt.Framework.Quartz4Net >= 1.0.0",
-      "Microsoft.NETCore.App >= 2.1.0"
+      "Microsoft.NETCore.App >= 2.1.0",
+      "Shitou.Framework.Quartz4Net >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5139,11 +5139,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\test-demo\\Fxt-Framework\\test\\Quartz4NetTest\\Quartz4NetTest.csproj",
+      "projectUniqueName": "E:\\test-demo\\Shitou.Framework4Core\\test\\Quartz4NetTest\\Quartz4NetTest.csproj",
       "projectName": "Quartz4NetTest",
-      "projectPath": "E:\\test-demo\\Fxt-Framework\\test\\Quartz4NetTest\\Quartz4NetTest.csproj",
+      "projectPath": "E:\\test-demo\\Shitou.Framework4Core\\test\\Quartz4NetTest\\Quartz4NetTest.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "E:\\test-demo\\Fxt-Framework\\test\\Quartz4NetTest\\obj\\",
+      "outputPath": "E:\\test-demo\\Shitou.Framework4Core\\test\\Quartz4NetTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5164,8 +5164,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "E:\\test-demo\\Fxt-Framework\\src\\Fxt.Framework.Quartz4Net\\Fxt.Framework.Quartz4Net.csproj": {
-              "projectPath": "E:\\test-demo\\Fxt-Framework\\src\\Fxt.Framework.Quartz4Net\\Fxt.Framework.Quartz4Net.csproj"
+            "E:\\test-demo\\Shitou.Framework4Core\\src\\Shitou.Framework.Quartz4Net\\Shitou.Framework.Quartz4Net.csproj": {
+              "projectPath": "E:\\test-demo\\Shitou.Framework4Core\\src\\Shitou.Framework.Quartz4Net\\Shitou.Framework.Quartz4Net.csproj"
             }
           }
         }

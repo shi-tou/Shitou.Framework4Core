@@ -940,11 +940,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\test-demo\\Fxt-Framework\\src\\Fxt.Framework.Autofac\\Fxt.Framework.Autofac.csproj",
-      "projectName": "Fxt.Framework.Autofac",
-      "projectPath": "E:\\test-demo\\Fxt-Framework\\src\\Fxt.Framework.Autofac\\Fxt.Framework.Autofac.csproj",
+      "projectUniqueName": "E:\\test-demo\\Shitou.Framework4Core\\src\\Shitou.Framework.Autofac\\Shitou.Framework.Autofac.csproj",
+      "projectName": "Shitou.Framework.Autofac",
+      "projectPath": "E:\\test-demo\\Shitou.Framework4Core\\src\\Shitou.Framework.Autofac\\Shitou.Framework.Autofac.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "E:\\test-demo\\Fxt-Framework\\src\\Fxt.Framework.Autofac\\obj\\",
+      "outputPath": "E:\\test-demo\\Shitou.Framework4Core\\src\\Shitou.Framework.Autofac\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

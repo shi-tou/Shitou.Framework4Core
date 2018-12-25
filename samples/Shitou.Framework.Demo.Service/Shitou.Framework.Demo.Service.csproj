@@ -9,10 +9,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Fxt.Framework.ORM\Fxt.Framework.ORM.csproj" />
-    <ProjectReference Include="..\Fxt.Framework.Demo.Dao\Fxt.Framework.Demo.Dao.csproj" />
-    <ProjectReference Include="..\Fxt.Framework.Demo.DataContract\Fxt.Framework.Demo.DataContract.csproj" />
-    <ProjectReference Include="..\Fxt.Framework.Demo.Utils\Fxt.Framework.Demo.Utils.csproj" />
+    <ProjectReference Include="..\Shitou.Framework.Demo.Dao\Shitou.Framework.Demo.Dao.csproj" />
+    <ProjectReference Include="..\Shitou.Framework.Demo.DataContract\Shitou.Framework.Demo.DataContract.csproj" />
+    <ProjectReference Include="..\Shitou.Framework.Demo.Utils\Shitou.Framework.Demo.Utils.csproj" />
   </ItemGroup>
 
 </Project>

@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Fxt.Framework.RabbitMQ\Fxt.Framework.RabbitMQ.csproj" />
+    <ProjectReference Include="..\..\src\Shitou.Framework.RabbitMQ\Shitou.Framework.RabbitMQ.csproj" />
   </ItemGroup>
 
 </Project>

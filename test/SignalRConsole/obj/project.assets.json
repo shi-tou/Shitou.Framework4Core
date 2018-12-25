@@ -941,7 +941,7 @@
       ]
     },
     "Microsoft.AspNetCore.Connections.Abstractions/2.1.2": {
-      "sha512": "O/dAVpldQyJEzzrY1f6Ki+s4DeAk8qtvcSK8Pk+zJLYB9tZKdWMQ68ob+fy7CsYCdLyhbT/vro0TSBK1teit7g==",
+      "sha512": "OJd++WKb8zmn7fTNFUjNTkXzDwFqhFOmSu6N9NqiY1/WT9Ly6Igr9hFsjvT9rOqgcAUUWTyLfI+RPSu6D7Hw/A==",
       "type": "package",
       "path": "microsoft.aspnetcore.connections.abstractions/2.1.2",
       "files": [
@@ -1001,7 +1001,7 @@
       ]
     },
     "Microsoft.AspNetCore.Http.Connections/1.0.2": {
-      "sha512": "uWt6+blWfD837am7JC/cNCzMi0xXKZtH71oCe8H5PEQoAyL3aIE1YTc5+ce4Nhv5A+SS/foHvFaZrj4YfLGmjQ==",
+      "sha512": "wFlt/qBNIxg6PE11Ck/nJNXvZbP2QT0xuHqFxuOrT7SaCrdVnecxgQBrTkcG9Rk8KVKtL9L6EbHfNolE9i16AA==",
       "type": "package",
       "path": "microsoft.aspnetcore.http.connections/1.0.2",
       "files": [
@@ -1015,7 +1015,7 @@
       ]
     },
     "Microsoft.AspNetCore.Http.Connections.Client/1.0.2": {
-      "sha512": "eUKKMfqbmwy/R0mBgp6CFqrIZ9nQFl59AlFL7nYS1i8OML6IDXj8hEJZUxaF7IFsrbpCrYFrryWskKynl2WCHw==",
+      "sha512": "fRp77vM2sAZOR+C047EVntb6P/MsURCwTHioTx6kCI/1nwHDY62WZjXeKGiTiTdsTN42URWDwC+3/jlMdwRj8w==",
       "type": "package",
       "path": "microsoft.aspnetcore.http.connections.client/1.0.2",
       "files": [
@@ -1029,7 +1029,7 @@
       ]
     },
     "Microsoft.AspNetCore.Http.Connections.Common/1.0.2": {
-      "sha512": "4s7EGp6qvYxWs7Eu/gMMBqsWHLB7UIlZsSSCVkB/oFRnnuYpwFSRCgC4SmvkTstz9wfwgd93u0iCzyvqkVEBjA==",
+      "sha512": "pUX+XY2NFEJto5RvFWpXjtSy87F01pqmXB/d8CeBtWUdCNuCLRRjbRblk+emIHPbFF30FwV+arNxz0YxhxlV4Q==",
       "type": "package",
       "path": "microsoft.aspnetcore.http.connections.common/1.0.2",
       "files": [
@@ -1089,7 +1089,7 @@
       ]
     },
     "Microsoft.AspNetCore.SignalR/1.0.2": {
-      "sha512": "Wmg5+Rq6OFa2lHi/qfIm9s2nBki6LY9GwmijWMPiPckk0ljk0jnZc15z/w1cGh7Ax0lA3cztHfoqGeFOIHoMQg==",
+      "sha512": "6MsTRgfJFdKbuIc6mORAE+kM4UQ3/oyhvMYuE+9I54NPdWSwYT6eaiFPiFE5epxYcIjZGIQQUW6VzfjSPb4/LA==",
       "type": "package",
       "path": "microsoft.aspnetcore.signalr/1.0.2",
       "files": [
@@ -1101,7 +1101,7 @@
       ]
     },
     "Microsoft.AspNetCore.SignalR.Client/1.0.2": {
-      "sha512": "MYLHC25YJ3/R/LUahCX6dPM74EdyuR3rurq7D56cJRhIsa/VPXnXB647+ZIsyBXHNN9DePZh1iPzdm8flgIEaw==",
+      "sha512": "ApqILtHfVWtcD6y7FDL4rdZI6x4AZLBQvfxuFJQ9SyyPHtjf0SZ5le+UwHQJotJdvU5xe7jPqIj8PRFazqh0ew==",
       "type": "package",
       "path": "microsoft.aspnetcore.signalr.client/1.0.2",
       "files": [
@@ -1113,7 +1113,7 @@
       ]
     },
     "Microsoft.AspNetCore.SignalR.Client.Core/1.0.2": {
-      "sha512": "IbgAu1o7ZnhZ5uiMNQY4dYNMvhvh5lLmXZH5MUz9cxW6dxAFc2CaGEp9iyYvdr2LKpyHy92RCQPRRrvo2z/Olg==",
+      "sha512": "A4YQ0nedIn78ArcCVtKnBh/MHewq5OcZNnv4RFQmwOPTIo9KfLGhmF0NLPZAvfgiIO5XmxjQWNY9xu4NhYqjZg==",
       "type": "package",
       "path": "microsoft.aspnetcore.signalr.client.core/1.0.2",
       "files": [
@@ -1125,7 +1125,7 @@
       ]
     },
     "Microsoft.AspNetCore.SignalR.Common/1.0.2": {
-      "sha512": "D/hQQMoGUDvuDxJmfRqSkpg4yuFrN2lFirQwj6zMN+dx/ZTAs7Ip2bGPM/Ht8cTKlKx/uXwT4SReDVaT/9xq5w==",
+      "sha512": "QnEoETRVTG+M8/PuuTB1ZR5aIFt6rH8dhLRLeOpsQpe8TXOPfrKnjsfNVFomeC3ir38a9ZlRjhtRuV2dSYHlgw==",
       "type": "package",
       "path": "microsoft.aspnetcore.signalr.common/1.0.2",
       "files": [
@@ -1139,7 +1139,7 @@
       ]
     },
     "Microsoft.AspNetCore.SignalR.Core/1.0.2": {
-      "sha512": "qLhOGK8qbcGzhIZQHko53qD2O0BXtWAyayahiOGElE/uFWQ3BxApwO+D8za1HXdJ/4Sy57x518w/kXLRNAuWJQ==",
+      "sha512": "FXqrlsq1FDJNQYFtl1aybEislKZXtJicyxVetTel6jPzDN1Ap/RZqSuitIMb5YAd/vTG6wRr8I4c/UxEhce/AA==",
       "type": "package",
       "path": "microsoft.aspnetcore.signalr.core/1.0.2",
       "files": [
@@ -1151,7 +1151,7 @@
       ]
     },
     "Microsoft.AspNetCore.SignalR.Protocols.Json/1.0.2": {
-      "sha512": "5CUIGbl8e118SVn3cF33VFhRk+anwt5Msp7nHYQAOARc6KbPMuqRKDBUtMC1uZ0amsl+52JTOol8ffN77kXOag==",
+      "sha512": "R6j88ntHrsQtKVFPJySBRMP/i7L7ps83YT6Fn9qPgpXxNwpy/o+03LB3Ehty2KE9O3KTT49Y9HL2n2yA2EBK4g==",
       "type": "package",
       "path": "microsoft.aspnetcore.signalr.protocols.json/1.0.2",
       "files": [
@@ -1383,7 +1383,7 @@
       ]
     },
     "Microsoft.NETCore.App/2.1.0": {
-      "sha512": "AvT774nTFgU8cYcGO9j1EMwuayKslxqYTurg32HGpWa2hEYNuW2+XgYVVNcZe6Ndbr84QX6fwaOZfd5n+1m2OA==",
+      "sha512": "mVxL8khUMyl0L+MkyY0SLhZU13Z+KoUCcCTDC1MZKaegUVbAuaEzqX0VyGJ5U1lyo8fh6ryJPbsBPJww6qcKpw==",
       "type": "package",
       "path": "microsoft.netcore.app/2.1.0",
       "files": [
@@ -1648,7 +1648,7 @@
       ]
     },
     "Microsoft.NETCore.DotNetAppHost/2.1.0": {
-      "sha512": "f/47I60Wg3SrveTvnecCQhCZCAMYlUujWF15EQ/AZTqF/54qeEJjbCIAxKcZI8ToUYzSg6JdfrHggsgjCyCE9Q==",
+      "sha512": "cZiASE81rksPJsGJ04hd/uEn6guNGAoqNsrzE/DP6AaNRPCHwTe6nZvHd4uAPj3MaVRQ3U0c6cRycMaHCYLPUQ==",
       "type": "package",
       "path": "microsoft.netcore.dotnetapphost/2.1.0",
       "files": [
@@ -1661,7 +1661,7 @@
       ]
     },
     "Microsoft.NETCore.DotNetHostPolicy/2.1.0": {
-      "sha512": "p50yZYKzhH64lmArJgoKjtvsNehECa+/sAuOQzZh5uDNBTbRKxjN8IXP1e517xdVsgrFcSNxSEVDKZIOWVjGcQ==",
+      "sha512": "JHyN4ibWkJy/2HlqHnUXBmcpzZfIhCFw7uGqWU5fyL7mzGq5E5vjCHChpFqPzRugM2QS3q31re6CAVzFBzTMqw==",
       "type": "package",
       "path": "microsoft.netcore.dotnethostpolicy/2.1.0",
       "files": [
@@ -1674,7 +1674,7 @@
       ]
     },
     "Microsoft.NETCore.DotNetHostResolver/2.1.0": {
-      "sha512": "fS9D8a+y55n6mHMbNqgHXaPGkjmpVH9h97OyrBxsCuo3Z8aQaFMJ5xIfmzji2ntUd/3truhMbSgSfIelHOkQpg==",
+      "sha512": "d+V3yHIMimz3m4MkecBtIrf1NI1oPUez5eaAXbVSWqNyFUuTeBeolYwA3yCYeKCS0zDkV0QjXEOaHd0pjujOZA==",
       "type": "package",
       "path": "microsoft.netcore.dotnethostresolver/2.1.0",
       "files": [
@@ -1703,7 +1703,7 @@
       ]
     },
     "Microsoft.NETCore.Targets/2.1.0": {
-      "sha512": "etaYwrLZQUS+b3UWTpCnUggd6SQ/ZIkZ5pHnoR7+dIWt/wp2Rv3CvMKOZISsrt7FYCHKwCxfcepuuyEWkQxADg==",
+      "sha512": "R+z1NrmXptbA6maCVVPcJ9xrCjUZFGEW1CHQeCqOyRni6PFxANYjiEjDBAK7wQUdmdZFy3xKJYUY0qhpb+hSLQ==",
       "type": "package",
       "path": "microsoft.netcore.targets/2.1.0",
       "files": [
@@ -2122,7 +2122,7 @@
       ]
     },
     "System.Reflection.Emit/4.3.0": {
-      "sha512": "RldTFsR8bYRdG90LxZ/fv0Lf0xglPVFjGmFjSztdwM5EOVb620ANmA+C/Nb2ui7vK8YjdPlSXhhqB0Kiq1o57A==",
+      "sha512": "228FG0jLcIwTVJyz8CLFKueVqQK36ANazUManGaJHkO0icjiIypKW7YLWLIWahyIkdh5M7mV2dJepllLyA1SKg==",
       "type": "package",
       "path": "system.reflection.emit/4.3.0",
       "files": [
@@ -2156,7 +2156,7 @@
       ]
     },
     "System.Reflection.Emit.ILGeneration/4.3.0": {
-      "sha512": "uQSlW/mQr3c8r8M6X0fxTsFvklLOqL6Yg7fpkUHOew5OXTZMzqd2hHJkcFfhjS6+L7s8hti5fiyVHFdjwUWJNw==",
+      "sha512": "59tBslAk9733NXLrUJrwNZEzbMAcu8k344OYo+wfSVygcgZ9lgBdGIzH/nrg3LYhXceynyvTc8t5/GD4Ri0/ng==",
       "type": "package",
       "path": "system.reflection.emit.ilgeneration/4.3.0",
       "files": [
@@ -2553,11 +2553,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\test-demo\\Fxt-Framework\\test\\SignalRConsole\\SignalRConsole.csproj",
+      "projectUniqueName": "E:\\test-demo\\Shitou.Framework4Core\\test\\SignalRConsole\\SignalRConsole.csproj",
       "projectName": "SignalRConsole",
-      "projectPath": "E:\\test-demo\\Fxt-Framework\\test\\SignalRConsole\\SignalRConsole.csproj",
+      "projectPath": "E:\\test-demo\\Shitou.Framework4Core\\test\\SignalRConsole\\SignalRConsole.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "E:\\test-demo\\Fxt-Framework\\test\\SignalRConsole\\obj\\",
+      "outputPath": "E:\\test-demo\\Shitou.Framework4Core\\test\\SignalRConsole\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
