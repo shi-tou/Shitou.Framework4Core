@@ -1,7 +1,3 @@
-E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\obj\Debug\netcoreapp2.0\Shitou.Framework.Demo.Mvc.csprojAssemblyReference.cache
-E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\obj\Debug\netcoreapp2.0\Shitou.Framework.Demo.Mvc.csproj.CoreCompileInputs.cache
-E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\obj\Debug\netcoreapp2.0\Shitou.Framework.Demo.Mvc.AssemblyInfoInputs.cache
-E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\obj\Debug\netcoreapp2.0\Shitou.Framework.Demo.Mvc.AssemblyInfo.cs
 E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\bin\Debug\netcoreapp2.0\Config\log4net.config
 E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\bin\Debug\netcoreapp2.0\Config\RedisSettings.json
 E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\bin\Debug\netcoreapp2.0\Shitou.Framework.Demo.Mvc.deps.json
@@ -9,7 +5,6 @@ E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\bin\Debug\ne
 E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\bin\Debug\netcoreapp2.0\Shitou.Framework.Demo.Mvc.runtimeconfig.dev.json
 E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\bin\Debug\netcoreapp2.0\Shitou.Framework.Demo.Mvc.dll
 E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\bin\Debug\netcoreapp2.0\Shitou.Framework.Demo.Mvc.pdb
-E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\bin\Debug\netcoreapp2.0\Shitou.Framework.Caching.dll
 E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\bin\Debug\netcoreapp2.0\Shitou.Framework.Demo.Application.dll
 E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\bin\Debug\netcoreapp2.0\Shitou.Framework.Demo.Dao.dll
 E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\bin\Debug\netcoreapp2.0\Shitou.Framework.Demo.DataContract.dll
@@ -18,7 +13,6 @@ E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\bin\Debug\ne
 E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\bin\Debug\netcoreapp2.0\Shitou.Framework.Demo.Utils.dll
 E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\bin\Debug\netcoreapp2.0\Shitou.Framework.Log4net.dll
 E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\bin\Debug\netcoreapp2.0\Shitou.Framework.ORM.dll
-E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\bin\Debug\netcoreapp2.0\Shitou.Framework.Caching.pdb
 E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\bin\Debug\netcoreapp2.0\Shitou.Framework.Log4net.pdb
 E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\bin\Debug\netcoreapp2.0\Shitou.Framework.Demo.Application.pdb
 E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\bin\Debug\netcoreapp2.0\Shitou.Framework.Demo.DataContract.pdb
@@ -27,6 +21,10 @@ E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\bin\Debug\ne
 E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\bin\Debug\netcoreapp2.0\Shitou.Framework.Demo.Model.pdb
 E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\bin\Debug\netcoreapp2.0\Shitou.Framework.Demo.Utils.pdb
 E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\bin\Debug\netcoreapp2.0\Shitou.Framework.ORM.pdb
+E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\obj\Debug\netcoreapp2.0\Shitou.Framework.Demo.Mvc.csprojAssemblyReference.cache
+E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\obj\Debug\netcoreapp2.0\Shitou.Framework.Demo.Mvc.csproj.CoreCompileInputs.cache
+E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\obj\Debug\netcoreapp2.0\Shitou.Framework.Demo.Mvc.AssemblyInfoInputs.cache
+E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\obj\Debug\netcoreapp2.0\Shitou.Framework.Demo.Mvc.AssemblyInfo.cs
 E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\obj\Debug\netcoreapp2.0\Shitou.Framework.Demo.Mvc.csproj.CopyComplete
 E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\obj\Debug\netcoreapp2.0\Shitou.Framework.Demo.Mvc.dll
 E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.MvcDemo\obj\Debug\netcoreapp2.0\Shitou.Framework.Demo.Mvc.pdb

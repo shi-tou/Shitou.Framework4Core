@@ -1,7 +1,3 @@
-E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.Service\obj\Debug\netcoreapp2.0\Shitou.Framework.Demo.Service.csprojAssemblyReference.cache
-E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.Service\obj\Debug\netcoreapp2.0\Shitou.Framework.Demo.Service.csproj.CoreCompileInputs.cache
-E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.Service\obj\Debug\netcoreapp2.0\Shitou.Framework.Demo.Service.AssemblyInfoInputs.cache
-E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.Service\obj\Debug\netcoreapp2.0\Shitou.Framework.Demo.Service.AssemblyInfo.cs
 E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.Service\bin\Debug\netcoreapp2.0\Shitou.Framework.Demo.Service.deps.json
 E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.Service\bin\Debug\netcoreapp2.0\Shitou.Framework.Demo.Service.dll
 E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.Service\bin\Debug\netcoreapp2.0\Shitou.Framework.Demo.Service.pdb
@@ -15,6 +11,10 @@ E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.Service\bin\Deb
 E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.Service\bin\Debug\netcoreapp2.0\Shitou.Framework.Demo.Utils.pdb
 E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.Service\bin\Debug\netcoreapp2.0\Shitou.Framework.Demo.Model.pdb
 E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.Service\bin\Debug\netcoreapp2.0\Shitou.Framework.ORM.pdb
+E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.Service\obj\Debug\netcoreapp2.0\Shitou.Framework.Demo.Service.csprojAssemblyReference.cache
+E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.Service\obj\Debug\netcoreapp2.0\Shitou.Framework.Demo.Service.csproj.CoreCompileInputs.cache
+E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.Service\obj\Debug\netcoreapp2.0\Shitou.Framework.Demo.Service.AssemblyInfoInputs.cache
+E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.Service\obj\Debug\netcoreapp2.0\Shitou.Framework.Demo.Service.AssemblyInfo.cs
 E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.Service\obj\Debug\netcoreapp2.0\Shitou.Framework.Demo.Service.csproj.CopyComplete
 E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.Service\obj\Debug\netcoreapp2.0\Shitou.Framework.Demo.Service.dll
 E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.Service\obj\Debug\netcoreapp2.0\Shitou.Framework.Demo.Service.pdb

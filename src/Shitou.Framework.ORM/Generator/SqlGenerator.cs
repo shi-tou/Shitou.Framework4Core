@@ -216,6 +216,17 @@ namespace Shitou.Framework.ORM.Generator
         /// <summary>
         /// Count语句
         /// </summary>
+        /// <returns></returns>
+        public virtual string GetCountSql<T>(Hashtable hs)
+        {
+            ClassMapper mapT = GetMapper(typeof(T));
+            string strWhere = GetSqlParam(hs.Keys);
+            return string.Format("SELECT COUNT(1) FROM {0} WHERE {1}", mapT.TableName, string.IsNullOrEmpty(strWhere) ? EmptyExpression : strWhere);
+        }
+
+        /// <summary>
+        /// Count语句
+        /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <typeparam name="W">查询对象</typeparam>
         /// <returns></returns>

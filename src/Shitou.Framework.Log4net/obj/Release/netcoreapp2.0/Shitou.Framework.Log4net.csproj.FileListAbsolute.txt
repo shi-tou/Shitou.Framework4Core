@@ -1,0 +1,9 @@
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Log4net\bin\Release\netcoreapp2.0\Shitou.Framework.Log4net.deps.json
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Log4net\bin\Release\netcoreapp2.0\Shitou.Framework.Log4net.dll
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Log4net\bin\Release\netcoreapp2.0\Shitou.Framework.Log4net.pdb
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Log4net\obj\Release\netcoreapp2.0\Shitou.Framework.Log4net.csprojAssemblyReference.cache
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Log4net\obj\Release\netcoreapp2.0\Shitou.Framework.Log4net.csproj.CoreCompileInputs.cache
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Log4net\obj\Release\netcoreapp2.0\Shitou.Framework.Log4net.AssemblyInfoInputs.cache
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Log4net\obj\Release\netcoreapp2.0\Shitou.Framework.Log4net.AssemblyInfo.cs
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Log4net\obj\Release\netcoreapp2.0\Shitou.Framework.Log4net.dll
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Log4net\obj\Release\netcoreapp2.0\Shitou.Framework.Log4net.pdb

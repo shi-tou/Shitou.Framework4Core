@@ -598,7 +598,40 @@ namespace Shitou.Framework.ORM
                 Dispose();
             }
         }
-
+        /// <summary>
+        /// 获取计数
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public int GetCount<T>(string columnName, object value)
+        {
+            Hashtable hs = new Hashtable
+            {
+                [columnName] = value
+            };
+            return GetCount<T>(hs);
+        }
+        /// <summary>
+        /// 获取计数
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public virtual int GetCount<T>(Hashtable where)
+        {
+            try
+            {
+                string sql = SqlGenerator.GetCountSql<T>(where);
+                return Convert.ToInt32(DbConnection.ExecuteScalar(sql, where));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Dispose();
+            }
+        }
         /// <summary>
         /// 获取计数
         /// </summary>

@@ -4,5 +4,5 @@ using System.Text;
 
 namespace Shitou.Framework.Demo.DataContract.Base
 {
-    
+
 }

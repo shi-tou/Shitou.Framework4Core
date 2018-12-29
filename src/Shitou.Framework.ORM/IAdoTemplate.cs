@@ -128,6 +128,7 @@ namespace Shitou.Framework.ORM
         #endregion
 
         #region ---GetModel---
+        
         /// <summary>
         /// 查询(单记录)
         /// </summary>
@@ -252,7 +253,18 @@ namespace Shitou.Framework.ORM
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         int GetCount<T>();
-
+        /// <summary>
+        /// 获取计数
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        int GetCount<T>(string columnName, object value);
+        /// <summary>
+        /// 获取计数
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        int GetCount<T>(Hashtable where);
         /// <summary>
         /// 获取计数
         /// </summary>

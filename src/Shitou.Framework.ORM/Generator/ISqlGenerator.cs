@@ -103,6 +103,12 @@ namespace Shitou.Framework.ORM.Generator
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         string GetCountSql<T>();
+        /// <summary>
+        /// Count语句
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        string GetCountSql<T>(Hashtable hs);
 
         /// <summary>
         /// Count语句

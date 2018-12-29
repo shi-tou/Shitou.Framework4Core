@@ -35,11 +35,28 @@ namespace Shitou.Framework.Demo.Application.Filter
 
         public override void OnException(ExceptionContext context)
         {
+            //var request = context.HttpContext.Request;
+            //_logger.LogError(context.Exception, string.Format("ErrorCdoe:{0},host:{1},path:{2}\n",
+            //    Activity.Current?.Id ?? context.HttpContext.TraceIdentifier,
+            //    request.Host, request.Path));
+            //base.OnException(context);
+            if (!_hostingEnvironment.IsDevelopment())
+            {
+                return;
+            }
+#if DEBUG
+
             var request = context.HttpContext.Request;
-            _logger.LogError(context.Exception, string.Format("ErrorCdoe:{0},host:{1},path:{2}\n",
-                Activity.Current?.Id ?? context.HttpContext.TraceIdentifier,
-                request.Host, request.Path));
-            base.OnException(context);
+            _logger.LogError(context.Exception, string.Format("host:{0},path:{1}", request.Host, request.Path));
+            var result = new AjaxResult { IsOk = false, Msg = context.Exception.Message, Data = "" };
+#endif
+#if RELEASE
+
+            var request = context.HttpContext.Request;
+            _logger.LogError(context.Exception, string.Format("host:{0},path:{1}", request.Host, request.Path));
+            var result = new AjaxResult { IsOk = false, Msg = "服务开小差了,请联系管理员", Data = "" };
+#endif
+            context.Result = new JsonResult(result);
         }
     }
 }

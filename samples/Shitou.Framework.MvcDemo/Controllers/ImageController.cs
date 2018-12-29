@@ -23,20 +23,21 @@ namespace Shitou.Framework.Demo.Mvc.Controllers
         }
 
         /// <summary>
-        /// 批量上传图片(入库)，Webupload排量上传，其他也是多少调用，每次调用上传一张
+        /// 批量上传图片(入库)，Webupload排量上传，其实是多次调用，每次调用上传一张
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult Upload(IFormFile file)
+        public string UploadImage(IFormFile file, string imageType)
         {
+            string url = string.Empty;
             if (file != null)
             {
 
-                string url = UploadPic(file, "Test");
+                url = UploadPic(file, imageType);
                 _logger?.LogInformation("上传图片路径：" + url);
 
             }
-            return Ok();
+            return url;
         }
 
         /// <summary>
@@ -45,18 +46,18 @@ namespace Shitou.Framework.Demo.Mvc.Controllers
         /// <param name="PicType"></param>
         /// <param name="targetID"></param>
         /// <param name="fileName"></param>
-        private string UploadPic(IFormFile file, string fileName)
+        private string UploadPic(IFormFile file, string imageType)
         {
             try
             {
                 string rootPath = Environment.CurrentDirectory;
-                string uploadDir = Path.Combine(rootPath, "upload/" + fileName);
+                string uploadDir = Path.Combine(rootPath, "upload/" + imageType);
                 if (!Directory.Exists(uploadDir))
                 {
                     Directory.CreateDirectory(uploadDir);
                 }
 
-                string relativePath = string.Format("/upload/{0}/{1}.jpg", fileName, Guid.NewGuid().ToString());
+                string relativePath = string.Format("/upload/{0}/{1}.jpg", imageType, Guid.NewGuid().ToString());
                 using (var fileStream = new FileStream(rootPath.TrimEnd('/') + relativePath, FileMode.Create))
                 {
                     file.CopyToAsync(fileStream);

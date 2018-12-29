@@ -11,7 +11,6 @@ using Shitou.Framework.Demo.DataContract.Response;
 using Shitou.Framework.ORM;
 using Shitou.Framework.Demo.Model;
 using Shitou.Framework.Demo.Application.Models;
-using Shitou.Framework.Caching.Redis;
 using Microsoft.AspNetCore.Authorization;
 using Shitou.Framework.Demo.Utils;
 
@@ -24,11 +23,9 @@ namespace Shitou.Framework.Demo.Mvc.Controllers
     public class SystemController : BaseController
     {
         public ISystemService SystemService { get; set; }
-        public IRedisCacheService RedisCacheService { get; set; }
-        public SystemController(ISystemService systemService,IRedisCacheService redisCacheService)
+        public SystemController(ISystemService systemService)
         {
             SystemService = systemService;
-            RedisCacheService = redisCacheService;
         }
 
         #region 用户管理

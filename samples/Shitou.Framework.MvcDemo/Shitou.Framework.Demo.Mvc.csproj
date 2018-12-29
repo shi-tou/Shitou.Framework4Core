@@ -67,11 +67,9 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
-    <PackageReference Include="Pivotal.Discovery.ClientCore" Version="2.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Shitou.Framework.Caching\Shitou.Framework.Caching.csproj" />
     <ProjectReference Include="..\..\src\Shitou.Framework.Log4net\Shitou.Framework.Log4net.csproj" />
     <ProjectReference Include="..\Shitou.Framework.Demo.Application\Shitou.Framework.Demo.Application.csproj" />
     <ProjectReference Include="..\Shitou.Framework.Demo.DataContract\Shitou.Framework.Demo.DataContract.csproj" />
@@ -84,6 +82,18 @@
     </Content>
     <Content Update="Config\RedisSettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\Goods\GoodsTypeAdd.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Goods\GoodsAdd.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Goods\GoodsTypeList.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Goods\GoodsList.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
     <Content Update="Views\Shared\NoFound.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>

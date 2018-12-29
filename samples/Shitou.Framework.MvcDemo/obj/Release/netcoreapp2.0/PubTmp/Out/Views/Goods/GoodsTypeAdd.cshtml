@@ -1,0 +1,58 @@
+﻿@model GoodsTypeInfo
+
+<body>
+    <form id="GoodsTypeAdd" class="layui-form layui-form-pane"
+          asp-controller="Goods" asp-action="GoodsTypeAdd"
+          data-ajax="true"
+          data-ajax-mode="replace"
+          data-ajax-update="#"
+          data-ajax-method="Post"
+          data-ajax-success="Callback">
+        <table class="post-form">
+            <tr>
+                <th>类别：</th>
+                <td>
+                    @Html.DropDownList("ParentID", ViewData["GoodsType"] as SelectList, "-根类别-", new { @class = "layui-input" })
+                </td>
+            </tr>
+            <tr>
+                <th style="width: 150px;">类别名：</th>
+                <td>
+                    <input id="GoodsTypeName" name="GoodsTypeName" lay-verify="required" lay-msg="类别名不能为空" class="layui-input" type="text" value="@Model.GoodsTypeName">
+                </td>
+            </tr>
+            <tr>
+                <th>简介：</th>
+                <td>
+                    <textarea id="Description" name="Description" class="layui-input" type="text" value="@Model.Description"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <button id="post_btn" type="submit" class="layui-btn" lay-submit="" lay-filter="post">保 存</button>
+                    <a href="javascript:void(0)" onclick="parent.CloseWindow();" class="layui-btn layui-btn-normal">返回列表</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        layui.use(['form', 'layer'], function () {
+            var form = layui.form,
+                layer = layui.layer;
+            //自定义验证规则
+            form.verify({
+                //confirmPassword: function (value) {
+                //    if (value != $('#Password').val()) {
+                //        return '两次输入密码不一致！';
+                //    }
+                //}
+            });
+            //监听提交
+            form.on('submit(post)', function (data) {
+                //console.log(JSON.stringify(data.field));
+                return true;
+            });
+        });
+    </script>
+</body>

@@ -79,6 +79,22 @@ namespace Shitou.Framework.Demo.Service
         /// <typeparam name="T"></typeparam>
         /// <param name="t"></param>
         /// <returns></returns>
+        int GetCount<T>(string columnName, object value);
+
+        /// <summary>
+        /// 获取数据
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="t"></param>
+        /// <returns></returns>
+        int GetCount<T>(Hashtable hs);
+
+        /// <summary>
+        /// 获取数据
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="t"></param>
+        /// <returns></returns>
         List<T> GetList<T>(string columnName, object value);
 
         /// <summary>

@@ -1,9 +1,0 @@
-E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.RabbitMQ\bin\Debug\netcoreapp2.0\Shitou.Framework.RabbitMQ.deps.json
-E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.RabbitMQ\bin\Debug\netcoreapp2.0\Shitou.Framework.RabbitMQ.dll
-E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.RabbitMQ\bin\Debug\netcoreapp2.0\Shitou.Framework.RabbitMQ.pdb
-E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.RabbitMQ\obj\Debug\netcoreapp2.0\Shitou.Framework.RabbitMQ.csprojAssemblyReference.cache
-E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.RabbitMQ\obj\Debug\netcoreapp2.0\Shitou.Framework.RabbitMQ.csproj.CoreCompileInputs.cache
-E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.RabbitMQ\obj\Debug\netcoreapp2.0\Shitou.Framework.RabbitMQ.AssemblyInfoInputs.cache
-E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.RabbitMQ\obj\Debug\netcoreapp2.0\Shitou.Framework.RabbitMQ.AssemblyInfo.cs
-E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.RabbitMQ\obj\Debug\netcoreapp2.0\Shitou.Framework.RabbitMQ.dll
-E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.RabbitMQ\obj\Debug\netcoreapp2.0\Shitou.Framework.RabbitMQ.pdb

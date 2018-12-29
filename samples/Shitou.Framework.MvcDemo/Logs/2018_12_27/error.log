@@ -1,0 +1,4 @@
+﻿2018-12-27 18:04:00,128 [11] ERROR Shitou.Framework.Demo.Service.SystemService [(null)] - BaseService.Insert->{"ID":"20181227180359905449","GoodsName":"888888888","GoodsTypeID":"20181226165750447340","OriginalPrice":100.0,"PresentPrice":88.0,"CouponPrice":12.0,"SummaryText":"999","Description":null,"Password":"22222222","ImageUrl":"/upload/Goods/8dd6729f-7360-4886-8dfa-87d51f4275f9.jpg","PlatformType":0,"IsDelete":false,"CreateBy":"20180615174009124552","CreateTime":"2018-12-27T18:03:59.9059305+08:00"}
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'OriginalPrice' in 'field list'
+   at Shitou.Framework.ORM.AdoTemplate.Insert[T](T t) in E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.ORM\AdoTemplate.cs:line 133
+   at Shitou.Framework.Demo.Service.BaseService.Insert[T](T t) in E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.Service\BaseService.cs:line 37

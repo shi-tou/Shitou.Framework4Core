@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using Shitou.Framework.Demo.Application.Extensions;
 using Shitou.Framework.Demo.Application.Filter;
-using Shitou.Framework.Caching.Redis;
 using Shitou.Framework.Log4net;
 using Shitou.Framework.ORM;
 using Microsoft.AspNetCore.Builder;
@@ -13,15 +8,13 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.FileProviders;
-using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
-using Pivotal.Discovery.Client;
 using Shitou.Framework.Demo.Application.Middleware;
-using Shitou.Framework.Demo.Model;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using MySql.Data.MySqlClient;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 
 namespace Shitou.Framework.Demo.Mvc
 {
@@ -39,9 +32,7 @@ namespace Shitou.Framework.Demo.Mvc
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
-                //add redis settings
-                .AddRedisFile("Config/RedisSettings.json", optional: true, reloadOnChange: true);
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
             //configure log4net
             env.ConfigureLog4Net("config/log4net.config");
             Configuration = builder.Build();
@@ -99,8 +90,6 @@ namespace Shitou.Framework.Demo.Mvc
 
             //add log4net service
             services.AddLog4Net();
-            //add redis service
-            services.AddRedisCache();
             //add mysql
             services.AddMySql(new MySqlConnection(Configuration.GetConnectionString("Mysql")));
             //add bussiness service
@@ -137,11 +126,11 @@ namespace Shitou.Framework.Demo.Mvc
             //静态文件
             app.UseStaticFiles();
             //设置根目录下'Upload'文件可静态访问
-            //app.UseStaticFiles(new StaticFileOptions()
-            //{
-            //    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"Upload")),
-            //    RequestPath = new PathString("/Upload")
-            //});
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"Upload")),
+                RequestPath = new PathString("/Upload")
+            });
 
             //验证中间件
             app.UseAuthentication();

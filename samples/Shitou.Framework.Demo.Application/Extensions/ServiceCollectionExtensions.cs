@@ -19,9 +19,11 @@ namespace Shitou.Framework.Demo.Application.Extensions
             //sevice
             services.AddTransient<IBaseService, BaseService>();
             services.AddTransient<ISystemService, SystemService>();
+            services.AddTransient<IGoodsService, GoodsService>();
 
             //dao
             services.AddTransient<ISystemDao, SystemDao>();
+            services.AddTransient<IGoodsDao, GoodsDao>();
         }
     }
 }

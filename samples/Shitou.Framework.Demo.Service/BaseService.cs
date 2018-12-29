@@ -168,6 +168,46 @@ namespace Shitou.Framework.Demo.Service
         }
         #endregion
 
+        #region
+        /// <summary>
+        /// 获取数据
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="t"></param>
+        /// <returns></returns>
+        public int GetCount<T>(string columnName, object value)
+        {
+            try
+            {
+                return adoTemplate.GetCount<T>(columnName, value);
+            }
+            catch (Exception ex)
+            {
+                logger?.LogError(ex, "BaseService.GetList->{0}:{1}={2}", typeof(T).Name, columnName, value);
+                return 0;
+            }
+        }
+
+        /// <summary>
+        /// 获取数据
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="t"></param>
+        /// <returns></returns>
+        public int GetCount<T>(Hashtable hs)
+        {
+            try
+            {
+                return adoTemplate.GetCount<T>(hs);
+            }
+            catch (Exception ex)
+            {
+                logger?.LogError(ex, "BaseService.GetList->{0}:{1}", typeof(T).Name, JsonConvert.SerializeObject(hs));
+                return 0;
+            }
+        }
+        #endregion
+
         #region ---GetList---
         /// <summary>
         /// 获取数据

@@ -26,4 +26,14 @@ namespace Shitou.Framework.Demo.DataContract.Base
         [Description("复选框")]
         CheckBox = 5
     }
+
+    public enum GoodsPlatformType
+    {
+        [Description("淘宝")]
+        TB = 1,
+        [Description("天猫")]
+        TM = 2,
+        [Description("京东")]
+        JD = 3
+    }
 }

@@ -1,0 +1,60 @@
+﻿@model List<GoodsTypeInfo>
+@{
+    ViewBag.Title = "商品类别列表";
+}
+
+<div class="container">
+    <div style="padding:0px 10px;">
+        <a class="layui-btn layui-btn-sm layui-btn-normal" href="javascript:void(0);" onclick="AddOrEdit()">
+            <i class="layui-icon layui-icon-tianjia2"></i>添加商品类别
+        </a>
+    </div>
+    <table class="layui-table" id="list">
+        <thead>
+            <tr>
+                <th style="text-align:center;">#</th>
+                <th>ID</th>
+                <th>类别名</th>
+                <th>描述</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{ int index = 1;}
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td style="width:20px; text-align:center;">@(index++)</td>
+                <td>@item.ID</td>
+                <td>@item.GoodsTypeName</td>
+                <td>@item.Description</td>
+                <td>
+                    <a class="layui-btn layui-btn-normal layui-btn-xs" onclick="AddOrEdit('@item.ID')"><i class="layui-icon layui-icon-bianji"></i>编辑</a>
+                    <a class="layui-btn layui-btn-danger layui-btn-xs" onclick="javascript:Delete('/Goods/GoodsTypeDelete/@item.ID');"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<script>
+    function AddOrEdit(id) {
+        if (id == undefined) {
+            ShowMaxWindow('===添加商品类别信息===', '/Goods/GoodsTypeAdd');
+        }
+        else {
+            ShowMaxWindow('===编辑商品类别信息===', '/Goods/GoodsTypeAdd/' + id);
+        }
+    }
+
+    //layui.use(['laydate'], function () {
+    //    var laydate = layui.laydate
+    //    //日期
+    //    laydate.render({
+    //        elem: '#StartTime'
+    //    });
+    //    laydate.render({
+    //        elem: '#EndTime'
+    //    });
+    //});
+</script>
