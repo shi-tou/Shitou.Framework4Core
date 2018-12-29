@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : local
-Source Server Version : 50505
+Source Server Version : 50540
 Source Host           : localhost:3306
 Source Database       : mvcdemo
 
 Target Server Type    : MYSQL
-Target Server Version : 50505
+Target Server Version : 50540
 File Encoding         : 65001
 
-Date: 2018-08-08 17:33:49
+Date: 2018-12-29 18:04:48
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -23,9 +23,9 @@ CREATE TABLE `t_article` (
   `ID` char(30) NOT NULL,
   `ArticleTypeID` char(30) NOT NULL COMMENT '文章类别',
   `Title` varchar(50) NOT NULL COMMENT '文章标题',
-  `Description` text DEFAULT NULL COMMENT '内容',
+  `Description` text COMMENT '内容',
   `Image` varchar(255) DEFAULT NULL COMMENT '封面图片',
-  `Sort` int(11) NOT NULL DEFAULT 99999,
+  `Sort` int(11) NOT NULL DEFAULT '99999',
   `CreateBy` char(30) NOT NULL COMMENT '创建人',
   `CreateTime` datetime NOT NULL COMMENT '创建时间',
   `IsDelete` bit(1) NOT NULL DEFAULT b'0',
@@ -37,13 +37,13 @@ CREATE TABLE `t_article` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for t_articletype
+-- Table structure for t_article_type
 -- ----------------------------
-DROP TABLE IF EXISTS `t_articletype`;
-CREATE TABLE `t_articletype` (
+DROP TABLE IF EXISTS `t_article_type`;
+CREATE TABLE `t_article_type` (
   `ID` char(30) NOT NULL,
   `ParentID` char(30) NOT NULL DEFAULT '0' COMMENT '父ID',
-  `Name` varchar(50) DEFAULT NULL COMMENT '类别名称',
+  `ArticleTypeName` varchar(50) DEFAULT NULL COMMENT '类别名称',
   `Description` varchar(255) DEFAULT NULL,
   `Icon` varchar(255) DEFAULT NULL COMMENT '图标',
   `IsDelete` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
@@ -51,7 +51,7 @@ CREATE TABLE `t_articletype` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='文章类别';
 
 -- ----------------------------
--- Records of t_articletype
+-- Records of t_article_type
 -- ----------------------------
 
 -- ----------------------------
@@ -66,14 +66,14 @@ CREATE TABLE `t_auth` (
   `ParentID` char(20) NOT NULL DEFAULT '0' COMMENT '父ID',
   `Url` varchar(100) DEFAULT NULL COMMENT 'Url',
   `IconClass` varchar(255) DEFAULT NULL,
-  `Sort` int(11) NOT NULL DEFAULT 999 COMMENT '排序',
+  `Sort` int(11) NOT NULL DEFAULT '999' COMMENT '排序',
   PRIMARY KEY (`ID`,`Sort`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户权限';
 
 -- ----------------------------
 -- Records of t_auth
 -- ----------------------------
-INSERT INTO `t_auth` VALUES ('20180619153350124756', '1', '系统管理', 'SystemManager', '0', '', 'layui-icon-chuangkou', '1');
+INSERT INTO `t_auth` VALUES ('20180619153350124756', '1', '系统管理', 'SystemManage', '0', '', 'layui-icon-chuangkou', '99');
 INSERT INTO `t_auth` VALUES ('20180619153350134152', '2', '用户列表', 'System.UserList', '20180619153350124756', '/System/UserList', null, '1');
 INSERT INTO `t_auth` VALUES ('20180619153458426296', '2', '角色列表', 'System.RoleList', '20180619153350124756', '/System/RoleList', null, '2');
 INSERT INTO `t_auth` VALUES ('20180626140143915604', '3', '添加/编辑用户', 'System.UserAdd', '20180619153350134152', '/System/UserAdd', null, '0');
@@ -87,6 +87,13 @@ INSERT INTO `t_auth` VALUES ('20180724094025653701', '3', '修改密码', 'Syste
 INSERT INTO `t_auth` VALUES ('20180725095722592140', '2', '上传控件', 'Image.Index', '20180619153350124756', '/Image/Index', null, '4');
 INSERT INTO `t_auth` VALUES ('20180731141113262551', '1', '表单模板', 'TableTemplateManage', '0', null, 'layui-icon-chuangkou', '2');
 INSERT INTO `t_auth` VALUES ('20180731141217864152', '2', '模板列表', 'TableTemplateList', '20180731141113262551', '/Template/TableTemplateList', null, '0');
+INSERT INTO `t_auth` VALUES ('20181226140244944262', '1', '商品管理', 'GoodsManage', '0', null, null, '0');
+INSERT INTO `t_auth` VALUES ('20181226140504182551', '2', '商品列表', 'GoodsList', '20181226140244944262', '/Goods/GoodsList', null, '1');
+INSERT INTO `t_auth` VALUES ('20181226140539554171', '3', '添加/编辑', 'GoodsAdd', '20181226140504182551', '/Goods/GoodsAdd', null, '1');
+INSERT INTO `t_auth` VALUES ('20181226140609030849', '3', '删除', 'GoodsDelete', '20181226140504182551', '/Goods/GoodsDelete', null, '2');
+INSERT INTO `t_auth` VALUES ('20181226160305716476', '2', '类别列表', 'GoodsTypeList', '20181226140244944262', '/Goods/GoodsTypeList', null, '1');
+INSERT INTO `t_auth` VALUES ('20181226160344546103', '3', '添加/编辑', 'GoodsTypeAdd', '20181226160305716476', '/Goods/GoodsTypeAdd', null, '1');
+INSERT INTO `t_auth` VALUES ('20181226160404650062', '3', '删除', 'GoodsTypeDelete', '20181226160305716476', '/Goods/GoodsTypeDelete', null, '2');
 
 -- ----------------------------
 -- Table structure for t_city
@@ -458,10 +465,10 @@ INSERT INTO `t_city` VALUES ('346', '三亚市', 'SanYa', 'S', 'NULL', '21', '\0
 DROP TABLE IF EXISTS `t_dictdata`;
 CREATE TABLE `t_dictdata` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ParentID` int(11) NOT NULL DEFAULT 0 COMMENT '父ID',
+  `ParentID` int(11) NOT NULL DEFAULT '0' COMMENT '父ID',
   `Name` varchar(50) NOT NULL COMMENT '名称',
   `Value` varchar(50) DEFAULT NULL COMMENT '值',
-  `Sort` int(255) NOT NULL DEFAULT 99 COMMENT '排序',
+  `Sort` int(255) NOT NULL DEFAULT '99' COMMENT '排序',
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8 COMMENT='基础数据信息（存放基本不改动的数据）';
 
@@ -3372,6 +3379,70 @@ INSERT INTO `t_district` VALUES ('2885', '金昌市', '300');
 INSERT INTO `t_district` VALUES ('2886', '红寺堡区', '322');
 
 -- ----------------------------
+-- Table structure for t_goods
+-- ----------------------------
+DROP TABLE IF EXISTS `t_goods`;
+CREATE TABLE `t_goods` (
+  `ID` char(30) NOT NULL,
+  `GoodsName` varchar(100) NOT NULL,
+  `GoodsTypeID` char(30) DEFAULT NULL,
+  `OriginalPrice` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '商品原价',
+  `PresentPrice` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '当前价格=(原价-优惠券价)',
+  `CouponPrice` decimal(10,0) NOT NULL DEFAULT '0' COMMENT '优惠券价格',
+  `SummaryText` varchar(255) DEFAULT NULL COMMENT '简介',
+  `Description` text COMMENT '图文描述',
+  `Password` varchar(50) NOT NULL COMMENT '淘宝口令',
+  `ImageUrl` varchar(500) DEFAULT NULL,
+  `PlatformType` tinyint(4) NOT NULL DEFAULT '1' COMMENT '平台：1-淘宝 2-京东',
+  `IsDelete` bit(1) NOT NULL DEFAULT b'0',
+  `CreateBy` char(30) NOT NULL,
+  `CreateTime` datetime NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_goods
+-- ----------------------------
+INSERT INTO `t_goods` VALUES ('20181229160146011186', '测试商品', '20181226165750447340', '100.00', '80.00', '20', '777777', null, '￥fhfh878kjhfdf￥', '/upload/Goods/ae3b4cf2-ab0c-4814-82be-b78a4eb982c3.jpg', '0', '\0', '20180615174009124552', '2018-12-29 16:01:46');
+
+-- ----------------------------
+-- Table structure for t_goods_image
+-- ----------------------------
+DROP TABLE IF EXISTS `t_goods_image`;
+CREATE TABLE `t_goods_image` (
+  `ID` char(30) NOT NULL,
+  `GoodsID` char(30) NOT NULL,
+  `ImageUrl` varchar(255) NOT NULL COMMENT '图片路径',
+  `IsTop` bit(1) NOT NULL DEFAULT b'0',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_goods_image
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for t_goods_type
+-- ----------------------------
+DROP TABLE IF EXISTS `t_goods_type`;
+CREATE TABLE `t_goods_type` (
+  `ID` char(30) NOT NULL,
+  `GoodsTypeName` varchar(50) NOT NULL,
+  `ParentID` char(30) NOT NULL DEFAULT '0',
+  `Description` varchar(255) DEFAULT NULL,
+  `IsDelete` bit(1) NOT NULL DEFAULT b'0',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_goods_type
+-- ----------------------------
+INSERT INTO `t_goods_type` VALUES ('20181226165719304655', '男装', '0', '男装', '\0');
+INSERT INTO `t_goods_type` VALUES ('20181226165729228519', '女装', '0', '女装', '\0');
+INSERT INTO `t_goods_type` VALUES ('20181226165750447340', '衬衫', '20181226165719304655', null, '\0');
+INSERT INTO `t_goods_type` VALUES ('20181226165804155353', '裤子', '20181226165719304655', null, '\0');
+
+-- ----------------------------
 -- Table structure for t_province
 -- ----------------------------
 DROP TABLE IF EXISTS `t_province`;
@@ -3525,7 +3596,7 @@ CREATE TABLE `t_table_template` (
   `TemplateType` tinyint(4) NOT NULL COMMENT '表单模板类型',
   `TemplateCode` varchar(20) NOT NULL DEFAULT '1' COMMENT '模板编码',
   `TemplateName` varchar(20) NOT NULL,
-  `TemplateContent` text DEFAULT NULL COMMENT '模板内容',
+  `TemplateContent` text COMMENT '模板内容',
   `CreateBy` varchar(30) NOT NULL,
   `CreateTime` datetime NOT NULL,
   `UpdateBy` varchar(255) DEFAULT NULL,
@@ -3575,179 +3646,6 @@ INSERT INTO `t_user` VALUES ('20180626104940221413', '666', 'YvJDSWf/d6Aqbrafuzd
 INSERT INTO `t_user` VALUES ('20180626105754917325', 'admin111', 'Jftjj14Zsh6kaNxZul4fnB7m4XI/23Nq9rZpR0LF3HHFxB9BEwJeTCjjf9TsNfkZVRwH8IMUhsUq9zDXMjCRiWAeJbF0tHVvQzBOscTqacsd9sgK/zBd6cJ6QxBqd/jc9KYTq3CLcKb3Oxh3qXh/Fmk10bcQwXRYXsMCE6ENDj8=', '666', '20180626110316552335', '', '20180615174009124552', '0001-01-01 00:00:00');
 INSERT INTO `t_user` VALUES ('20180626105908771923', 'admin01033', 'U43sxKdK5vBzzE+5bBQg6up/dVtCoozBRXFBH0BQZsuv1vdrACrGsNOX5WibCLSPOuf+rZrSWnXkTz0BRVbd9Msn10EWsNa31rJ64rCHXKSFM5IeDfHFSflK0nV/TLzcNzbHR8i6KBmt5YGBcD2PmWkSU0rcZwbpJH/4NjxfYv4=', '333', '20180626110316552335', '', '20180615174009124552', '0001-01-01 00:00:00');
 INSERT INTO `t_user` VALUES ('20180720150618117879', 'admin100', 'JIgtXA1Itt7Yz8n8C0dvUULqWWhUrhl1a1Xv0p3L68wSCuUNcMXZyPknK5fsLKupkvJ5IbWLb5Yjeq8kzECxkwtx5qb7Y6y3aOZgQnSwQz71SYM6QbfbcZ2qEZ4TKG2yidxtbrAfog4qu3+U3r3SmtYg1LbRLcE6JEKQJGPZ44I=', '张三', '20180720153833028237', '\0', '20180615174009124552', '0001-01-01 00:00:00');
-
--- ----------------------------
--- Procedure structure for sp_AllotCarForAppointmentOrder
--- ----------------------------
-DROP PROCEDURE IF EXISTS `sp_AllotCarForAppointmentOrder`;
-DELIMITER ;;
-CREATE DEFINER=`wclmdb`@`%` PROCEDURE `sp_AllotCarForAppointmentOrder`(`IN_AppointmentCode` char(30),`IN_CarID` char(30))
-BEGIN
-	-- 定义接收游标的变量 
-	DECLARE IN_RentEndTime datetime;
-	DECLARE IN_CarBrandID char(30);
-	DECLARE IN_CarModelID char(30);
-	DECLARE IN_CarTransmissionID char(30);
-	-- 车辆信息
-	SELECT CarBrandID,CarModelID,CarTransmissionID INTO IN_CarBrandID,IN_CarModelID,IN_CarTransmissionID from t_car where id=IN_CarID;
-	-- 预约信息
-	SELECT RentEndTime INTO IN_RentEndTime FROM t_carappointmentorder where AppointmentCode=IN_AppointmentCode;
-	-- 更新预约订单
-	UPDATE t_carappointmentorder set AppointmentStatus=3,CarID=IN_CarID,AllotCarTime=date_add(NOW(),INTERVAL 8 hour),
-		CarBrandID=IN_CarBrandID,CarModelID=IN_CarModelID,CarTransmissionID=IN_CarTransmissionID where AppointmentCode=IN_AppointmentCode;
-	-- 更新车辆出租状态
-	UPDATE t_car set `Status`=3 where ID=IN_CarID;
-	-- 更新最后租用截止时间
-	UPDATE t_carsetting set LastOrderEndRentTime=IN_RentEndTime where CarID=IN_CarID;
-END
-;;
-DELIMITER ;
-
--- ----------------------------
--- Procedure structure for sp_CancelAppointmentOrderForTimeOut
--- ----------------------------
-DROP PROCEDURE IF EXISTS `sp_CancelAppointmentOrderForTimeOut`;
-DELIMITER ;;
-CREATE DEFINER=`wclmdb`@`%` PROCEDURE `sp_CancelAppointmentOrderForTimeOut`()
-BEGIN
-	-- 定义接收游标的OrderNo变量 
-  DECLARE IN_AppointmentCode char(30); 
-	DECLARE IN_CarID char(30);
-	DECLARE IN_AppointmentStatus int(4);
-	-- 遍历数据结束标志
-  DECLARE done INT DEFAULT FALSE;
-	-- 游标
-	DECLARE cur CURSOR FOR 
-		select AppointmentCode,CarID,AppointmentStatus from t_carappointmentorder 
-		where AppointmentStatus = 3 and TIMESTAMPDIFF(MINUTE,RentStartTime,date_add(NOW(),INTERVAL 8 hour))>=0;
-  -- 将结束标志绑定到游标
-  DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
-	-- 打开游标
-	OPEN cur;  
-	-- 开始循环
-		read_loop: 
-		LOOP
-			-- 提取游标里的数据
-			FETCH cur into IN_AppointmentCode,IN_CarID,IN_AppointmentStatus;
-			-- 声明结束的时候
-			IF done THEN
-				LEAVE read_loop;
-			END IF;
-			BEGIN
-				#取消订单
-				update t_carappointmentorder set AppointmentStatus=5,CancelReason='用车时间已到，未进行租车订单操作！',CancelTime=date_add(NOW(),INTERVAL 8 hour)
-				where AppointmentCode=IN_AppointmentCode;
-				#出租状态
-				update t_car set `Status`=2 where ID=IN_CarID;
-				-- 更新最后租用截止时间
-					UPDATE t_carsetting set LastOrderEndRentTime=date_add(NOW(),INTERVAL 8 hour) where CarID=IN_CarID;
-			END;
-		END LOOP;
-	CLOSE cur;
-END
-;;
-DELIMITER ;
-
--- ----------------------------
--- Procedure structure for sp_CancelCarOrderForTimeOut
--- ----------------------------
-DROP PROCEDURE IF EXISTS `sp_CancelCarOrderForTimeOut`;
-DELIMITER ;;
-CREATE DEFINER=`wclmdb`@`%` PROCEDURE `sp_CancelCarOrderForTimeOut`()
-BEGIN
-	-- 定义接收游标的OrderNo变量 
-  DECLARE IN_Order char(30); 
-	DECLARE IN_CarID char(30);  
-	-- 遍历数据结束标志
-  DECLARE done INT DEFAULT FALSE;
-	-- 游标
-	DECLARE cur CURSOR FOR select OrderNo,CarID from t_carorder where OrderStatus in (1,2,3) and TIMESTAMPDIFF(MINUTE,CreateTime,date_add(NOW(),INTERVAL 8 hour))>30;
-  -- 将结束标志绑定到游标
-  DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
-	-- 打开游标
-	OPEN cur;  
-	-- 开始循环
-		read_loop: 
-		LOOP
-			-- 提取游标里的数据
-			FETCH cur into IN_Order,IN_CarID;
-			-- 声明结束的时候
-			IF done THEN
-				LEAVE read_loop;
-			END IF;
-			BEGIN
-				#更新
-				update t_carorder set OrderStatus=12 where OrderNo=IN_Order;
-				update t_car set `Status`=2 where ID=IN_CarID;
-				#跟踪记录
-				INSERT INTO `weiche`.`t_ordertrace` (`ID`, `OrderType`, `OrderNo`, `Status`, `Remark`, `CreateBy`, `CreateTime`) 
-				VALUES (IN_Order, 1, IN_Order, 12, '超时未支付,系统自动取消', NULL, NOW());
-			END;
-		END LOOP;
-	CLOSE cur;
-END
-;;
-DELIMITER ;
-
--- ----------------------------
--- Procedure structure for sp_GetAppointmentOrderForAllotCar
--- ----------------------------
-DROP PROCEDURE IF EXISTS `sp_GetAppointmentOrderForAllotCar`;
-DELIMITER ;;
-CREATE DEFINER=`wclmdb`@`%` PROCEDURE `sp_GetAppointmentOrderForAllotCar`()
-BEGIN
-	-- 获取可分配的预约订单信息
-		select AppointmentCode,RentStartTime,RentEndTime,MinPrice,MaxPrice,CarBrandID,CarModelID 
-		from t_carappointmentorder 
-		where AppointmentStatus=2 and (TIMESTAMPDIFF(MINUTE,date_add(NOW(),INTERVAL 8 hour),RentStartTime) between 0 and 60);
-END
-;;
-DELIMITER ;
-
--- ----------------------------
--- Procedure structure for sp_GetCarForAllot
--- ----------------------------
-DROP PROCEDURE IF EXISTS `sp_GetCarForAllot`;
-DELIMITER ;;
-CREATE DEFINER=`wclmdb`@`%` PROCEDURE `sp_GetCarForAllot`(`IN_AppointmentCode` char(30))
-BEGIN
-	-- 定义接收游标的变量 
-	DECLARE IN_RentEndTime datetime;
-	DECLARE IN_MinPrice decimal(10,2);
-	DECLARE IN_MaxPrice decimal(10,2);
-	DECLARE IN_CarBrandID char(30);
-	DECLARE IN_CarModelID char(30);
-	DECLARE IN_Longitude decimal(10,2);
-	DECLARE IN_Latitude decimal(10,2);
-	
-	-- 预约信息
-	SELECT RentEndTime,MinPrice,MaxPrice,CarBrandID,CarModelID,Longitude,Latitude
-		INTO IN_RentEndTime,IN_MinPrice,IN_MaxPrice,IN_CarBrandID,IN_CarModelID,IN_Longitude,IN_Latitude
-	FROM t_carappointmentorder where AppointmentCode=IN_AppointmentCode;
-	
-	IF(IN_MaxPrice<=0) THEN
-		BEGIN
-			SET IN_MaxPrice=9999;
-		END;
-	END IF;
-
-SELECT * from (
-	-- 获取可分配车辆信息(按最近时间分配)
-	select a.*,fn_GetDistance(IN_Longitude,IN_Latitude,a.Longitude,a.Latitude) as Distance from t_car a
-		inner join t_carsetting b on b.CarID=a.ID 
-		where a.Status=2 and IN_RentEndTime < b.RentDeadline
-			and (a.RentPrice BETWEEN IN_MinPrice and IN_MaxPrice ) 
-			and a.CarBrandID=IN_CarBrandID and a.CarModelID=IN_CarModelID
-	UNION ALL
-	select a.*,fn_GetDistance(IN_Longitude,IN_Latitude,a.Longitude,a.Latitude) as Distance from t_car a
-		inner join t_carsetting b on b.CarID=a.ID 
-		where a.Status=2 and IN_RentEndTime < b.RentDeadline 
-			and (a.RentPrice BETWEEN IN_MinPrice and IN_MaxPrice )
-) a order by a.Distance LIMIT 1;
-				
-END
-;;
-DELIMITER ;
 
 -- ----------------------------
 -- Function structure for fn_GetDistance
