@@ -6,3 +6,4 @@ E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.ORM\obj\Debug\netcoreapp
 E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.ORM\obj\Debug\netcoreapp2.0\Shitou.Framework.ORM.AssemblyInfo.cs
 E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.ORM\obj\Debug\netcoreapp2.0\Shitou.Framework.ORM.dll
 E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.ORM\obj\Debug\netcoreapp2.0\Shitou.Framework.ORM.pdb
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.ORM\obj\Debug\netcoreapp2.0\Shitou.Framework.ORM.csprojAssemblyReference.cache

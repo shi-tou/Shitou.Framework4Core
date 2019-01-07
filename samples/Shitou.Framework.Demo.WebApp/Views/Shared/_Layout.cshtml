@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Shitou.Framework.Demo.WebApp</title>
+    <link href="~/lib/amazeui/css/amazeui.min.css" rel="stylesheet" />
+    <link href="~/css/app.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="app-main">
+        @RenderBody()
+    </div>
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/lib/amazeui/js/amazeui.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

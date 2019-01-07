@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Shitou.Framework.SignalR</name>
+    </assembly>
+    <members>
+        <member name="T:Shitou.Framework.SignalR.Controllers.ChatController">
+            <summary>
+            ChatController
+            </summary>
+        </member>
+        <member name="M:Shitou.Framework.SignalR.Controllers.ChatController.#ctor(Microsoft.AspNetCore.SignalR.IHubContext{Shitou.Framework.SignalR.MessageHub})">
+            <summary>
+            构造注入hubContext
+            </summary>
+            <param name="hubContext"></param>
+        </member>
+        <member name="M:Shitou.Framework.SignalR.Controllers.ChatController.Send(Shitou.Framework.SignalR.MsgInfo)">
+            <summary>
+            推送消息
+            </summary>
+            <param name="msgInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Shitou.Framework.SignalR.MessageHub">
+            <summary>
+            ChatHub
+            </summary>
+        </member>
+        <member name="M:Shitou.Framework.SignalR.MessageHub.OnConnectedAsync">
+            <summary>
+            每当有新客户端连接到 Hub 时调用。 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Shitou.Framework.SignalR.MessageHub.OnDisconnectedAsync(System.Exception)">
+            <summary>
+            每当有客户端与 Hub 断开连接时调用。 
+            </summary>
+            <param name="exception"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shitou.Framework.SignalR.MessageHub.InitConnection(System.String)">
+            <summary>
+            初始化客户端连接
+            </summary>
+            <param name="groupName">分组名称</param>
+            <returns></returns>
+        </member>
+        <member name="T:Shitou.Framework.SignalR.MsgInfo">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="P:Shitou.Framework.SignalR.MsgInfo.GroupName">
+            <summary>
+            客户端分组名称
+            </summary>
+        </member>
+        <member name="P:Shitou.Framework.SignalR.MsgInfo.BizType">
+            <summary>
+            业务消息类型
+            </summary>
+        </member>
+        <member name="P:Shitou.Framework.SignalR.MsgInfo.MsgContent">
+            <summary>
+            业务消息数据
+            </summary>
+        </member>
+        <member name="T:Shitou.Framework.SignalR.Startup">
+            <summary>
+            启动类
+            </summary>
+        </member>
+        <member name="M:Shitou.Framework.SignalR.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Startup
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:Shitou.Framework.SignalR.Startup.Configuration">
+            <summary>
+            Configuration
+            </summary>
+        </member>
+        <member name="M:Shitou.Framework.SignalR.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Shitou.Framework.SignalR.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Shitou.Framework.Demo.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:Shitou.Framework.Demo.WebApi.AddAuthTokenHeaderParameter">
+            <summary>
+            token header
+            </summary>
+        </member>
+        <member name="M:Shitou.Framework.Demo.WebApi.AddAuthTokenHeaderParameter.Apply(Swashbuckle.AspNetCore.Swagger.Operation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)">
+            <summary>
+            Swagger OperationFilter
+            对swagger请求，添加header参数
+            </summary>
+            <param name="operation"></param>
+            <param name="context"></param>
+        </member>
+        <member name="F:Shitou.Framework.Demo.WebApi.TokenAuthorizeMiddleware._next">
+            <summary>
+            管道代理对象
+            </summary>
+        </member>
+        <member name="M:Shitou.Framework.Demo.WebApi.TokenAuthorizeMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            权限中间件构造
+            </summary>
+            <param name="next">管道代理对象</param>
+            <param name="permissionResitory">权限仓储对象</param>
+            <param name="option">权限中间件配置选项</param>
+        </member>
+        <member name="M:Shitou.Framework.Demo.WebApi.TokenAuthorizeMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            调用管道
+            </summary>
+            <param name="context">请求上下文</param>
+            <returns></returns>
+        </member>
+        <member name="T:Shitou.Framework.Demo.WebApi.TokenAuthorizeExtensions">
+            <summary>
+            扩展token中间件
+            </summary>
+        </member>
+        <member name="M:Shitou.Framework.Demo.WebApi.TokenAuthorizeExtensions.UseTokenAuthorize(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            引入token验证中间件
+            </summary>
+            <param name="builder">扩展类型</param>
+            <param name="option">权限中间件配置选项</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

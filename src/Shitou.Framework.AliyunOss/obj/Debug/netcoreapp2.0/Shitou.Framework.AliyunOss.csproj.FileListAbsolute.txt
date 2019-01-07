@@ -1,0 +1,9 @@
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.AliyunOss\bin\Debug\netcoreapp2.0\Shitou.Framework.AliyunOss.deps.json
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.AliyunOss\bin\Debug\netcoreapp2.0\Shitou.Framework.AliyunOss.dll
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.AliyunOss\bin\Debug\netcoreapp2.0\Shitou.Framework.AliyunOss.pdb
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.AliyunOss\obj\Debug\netcoreapp2.0\Shitou.Framework.AliyunOss.csprojAssemblyReference.cache
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.AliyunOss\obj\Debug\netcoreapp2.0\Shitou.Framework.AliyunOss.csproj.CoreCompileInputs.cache
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.AliyunOss\obj\Debug\netcoreapp2.0\Shitou.Framework.AliyunOss.AssemblyInfoInputs.cache
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.AliyunOss\obj\Debug\netcoreapp2.0\Shitou.Framework.AliyunOss.AssemblyInfo.cs
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.AliyunOss\obj\Debug\netcoreapp2.0\Shitou.Framework.AliyunOss.dll
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.AliyunOss\obj\Debug\netcoreapp2.0\Shitou.Framework.AliyunOss.pdb

@@ -1,0 +1,9 @@
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Autofac\bin\Debug\netcoreapp2.0\Shitou.Framework.Autofac.deps.json
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Autofac\bin\Debug\netcoreapp2.0\Shitou.Framework.Autofac.dll
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Autofac\bin\Debug\netcoreapp2.0\Shitou.Framework.Autofac.pdb
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Autofac\obj\Debug\netcoreapp2.0\Shitou.Framework.Autofac.csprojAssemblyReference.cache
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Autofac\obj\Debug\netcoreapp2.0\Shitou.Framework.Autofac.csproj.CoreCompileInputs.cache
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Autofac\obj\Debug\netcoreapp2.0\Shitou.Framework.Autofac.AssemblyInfoInputs.cache
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Autofac\obj\Debug\netcoreapp2.0\Shitou.Framework.Autofac.AssemblyInfo.cs
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Autofac\obj\Debug\netcoreapp2.0\Shitou.Framework.Autofac.dll
+E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Autofac\obj\Debug\netcoreapp2.0\Shitou.Framework.Autofac.pdb

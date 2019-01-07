@@ -1,0 +1,11 @@
+E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.WebApp\bin\Debug\netcoreapp2.0\Shitou.Framework.Demo.WebApp.deps.json
+E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.WebApp\bin\Debug\netcoreapp2.0\Shitou.Framework.Demo.WebApp.runtimeconfig.json
+E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.WebApp\bin\Debug\netcoreapp2.0\Shitou.Framework.Demo.WebApp.runtimeconfig.dev.json
+E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.WebApp\bin\Debug\netcoreapp2.0\Shitou.Framework.Demo.WebApp.dll
+E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.WebApp\bin\Debug\netcoreapp2.0\Shitou.Framework.Demo.WebApp.pdb
+E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.WebApp\obj\Debug\netcoreapp2.0\Shitou.Framework.Demo.WebApp.csprojAssemblyReference.cache
+E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.WebApp\obj\Debug\netcoreapp2.0\Shitou.Framework.Demo.WebApp.csproj.CoreCompileInputs.cache
+E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.WebApp\obj\Debug\netcoreapp2.0\Shitou.Framework.Demo.WebApp.AssemblyInfoInputs.cache
+E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.WebApp\obj\Debug\netcoreapp2.0\Shitou.Framework.Demo.WebApp.AssemblyInfo.cs
+E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.WebApp\obj\Debug\netcoreapp2.0\Shitou.Framework.Demo.WebApp.dll
+E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.WebApp\obj\Debug\netcoreapp2.0\Shitou.Framework.Demo.WebApp.pdb
