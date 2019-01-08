@@ -25,3 +25,22 @@
     float: left;
     margin-bottom: 15px;
 }
+.app_circle_nav_list a {
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: block;
+    margin: 0 auto;
+    color: #fff;
+    text-align: center;
+    line-height: 55px;
+    font-size: 35px;
+    background:#ff6a00;
+}
+.app_circle_nav_list span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 14px;
+}
