@@ -11,18 +11,16 @@
         <table class="post-form">
             <tr>
                 <th style="width: 150px;">商品名：</th>
-                <td>
+                <td colspan="3">
                     <input id="GoodsName" name="GoodsName" lay-verify="required" lay-msg="商品名不能为空" class="layui-input" type="text" value="@Model.GoodsName">
                 </td>
             </tr>
             <tr>
-                <th>类别：</th>
-                <td>
+                <th style="width:150px;">类别：</th>
+                <td style="width:250px;">
                     @Html.DropDownList("GoodsTypeID", ViewData["GoodsType"] as SelectList, "-请选择-", new { @class = "layui-input" })
                 </td>
-            </tr>
-            <tr>
-                <th>原价：</th>
+                <th style="width:150px;">原价：</th>
                 <td>
                     <input id="OriginalPrice" name="OriginalPrice" lay-verify="required|number" lay-msg="商品原价输入有误" class="layui-input" value="@Model.OriginalPrice">
                 </td>
@@ -32,8 +30,6 @@
                 <td>
                     <input id="CouponPrice" name="CouponPrice" lay-verify="required|number" lay-msg="优惠券面值输入有误" class="layui-input" type="text" value="@Model.CouponPrice">
                 </td>
-            </tr>
-            <tr>
                 <th>现价：</th>
                 <td>
                     <input id="PresentPrice" name="PresentPrice" lay-verify="required|number" lay-msg="现价输入有误" class="layui-input" type="text" value="@Model.PresentPrice">
@@ -41,8 +37,23 @@
             </tr>
             <tr>
                 <th style="width: 150px;">商品口令：</th>
-                <td>
+                <td colspan="3">
                     <input id="Password" name="Password" lay-verify="required" lay-msg="商品口令不能为空" class="layui-input" type="text" value="@Model.Password">
+                </td>
+            </tr>
+            <tr>
+                <th>图片：</th>
+                <td>
+                    @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                    {
+                        <img id="_ImageUrl" style="width:150px; height:150px; border:solid 1px #ddd;" src="@Url.Content(Model.ImageUrl)" alt="logo" />
+                    }
+                    else
+                    {
+                        <img id="_ImageUrl" style="width:150px; height:150px; border:solid 1px #ddd;" alt="logo" src="/images/nophoto.gif" />
+                    }
+                    @Html.Hidden("ImageUrl", Model.ImageUrl)
+                    <div id="picker">选择头像(尺寸：150*150) </div>
                 </td>
             </tr>
             <tr>
@@ -60,6 +71,9 @@
             </tr>
         </table>
     </form>
+    <link href="/lib/webuploader/webuploader.css" rel="stylesheet" />
+    <script src="/lib/webuploader/webuploader.min.js"></script>
+    <script src="/js/webuploader-lib.js"></script>
     <script>
         layui.use(['form', 'layer'], function () {
             var form = layui.form,
@@ -76,6 +90,12 @@
             form.on('submit(post)', function (data) {
                 //console.log(JSON.stringify(data.field));
                 return true;
+            });
+            //初始化上传插件
+            var webUploader = InitSingleUploader('/Image/UploadImage', '#picker', 'Goods', function (file, response) {
+                alert(response._raw);
+                $('#_ImageUrl').attr('src', response._raw).show();
+                $('#ImageUrl').val(response._raw);
             });
         });
     </script>

@@ -179,6 +179,7 @@ function initUploader() {
     });
 
     // 拖拽时不接受 js, txt 文件。
+    //阻止此事件可以拒绝某些类型的文件拖入进来。目前只有 chrome 提供这样的 API，且只能通过 mime-type 验证。
     uploader.on('dndAccept', function (items) {
         var denied = false,
             len = items.length,
@@ -196,21 +197,8 @@ function initUploader() {
         return !denied;
     });
 
-    uploader.on('dialogOpen', function () {
-        console.log('here');
-    });
-
-    // uploader.on('filesQueued', function() {
-    //     uploader.sort(function( a, b ) {
-    //         if ( a.name < b.name )
-    //           return -1;
-    //         if ( a.name > b.name )
-    //           return 1;
-    //         return 0;
-    //     });
-    // });
-
     // 添加“添加文件”的按钮，
+    //添加文件选择按钮，如果一个按钮不够，需要调用此方法来添加。参数跟options.pick一致。
     uploader.addButton({
         id: '#filePicker2',
         label: '继续添加'
@@ -219,16 +207,17 @@ function initUploader() {
     uploader.on('ready', function () {
         window.uploader = uploader;
     });
-    uploader.onUploadProgress = function (file, percentage) {
+    //上传过程中触发，携带上传进度。
+    uploader.on('uploadProgress', function (file, percentage) {
         var $li = $('#' + file.id),
             $percent = $li.find('.progress span');
 
         $percent.css('width', percentage * 100 + '%');
         percentages[file.id][1] = percentage;
         updateTotalProgress();
-    };
-
-    uploader.onFileQueued = function (file) {
+    });
+    //当文件被加入队列以后触发。
+    uploader.on('fileQueued', function (file) {
         fileCount++;
         fileSize += file.size;
 
@@ -236,25 +225,23 @@ function initUploader() {
             $placeHolder.addClass('element-invisible');
             $statusBar.show();
         }
-
         addFile(file);
         setState('ready');
         updateTotalProgress();
-    };
-
-    uploader.onFileDequeued = function (file) {
+    });
+    //当文件被移除队列后触发。
+    uploader.on('fileDequeued', function (file) {
         fileCount--;
         fileSize -= file.size;
 
         if (!fileCount) {
             setState('pedding');
         }
-
         removeFile(file);
         updateTotalProgress();
-
-    };
-
+    });
+    //on还可以用来添加一个特殊事件all, 这样所有的事件触发都会响应到。
+    //同时此类callback中的arguments有一个不同处， 就是第一个参数为type，记录当前是什么事件在触发。此类callback的优先级比脚低，会再正常callback执行完后触发。
     uploader.on('all', function (type) {
         var stats;
         switch (type) {
@@ -273,9 +260,9 @@ function initUploader() {
         }
     });
 
-    uploader.onError = function (code) {
+    uploader.on('error', function (code) {
         alert('Eroor: ' + code);
-    };
+    });
 
     $upload.on('click', function () {
         if ($(this).hasClass('disabled')) {
@@ -303,6 +290,38 @@ function initUploader() {
     updateTotalProgress();
 }
 
+
+//单图（品牌Logo,会员头像）
+function InitSingleUploader(server, pick, imageType, callback) {
+    var webUploader = WebUploader.create({
+        // 选完文件后，是否自动上传。
+        auto: true,
+        // swf文件路径
+        swf: '/lib/webuploader/Uploader.swf',
+        // 文件接收服务端。
+        server: server,
+        //表单数据
+        formData: { imageType: imageType },
+        // 选择文件的按钮。可选。
+        // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+        pick: pick,
+        // 不压缩image, 默认如果是jpeg，文件上传前会压缩一把再上传！
+        resize: false,
+        // 只允许选择图片文件。
+        accept: {
+            title: 'Images',
+            extensions: 'gif,jpg,jpeg,bmp,png',
+            mimeTypes: 'image/*'
+        }
+    });
+    webUploader.on('uploadSuccess', function (file, response) {
+        if (callback != null)
+            callback(file, response);
+    });
+    webUploader.on('uploadError', function (file) {
+        layer.alert('上传失败', { icon: 2, shadeClose: false, title: '操作提示' });
+    });
+}
 // 当有文件添加进来时执行，负责view的创建
 function addFile(file) {
     var $li = $('<li id="' + file.id + '">' +
