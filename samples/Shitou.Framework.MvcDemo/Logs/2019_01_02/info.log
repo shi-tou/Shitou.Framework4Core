@@ -1,8 +1,0 @@
-﻿2019-01-02 11:30:43,815 [1] INFO  Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager - User profile is available. Using 'C:\Users\PC\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
-2019-01-02 11:30:44,386 [7] INFO  Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:23048/  
-2019-01-02 11:30:44,386 [6] INFO  Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:23048/  0
-2019-01-02 11:30:44,474 [6] INFO  Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 116.3776ms 200 
-2019-01-02 11:30:44,687 [7] INFO  Microsoft.AspNetCore.Authorization.DefaultAuthorizationService - Authorization failed for user: (null).
-2019-01-02 11:30:44,693 [7] INFO  Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
-2019-01-02 11:30:44,699 [7] INFO  Microsoft.AspNetCore.Mvc.ChallengeResult - Executing ChallengeResult with authentication schemes ().
-2019-01-02 11:30:44,718 [7] INFO  Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler - AuthenticationScheme: Cookies was challenged.
