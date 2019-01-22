@@ -9,7 +9,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using MySql.Data.MySqlClient;
 using Newtonsoft.Json.Serialization;
+using Shitou.Framework.Demo.Application.Extensions;
+using Shitou.Framework.ORM;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace Shitou.Framework.Demo.WebApi
@@ -34,6 +37,11 @@ namespace Shitou.Framework.Demo.WebApi
                 //options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 
             });
+
+            //add mysql
+            services.AddMySql(new MySqlConnection(Configuration.GetConnectionString("Mysql")));
+            //add bussiness service
+            services.AddBusinessService();
             //add swagger
             services.AddSwaggerGen(config =>
             {

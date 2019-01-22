@@ -6,4 +6,3 @@ E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Payment\obj\Debug\netcor
 E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Payment\obj\Debug\netcoreapp2.0\Shitou.Framework.Payment.AssemblyInfo.cs
 E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Payment\obj\Debug\netcoreapp2.0\Shitou.Framework.Payment.dll
 E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Payment\obj\Debug\netcoreapp2.0\Shitou.Framework.Payment.pdb
-E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Payment\obj\Debug\netcoreapp2.0\Shitou.Framework.Payment.csprojAssemblyReference.cache

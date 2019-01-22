@@ -19,6 +19,7 @@ namespace Shitou.Framework.Demo.WebApi
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseUrls("http://*:8090")
                 .UseStartup<Startup>()
                 .Build();
     }
