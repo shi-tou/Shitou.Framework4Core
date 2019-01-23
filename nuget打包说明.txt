@@ -1,0 +1,12 @@
+->打.nupkg包
+1-将nuget.exe拷贝到工程文件（.csproj）所在的文件夹
+2-Dos进行到该文件目录
+3-执行"nuget.txt pack"即可在当前目录下生成.nupkg包
+4-将.nupkg文件，拷贝到Fxt.NugetServer站点下的Packages中，进行发布(注意，发布后清除一下缓存)
+
+->推送到nuget服务器
+执行"nuget.exe push {package file} {apikey} -Source {nuget server host}"
+
+package file:文件.nupkg包,Fxt.Framework.DiscoveryClient.1.0.0.nupkg
+apikey：密钥，配置在web.config的<add key="apiKey" value="fxt2018" />
+nuget server host:站点nuget服务地址,http://192.168.0.88:9000/nuget

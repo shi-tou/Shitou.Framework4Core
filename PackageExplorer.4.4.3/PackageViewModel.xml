@@ -1,0 +1,302 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PackageViewModel</name>
+    </assembly>
+    <members>
+        <member name="T:PackageExplorerViewModel.RelayCommand`1">
+            <summary>
+            A command whose sole purpose is to 
+            relay its functionality to other
+            objects by invoking delegates. The
+            default return value for the CanExecute
+            method is 'true'.
+            </summary>
+        </member>
+        <member name="M:PackageExplorerViewModel.RelayCommand`1.#ctor(System.Action{`0},System.Predicate{`0})">
+            <summary>
+            Creates a new command.
+            </summary>
+            <param name="execute">The execution logic.</param>
+            <param name="canExecute">The execution status logic.</param>
+        </member>
+        <member name="T:PackageExplorerViewModel.RelayCommand">
+            <summary>
+            A command whose sole purpose is to 
+            relay its functionality to other
+            objects by invoking delegates. The
+            default return value for the CanExecute
+            method is 'true'.
+            </summary>
+        </member>
+        <member name="M:PackageExplorerViewModel.RelayCommand.#ctor(System.Action)">
+            <summary>
+            Creates a new command that can always execute.
+            </summary>
+            <param name="execute">The execution logic.</param>
+        </member>
+        <member name="M:PackageExplorerViewModel.RelayCommand.#ctor(System.Action,System.Func{System.Boolean})">
+            <summary>
+            Creates a new command.
+            </summary>
+            <param name="execute">The execution logic.</param>
+            <param name="canExecute">The execution status logic.</param>
+        </member>
+        <member name="P:PackageExplorerViewModel.EditablePackageMetadata.FileName">
+            <summary>
+            file name for V2 local feeds {id}.{version}
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.PackageFile.OriginalPath">
+            <summary>
+            Returns the path on disk if this file is a PhysicalPackageFile. Otherwise, returns null;
+            </summary>
+        </member>
+        <member name="M:PackageExplorerViewModel.PackageFile.OnFileDeleted(System.Object,System.IO.FileSystemEventArgs)">
+            <summary>
+            this is invoked on a background thread.
+            </summary>
+        </member>
+        <member name="M:PackageExplorerViewModel.PackageFolder.Detach(PackageExplorerViewModel.PackagePart)">
+            <summary>
+            Detach() is different from Remove() in that it doesn't dispose the child.
+            </summary>
+            <param name="child"></param>
+        </member>
+        <member name="T:PackageExplorerViewModel.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.Browse">
+            <summary>
+              Looks up a localized string similar to Browse.
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.Certificate">
+            <summary>
+              Looks up a localized string similar to Certificate.
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.CertificateInfo">
+            <summary>
+              Looks up a localized string similar to Certificate Info.
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.CertificateStore">
+            <summary>
+              Looks up a localized string similar to Certificate Store.
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.ChooseCertificate_Description">
+            <summary>
+              Looks up a localized string similar to Provide the code signing certificate for signing the package..
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.ChooseCertificate_Title">
+            <summary>
+              Looks up a localized string similar to Choose a Certificate for Package Signing.
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.Close">
+            <summary>
+              Looks up a localized string similar to Close.
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.ConfirmToDeleteContent">
+            <summary>
+              Looks up a localized string similar to Are you sure you want to delete &apos;{0}&apos;?.
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.ConfirmToDeleteContent_Title">
+            <summary>
+              Looks up a localized string similar to Deleted file or folder is not recoverable..
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.ConfirmToDeletePlugin">
+            <summary>
+              Looks up a localized string similar to Are you sure you want to delete this plugin?.
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.ConfirmToReplaceExsitingFile">
+            <summary>
+              Looks up a localized string similar to Do you want to replace the existing file &apos;{0}&apos;?.
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.ConfirmToReplaceExsitingFile_Title">
+            <summary>
+              Looks up a localized string similar to There is already a file with the same name in this folder..
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.ConfirmToReplaceFile">
+            <summary>
+              Looks up a localized string similar to Do you want to replace existing file &apos;{0}&apos; on disk?.
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.ConfirmToReplaceFile_Title">
+            <summary>
+              Looks up a localized string similar to There is already a file with the same name in this location..
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.ConnectingMessage">
+            <summary>
+              Looks up a localized string similar to Connecting to package source....
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.Dialog_SaveQuestion">
+            <summary>
+              Looks up a localized string similar to Do you want to save your changes?.
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.Dialog_Title">
+            <summary>
+              Looks up a localized string similar to NuGet Package Explorer.
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.EditFormHasInvalidInput">
+            <summary>
+              Looks up a localized string similar to The operation cannot be completed because the edit form has some invalid input..
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.ExportPackageSuccess">
+            <summary>
+              Looks up a localized string similar to This package has been exported successfully..
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.FileNameConflictWithExistingDirectory">
+            <summary>
+              Looks up a localized string similar to The new file has the same name as another folder..
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.HashAlgorithName">
+            <summary>
+              Looks up a localized string similar to Hash Algorithm Name.
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.LoadingMessage">
+            <summary>
+              Looks up a localized string similar to Loading....
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.NoNetworkConnection">
+            <summary>
+              Looks up a localized string similar to No network connection is detected..
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.OpenExecutableScriptWarning">
+            <summary>
+              Looks up a localized string similar to Opening this file can potentially harm your computer. Do you want to continue?.
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.OpenExecutableScriptWarning_Title">
+            <summary>
+              Looks up a localized string similar to The file &apos;{0}&apos; is executable..
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.PackageCreationFailed">
+            <summary>
+              Looks up a localized string similar to Failed to generate package due to this error:.
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.Password">
+            <summary>
+              Looks up a localized string similar to Password.
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.PasswordIncorrect">
+            <summary>
+              Looks up a localized string similar to Password incorrect.
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.PasswordRequired">
+            <summary>
+              Looks up a localized string similar to Password required.
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.PhysicalFileMissing">
+            <summary>
+              Looks up a localized string similar to The file &apos;{0}&apos; was either renamed or deleted from its physical location. It will now be removed from the package..
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.PluginFailToReadContent">
+            <summary>
+              Looks up a localized string similar to *** The plugin that registers to read this file type fails to read the content of this file. ***.
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.RenameCausesNameCollison">
+            <summary>
+              Looks up a localized string similar to There is another file or folder with the same name as &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.SelectCertificate">
+            <summary>
+              Looks up a localized string similar to Select Certificate.
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.Sign">
+            <summary>
+              Looks up a localized string similar to Sign.
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.SigningPackage">
+            <summary>
+              Looks up a localized string similar to Signing package....
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.SigningPackageAndRemoveSignature">
+            <summary>
+              Looks up a localized string similar to Remove signature and signing package....
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.SignPackage">
+            <summary>
+              Looks up a localized string similar to Sign Package.
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.TimestampServer">
+            <summary>
+              Looks up a localized string similar to Timestamp Server.
+            </summary>
+        </member>
+        <member name="P:PackageExplorerViewModel.Resources.UnsupportedFormatMessage">
+            <summary>
+              Looks up a localized string similar to *** The format of this file is not supported. ***.
+            </summary>
+        </member>
+        <member name="M:PackageExplorerViewModel.PackageHelper.ParseTags(System.String)">
+            <summary>
+            Tags come in this format. tag1 tag2 tag3 etc..
+            </summary>
+        </member>
+        <member name="M:PackageExplorerViewModel.PathUtility.RelativePathTo(System.String,System.String)">
+            <summary>
+            Creates a relative path from one file
+            or folder to another.
+            </summary>
+            <param name="fromDirectory">
+            Contains the directory that defines the
+            start of the relative path.
+            </param>
+            <param name="toPath">
+            Contains the path that defines the
+            endpoint of the relative path.
+            </param>
+            <returns>
+            The relative path from the start
+            directory to the end path.
+            </returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+    </members>
+</doc>

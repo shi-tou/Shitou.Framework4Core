@@ -1,0 +1,260 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Core</name>
+    </assembly>
+    <members>
+        <member name="T:NuGetPe.AssemblyMetadata.AssemblyMetaData">
+            <summary>
+            Meta data of the assembly, 
+            </summary>
+        </member>
+        <member name="M:NuGetPe.AssemblyMetadata.AssemblyMetaData.SetFullName(System.Reflection.AssemblyName)">
+            <summary>
+            Set Fullname of the assembly and determine strong name.
+            </summary>
+            <remarks>Helper</remarks>
+        </member>
+        <member name="M:NuGetPe.AssemblyMetadata.AssemblyMetaData.SetReferencedAssemblyNames(System.Collections.Generic.IEnumerable{System.Reflection.AssemblyName})">
+            <summary>
+            Set list of referenced assembly names.
+            </summary>
+        </member>
+        <member name="M:NuGetPe.AssemblyMetadata.AssemblyMetaData.AddMetadata(System.String,System.String)">
+            <summary>
+            Add arbitrary metadata information.
+            </summary>
+        </member>
+        <member name="M:NuGetPe.AssemblyMetadata.AssemblyMetaData.GetMetadataEntriesOrderedByImportance">
+            <summary>
+            Gets all the metadata entries sorted by importance
+            </summary>
+        </member>
+        <member name="T:NuGetPe.Resources.NuGetResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.CannotCreateEmptyPackage">
+            <summary>
+              Looks up a localized string similar to Cannot create a package that has no dependencies nor content..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.DependencyHasInvalidVersion">
+            <summary>
+              Looks up a localized string similar to Dependency &apos;{0}&apos; has an invalid version..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.DuplicateDependenciesDefined">
+            <summary>
+              Looks up a localized string similar to &apos;{0}&apos; already has a dependency defined for &apos;{1}&apos;..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.ErrorReadingFile">
+            <summary>
+              Looks up a localized string similar to Error reading &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.IncompatibleSchema">
+            <summary>
+              Looks up a localized string similar to The schema version of &apos;{0}&apos; is incompatible with version {1} of NuGet Package Explorer. Please upgrade NuGet Package Explorer to the latest version..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.InvalidFeed">
+            <summary>
+              Looks up a localized string similar to There was an error while processing the request. Please verify that &apos;{0}&apos; is a valid feed..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.InvalidFrameworkNameFormat">
+            <summary>
+              Looks up a localized string similar to Invalid framework name format. Expected {framework}{version}-{profile}..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.InvalidPackageId">
+            <summary>
+              Looks up a localized string similar to The package ID &apos;{0}&apos; contains invalid characters. Examples of valid package IDs include &apos;MyPackage&apos; and &apos;MyPackage.Sample&apos;..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.InvalidVersionString">
+            <summary>
+              Looks up a localized string similar to &apos;{0}&apos; is not a valid version string..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.Manifest_DependenciesHasMixedElements">
+            <summary>
+              Looks up a localized string similar to &lt;dependencies&gt; element must not contain both &lt;group&gt; and &lt;dependency&gt; child elements..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.Manifest_DependencyIdRequired">
+            <summary>
+              Looks up a localized string similar to Dependency Id is required..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.Manifest_ExcludeContainsInvalidCharacters">
+            <summary>
+              Looks up a localized string similar to Exclude path &apos;{0}&apos; contains invalid characters..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.Manifest_IdMaxLengthExceeded">
+            <summary>
+              Looks up a localized string similar to Package Id cannot exceed 100 characters..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.Manifest_InvalidMinClientVersion">
+            <summary>
+              Looks up a localized string similar to The &apos;minClientVersion&apos; attribute in the package manifest has invalid value. It must be a valid version string..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.Manifest_InvalidPrereleaseDependency">
+            <summary>
+              Looks up a localized string similar to A stable release of a package should not have dependency on a prerelease package. Either modify the version spec of dependency &quot;{0}&quot; or update the version field..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.Manifest_InvalidReference">
+            <summary>
+              Looks up a localized string similar to Invalid assembly reference &apos;{0}&apos;. Ensure that a file named &apos;{0}&apos; exists in the lib directory..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.Manifest_InvalidSchemaNamespace">
+            <summary>
+              Looks up a localized string similar to Invalid schema namespace &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.Manifest_InvalidVersion">
+            <summary>
+              Looks up a localized string similar to No namespace was found corresponding to the schema version &apos;{0}&apos;. Add an entry to the VersionToSchemaMappings dictionary in &apos;{1}&apos;..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.Manifest_ReferencesHasMixedElements">
+            <summary>
+              Looks up a localized string similar to &lt;references&gt; element must not contain both &lt;group&gt; and &lt;reference&gt; child elements..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.Manifest_ReferencesIsEmpty">
+            <summary>
+              Looks up a localized string similar to The element package\metadata\references\group must contain at least one &lt;reference&gt; child element..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.Manifest_RequiredMetadataMissing">
+            <summary>
+              Looks up a localized string similar to {0} is required..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.Manifest_RequireLicenseAcceptanceRequiresLicenseUrl">
+            <summary>
+              Looks up a localized string similar to Enabling license acceptance requires a license url..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.Manifest_SourceContainsInvalidCharacters">
+            <summary>
+              Looks up a localized string similar to Source path &apos;{0}&apos; contains invalid characters..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.Manifest_TargetContainsInvalidCharacters">
+            <summary>
+              Looks up a localized string similar to Target path &apos;{0}&apos; contains invalid characters..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.Manifest_UriCannotBeEmpty">
+            <summary>
+              Looks up a localized string similar to {0} cannot be empty..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.MissingFrameworkName">
+            <summary>
+              Looks up a localized string similar to Framework name is missing..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.PackageAuthoring_FileNotFound">
+            <summary>
+              Looks up a localized string similar to File not found: &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.PackageContentsVerifyError">
+            <summary>
+              Looks up a localized string similar to Failed to download package correctly. The contents of the package could not be verified..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.PackageDoesNotContainManifest">
+            <summary>
+              Looks up a localized string similar to Package does not contain a manifest..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.UnableToLocateWIF">
+            <summary>
+              Looks up a localized string similar to Connection to feed &apos;{0}&apos; requires the Windows Identity Foundation runtime to be installed..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.UnableToResolveUri">
+            <summary>
+              Looks up a localized string similar to Unable to resolve &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.UnknownSchemaVersion">
+            <summary>
+              Looks up a localized string similar to Unknown schema version &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.UserSettings_KeyDoesNotExist">
+            <summary>
+              Looks up a localized string similar to Key &apos;{0}&apos; does not exist..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.UserSettings_SectionDoesNotExist">
+            <summary>
+              Looks up a localized string similar to Section&apos;{0}&apos; does not exist..
+            </summary>
+        </member>
+        <member name="P:NuGetPe.Resources.NuGetResources.UserSettings_UnableToParseConfigFile">
+            <summary>
+              Looks up a localized string similar to Unable to parse config file..
+            </summary>
+        </member>
+        <member name="M:NuGetPe.ZipPackage.MyPackageArchiveReader.#ctor(System.IO.Stream,System.Boolean)">
+            <summary>Nupkg package reader</summary>
+            <param name="stream">Nupkg data stream.</param>
+            <param name="leaveStreamOpen">If true the nupkg stream will not be closed by the zip reader.</param>
+        </member>
+        <member name="T:NuGetPe.MachineCache">
+            <summary>
+            The machine cache represents a location on the machine where packages are cached. It is a specific implementation of a local repository and can be used as such.
+            </summary>
+        </member>
+        <member name="M:NuGetPe.MachineCache.GetCachePath">
+            <summary>
+            Determines the cache path to use for NuGet.exe. By default, NuGet caches files under %LocalAppData%\NuGet\Cache.
+            This path can be overridden by specifying a value in the NuGetCachePath environment variable.
+            </summary>
+        </member>
+        <member name="M:NuGetPe.ManifestUtility.ReplaceTokenWithMetadata(System.String)">
+            <summary>
+            Goes from $token$ to a marker value with 0.0.0+TOKENSTART.token.TOKENEND
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NuGetPe.ManifestUtility.ReplaceMetadataWithToken(System.String)">
+            <summary>
+            Goes from marker 0.0.0+TOKENSTART.token.TOKENEND to the token $token$
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NuGetPe.UriUtility.GetPath(System.Uri)">
+            <summary>
+            Converts a uri to a path. Only used for local paths.
+            </summary>
+        </member>
+    </members>
+</doc>
