@@ -1,9 +1,0 @@
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Quartz4Net\bin\Debug\netcoreapp2.0\Fxt.Framework.Quartz4Net.deps.json
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Quartz4Net\bin\Debug\netcoreapp2.0\Fxt.Framework.Quartz4Net.dll
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Quartz4Net\bin\Debug\netcoreapp2.0\Fxt.Framework.Quartz4Net.pdb
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Quartz4Net\obj\Debug\netcoreapp2.0\Fxt.Framework.Quartz4Net.csprojAssemblyReference.cache
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Quartz4Net\obj\Debug\netcoreapp2.0\Fxt.Framework.Quartz4Net.csproj.CoreCompileInputs.cache
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Quartz4Net\obj\Debug\netcoreapp2.0\Fxt.Framework.Quartz4Net.AssemblyInfoInputs.cache
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Quartz4Net\obj\Debug\netcoreapp2.0\Fxt.Framework.Quartz4Net.AssemblyInfo.cs
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Quartz4Net\obj\Debug\netcoreapp2.0\Fxt.Framework.Quartz4Net.dll
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Quartz4Net\obj\Debug\netcoreapp2.0\Fxt.Framework.Quartz4Net.pdb

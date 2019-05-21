@@ -1,9 +1,0 @@
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Nlog\bin\Release\netcoreapp2.0\Fxt.Framework.Nlog.deps.json
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Nlog\bin\Release\netcoreapp2.0\Fxt.Framework.Nlog.dll
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Nlog\bin\Release\netcoreapp2.0\Fxt.Framework.Nlog.pdb
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Nlog\obj\Release\netcoreapp2.0\Fxt.Framework.Nlog.csprojAssemblyReference.cache
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Nlog\obj\Release\netcoreapp2.0\Fxt.Framework.Nlog.csproj.CoreCompileInputs.cache
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Nlog\obj\Release\netcoreapp2.0\Fxt.Framework.Nlog.AssemblyInfoInputs.cache
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Nlog\obj\Release\netcoreapp2.0\Fxt.Framework.Nlog.AssemblyInfo.cs
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Nlog\obj\Release\netcoreapp2.0\Fxt.Framework.Nlog.dll
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Nlog\obj\Release\netcoreapp2.0\Fxt.Framework.Nlog.pdb

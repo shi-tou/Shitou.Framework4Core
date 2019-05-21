@@ -1,9 +1,0 @@
-E:\test-demo\Fxt-Framework\samples\Fxt.Framework.Demo.Utils\bin\Debug\netcoreapp2.1\Fxt.Framework.Demo.Utils.deps.json
-E:\test-demo\Fxt-Framework\samples\Fxt.Framework.Demo.Utils\bin\Debug\netcoreapp2.1\Fxt.Framework.Demo.Utils.dll
-E:\test-demo\Fxt-Framework\samples\Fxt.Framework.Demo.Utils\bin\Debug\netcoreapp2.1\Fxt.Framework.Demo.Utils.pdb
-E:\test-demo\Fxt-Framework\samples\Fxt.Framework.Demo.Utils\obj\Debug\netcoreapp2.1\Fxt.Framework.Demo.Utils.csproj.CoreCompileInputs.cache
-E:\test-demo\Fxt-Framework\samples\Fxt.Framework.Demo.Utils\obj\Debug\netcoreapp2.1\Fxt.Framework.Demo.Utils.AssemblyInfoInputs.cache
-E:\test-demo\Fxt-Framework\samples\Fxt.Framework.Demo.Utils\obj\Debug\netcoreapp2.1\Fxt.Framework.Demo.Utils.AssemblyInfo.cs
-E:\test-demo\Fxt-Framework\samples\Fxt.Framework.Demo.Utils\obj\Debug\netcoreapp2.1\Fxt.Framework.Demo.Utils.dll
-E:\test-demo\Fxt-Framework\samples\Fxt.Framework.Demo.Utils\obj\Debug\netcoreapp2.1\Fxt.Framework.Demo.Utils.pdb
-E:\test-demo\Fxt-Framework\samples\Fxt.Framework.Demo.Utils\obj\Debug\netcoreapp2.1\Fxt.Framework.Demo.Utils.csprojAssemblyReference.cache

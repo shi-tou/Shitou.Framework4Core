@@ -1,9 +1,0 @@
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Caching\bin\Release\netcoreapp2.0\Fxt.Framework.Caching.deps.json
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Caching\bin\Release\netcoreapp2.0\Fxt.Framework.Caching.dll
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Caching\bin\Release\netcoreapp2.0\Fxt.Framework.Caching.pdb
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Caching\obj\Release\netcoreapp2.0\Fxt.Framework.Caching.csproj.CoreCompileInputs.cache
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Caching\obj\Release\netcoreapp2.0\Fxt.Framework.Caching.AssemblyInfoInputs.cache
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Caching\obj\Release\netcoreapp2.0\Fxt.Framework.Caching.AssemblyInfo.cs
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Caching\obj\Release\netcoreapp2.0\Fxt.Framework.Caching.dll
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Caching\obj\Release\netcoreapp2.0\Fxt.Framework.Caching.pdb
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Caching\obj\Release\netcoreapp2.0\Fxt.Framework.Caching.csprojAssemblyReference.cache

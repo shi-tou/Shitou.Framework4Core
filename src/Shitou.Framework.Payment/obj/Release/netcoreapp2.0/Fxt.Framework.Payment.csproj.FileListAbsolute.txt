@@ -1,8 +1,0 @@
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Payment\bin\Release\netcoreapp2.0\Fxt.Framework.Payment.deps.json
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Payment\bin\Release\netcoreapp2.0\Fxt.Framework.Payment.dll
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Payment\bin\Release\netcoreapp2.0\Fxt.Framework.Payment.pdb
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Payment\obj\Release\netcoreapp2.0\Fxt.Framework.Payment.csproj.CoreCompileInputs.cache
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Payment\obj\Release\netcoreapp2.0\Fxt.Framework.Payment.AssemblyInfoInputs.cache
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Payment\obj\Release\netcoreapp2.0\Fxt.Framework.Payment.AssemblyInfo.cs
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Payment\obj\Release\netcoreapp2.0\Fxt.Framework.Payment.dll
-E:\test-demo\Fxt-Framework\src\Fxt.Framework.Payment\obj\Release\netcoreapp2.0\Fxt.Framework.Payment.pdb

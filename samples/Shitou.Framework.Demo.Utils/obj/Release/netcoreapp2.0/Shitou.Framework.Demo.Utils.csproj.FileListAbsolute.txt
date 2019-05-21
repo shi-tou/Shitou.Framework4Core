@@ -1,9 +1,0 @@
-E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.Utils\bin\Release\netcoreapp2.0\Shitou.Framework.Demo.Utils.deps.json
-E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.Utils\bin\Release\netcoreapp2.0\Shitou.Framework.Demo.Utils.dll
-E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.Utils\bin\Release\netcoreapp2.0\Shitou.Framework.Demo.Utils.pdb
-E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.Utils\obj\Release\netcoreapp2.0\Shitou.Framework.Demo.Utils.csprojAssemblyReference.cache
-E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.Utils\obj\Release\netcoreapp2.0\Shitou.Framework.Demo.Utils.csproj.CoreCompileInputs.cache
-E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.Utils\obj\Release\netcoreapp2.0\Shitou.Framework.Demo.Utils.AssemblyInfoInputs.cache
-E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.Utils\obj\Release\netcoreapp2.0\Shitou.Framework.Demo.Utils.AssemblyInfo.cs
-E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.Utils\obj\Release\netcoreapp2.0\Shitou.Framework.Demo.Utils.dll
-E:\test-demo\Shitou.Framework4Core\samples\Shitou.Framework.Demo.Utils\obj\Release\netcoreapp2.0\Shitou.Framework.Demo.Utils.pdb

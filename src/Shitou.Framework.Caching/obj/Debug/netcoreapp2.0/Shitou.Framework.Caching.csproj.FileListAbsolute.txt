@@ -1,9 +1,0 @@
-E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Caching\bin\Debug\netcoreapp2.0\Shitou.Framework.Caching.deps.json
-E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Caching\bin\Debug\netcoreapp2.0\Shitou.Framework.Caching.dll
-E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Caching\bin\Debug\netcoreapp2.0\Shitou.Framework.Caching.pdb
-E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Caching\obj\Debug\netcoreapp2.0\Shitou.Framework.Caching.csprojAssemblyReference.cache
-E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Caching\obj\Debug\netcoreapp2.0\Shitou.Framework.Caching.csproj.CoreCompileInputs.cache
-E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Caching\obj\Debug\netcoreapp2.0\Shitou.Framework.Caching.AssemblyInfoInputs.cache
-E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Caching\obj\Debug\netcoreapp2.0\Shitou.Framework.Caching.AssemblyInfo.cs
-E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Caching\obj\Debug\netcoreapp2.0\Shitou.Framework.Caching.dll
-E:\test-demo\Shitou.Framework4Core\src\Shitou.Framework.Caching\obj\Debug\netcoreapp2.0\Shitou.Framework.Caching.pdb
