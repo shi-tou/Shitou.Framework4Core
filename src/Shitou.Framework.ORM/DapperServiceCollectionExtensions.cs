@@ -33,25 +33,6 @@ namespace Shitou.Framework.ORM
             services.AddSingleton<IAdoTemplate, AdoTemplate>();
             return services;
         }
-
-        /// <summary>
-        /// 注册MySql服务(选用于不同用户登录，创建不同的数据源)
-        /// 需要在程序启动时，设置数据库连接的委托DbConnectionSetting.DbConnection
-        /// </summary>
-        /// <param name="services"></param>
-        /// <returns></returns>
-        public static IServiceCollection AddMySql(this IServiceCollection services)
-        {
-            if (DbConnectionSetting.DbConnection == null)
-            {
-                throw new NoNullAllowedException("DbConnectionSetting.DbConnection not allow null,please init it when app start");
-            }
-            services.AddTransient(_ => { return DbConnectionSetting.DbConnection(DbConnectionNameConst.MySql); });
-            services.AddSingleton<ISqlGenerator, MySqlGenerator>();
-            services.AddTransient<IAdoTemplate, AdoTemplate>();
-            return services;
-        }
-
         /// <summary>
         /// 注册Sqlite服务
         /// </summary>

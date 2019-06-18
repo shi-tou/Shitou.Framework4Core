@@ -43,7 +43,7 @@ namespace Shitou.Framework.Demo.Mvc.Controllers
         {
             List<GoodsTypeInfo> typeList = GoodsService.GetGoodsTypeList();
             ViewData["GoodsType"] = new SelectList(typeList, "ID", "GoodsTypeName");
-            GoodsInfo info = GoodsService.GetModel<GoodsInfo>("ID", id);
+            GoodsInfo info = GoodsService.GetModel<GoodsInfo>(new { ID = id });
             return View(info ?? new GoodsInfo());
         }
         /// <summary>
@@ -93,7 +93,7 @@ namespace Shitou.Framework.Demo.Mvc.Controllers
         /// <returns></returns>
         public ActionResult GoodsDelete(string id)
         {
-            if (GoodsService.Delete<GoodsInfo>("ID", id))
+            if (GoodsService.Delete<GoodsInfo>(new { ID = id }))
             {
                 Result.IsOk = true;
                 Result.Msg = "删除成功";
@@ -127,7 +127,7 @@ namespace Shitou.Framework.Demo.Mvc.Controllers
         {
             List<GoodsTypeInfo> typeList = GoodsService.GetGoodsTypeList();
             ViewData["GoodsType"] = new SelectList(typeList, "ID", "GoodsTypeName");
-            GoodsTypeInfo info = GoodsService.GetModel<GoodsTypeInfo>("ID", id);
+            GoodsTypeInfo info = GoodsService.GetModel<GoodsTypeInfo>(new { ID = id });
             return View(info ?? new GoodsTypeInfo());
         }
         /// <summary>
@@ -190,7 +190,7 @@ namespace Shitou.Framework.Demo.Mvc.Controllers
                 Result.Msg = "不可删除,该类别有关联的商品";
                 return Json(Result);
             }
-            if (GoodsService.Delete<GoodsTypeInfo>("ID", id))
+            if (GoodsService.Delete<GoodsTypeInfo>(new { ID = id }))
             {
                 Result.IsOk = true;
                 Result.Msg = "删除成功";

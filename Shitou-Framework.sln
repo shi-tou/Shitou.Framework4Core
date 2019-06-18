@@ -57,7 +57,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shitou.Framework.Demo.WebAp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shitou.Framework.Demo.WebApp", "samples\Shitou.Framework.Demo.WebApp\Shitou.Framework.Demo.WebApp.csproj", "{FFA35F9F-DF1A-46D0-8BF9-E3560C069FD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyncBooksTest", "test\SyncBooksTest\SyncBooksTest.csproj", "{A0AB5719-EB11-4AEA-BC24-CC68BB058B2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyncBooksTest", "test\SyncBooksTest\SyncBooksTest.csproj", "{A0AB5719-EB11-4AEA-BC24-CC68BB058B2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

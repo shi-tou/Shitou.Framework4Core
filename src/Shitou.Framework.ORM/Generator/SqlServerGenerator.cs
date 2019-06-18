@@ -42,15 +42,16 @@ namespace Shitou.Framework.ORM.Generator
         /// <param name="pageSize">页大小</param>
         /// <param name="orderBy">排序</param>
         /// <returns></returns>
-        public override string GetPageListSql<T, W>(W where, int pageIndex, int pageSize, string orderBy)
+        public override string GetPageListSql<T>(object param, int pageIndex, int pageSize, string orderBy)
         {
             string PageSql = @"select * from (
 	                                    select *, ROW_NUMBER() OVER(Order by {0} ) AS RowId from {1} where {2}
                                     ) as b where RowId between {3} and {4} ";
             ClassMapper mapT = GetMapper(typeof(T));
-            ClassMapper mapW = GetMapper(where.GetType());
-            string strWhere = mapW.Properties.Select(p => string.Format("{0}={1}{0}", p.Name, ParameterPrefix)).AppendStrings(" and ");
-            return string.Format(PageSql, orderBy, mapT.TableName, string.IsNullOrEmpty(strWhere) ? EmptyExpression : strWhere, orderBy, (pageIndex - 1) * pageSize + 1, pageIndex * pageSize);
+
+            Type type = param.GetType();
+            string strWhere = type.GetProperties().Select(p => string.Format("{0}={1}{0}", p.Name, ParameterPrefix)).AppendStrings(" and ");
+            return string.Format(PageSql, orderBy, mapT.TableName, strWhere, orderBy, (pageIndex - 1) * pageSize + 1, pageIndex * pageSize);
         }
         /// <summary>
         /// 分页语句(联表查询)

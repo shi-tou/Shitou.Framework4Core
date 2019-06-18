@@ -91,6 +91,13 @@ namespace Shitou.Framework.ORM
         /// <param name="t"></param>
         /// <returns></returns>
         int Update<T>(T t);
+        /// <summary>
+        /// 更新
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="t"></param>
+        /// <returns></returns>
+        int Update<T>(T t,object param);
         #endregion
 
         #region ---Delete---
@@ -100,58 +107,24 @@ namespace Shitou.Framework.ORM
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         int Delete<T>();
-
-        /// <summary>
-        /// 删除
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="columnName"></param>
-        /// <param name="vlaue"></param>
-        /// <returns></returns>
-        int Delete<T>(string columnName, object vlaue);
-
+        
         /// <summary>
         /// 删除
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="hs"></param>
         /// <returns></returns>
-        int Delete<T>(Hashtable hs);
-
-        /// <summary>
-        /// 删除
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="hs"></param>
-        /// <returns></returns>
-        int Delete<T, W>(W where);
+        int Delete<T>(object param);
         #endregion
 
         #region ---GetModel---
-        
         /// <summary>
         /// 查询(单记录)
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="hs"></param>
         /// <returns></returns>
-        T GetModel<T>(string columnName, object value);
-
-        /// <summary>
-        /// 查询(单记录)
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="hs"></param>
-        /// <returns></returns>
-        T GetModel<T>(Hashtable hs);
-
-        /// <summary>
-        /// 查询(单记录)
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="hs"></param>
-        /// <returns></returns>
-        T GetModel<T, W>(W where);
+        T GetModel<T>(object param);
         #endregion
 
         #region ---GetList---
@@ -166,27 +139,9 @@ namespace Shitou.Framework.ORM
         /// 查询(多记录)
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="columnName"></param>
-        /// <param name="vlaue"></param>
+        /// <param name="param"></param>
         /// <returns></returns>
-        List<T> GetList<T>(string columnName, object vlaue);
-
-        /// <summary>
-        /// 查询(单记录)
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="hs"></param>
-        /// <returns></returns>
-        List<T> GetList<T>(Hashtable hs);
-
-        /// <summary>
-        /// 查询(多记录)
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="hs"></param>
-        /// <returns></returns>
-        List<T> GetList<T, W>(W where);
-
+        List<T> GetList<T>(object param);
         /// <summary>
         /// 查询(多记录)
         /// </summary>
@@ -195,7 +150,7 @@ namespace Shitou.Framework.ORM
         /// <param name="sql"></param>
         /// <param name="where"></param>
         /// <returns></returns>
-        List<T> GetList<T, W>(string sql, W where);
+        List<T> GetList<T>(string sql, object param);
         #endregion
 
         #region ---GetPageList---
@@ -219,7 +174,7 @@ namespace Shitou.Framework.ORM
         /// <param name="pageSize">页大小</param>
         /// <param name="orderBy">排序</param>
         /// <returns></returns>
-        Pager<T> GetPagedList<T, W>(W where, int pageIndex, int pageSize, string orderBy);
+        Pager<T> GetPagedList<T>(object param, int pageIndex, int pageSize, string orderBy);
 
         /// <summary>
         /// 分页查询
@@ -231,7 +186,7 @@ namespace Shitou.Framework.ORM
         /// <param name="pageSize">页大小</param>
         /// <param name="orderBy">排序</param>
         /// <returns></returns>
-        Pager<T> GetPagedList<T, W>(string sql, W where, int pageIndex, int pageSize, string orderBy);
+        Pager<T> GetPagedList<T>(string sql, object param, int pageIndex, int pageSize, string orderBy);
 
         /// <summary>
         /// 分页查询
@@ -264,7 +219,7 @@ namespace Shitou.Framework.ORM
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        int GetCount<T>(Hashtable where);
+        int GetCount<T>(object  where);
         /// <summary>
         /// 获取计数
         /// </summary>

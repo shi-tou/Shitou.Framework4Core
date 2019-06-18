@@ -43,7 +43,7 @@ namespace Shitou.Framework.Demo.Service
         public UserLoginResponse UserLogin(UserLoginRequest request)
         {
             UserLoginResponse response = new UserLoginResponse();
-            UserInfo info = GetModel<UserInfo>("UserName", request.UserName);
+            UserInfo info = GetModel<UserInfo>(new { request.UserName });
             if (info == null)
             {
                 response.Result = RT.User_NotExist_UserName;

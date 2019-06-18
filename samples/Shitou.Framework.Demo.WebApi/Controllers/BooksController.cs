@@ -50,12 +50,14 @@ namespace Shitou.Framework.Demo.WebApi.Controllers
         [HttpPut("{id}")]
         public void Put(int id, [FromBody]string value)
         {
+            BaseService.Update(new BookInfo(), new { ID = 1 });
         }
         
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            
         }
     }
 }

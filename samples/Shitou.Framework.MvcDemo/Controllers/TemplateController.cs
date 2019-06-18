@@ -50,7 +50,7 @@ namespace Shitou.Framework.Demo.Mvc.Controllers
                 });
             }
             ViewData["TemplateTypeList"] = new SelectList(list, "Value", "Text");
-            TableTemplateInfo info = _baseService.GetModel<TableTemplateInfo>("ID", id);
+            TableTemplateInfo info = _baseService.GetModel<TableTemplateInfo>(new { ID = id });
             return View(info ?? new TableTemplateInfo());
         }
         /// <summary>
@@ -82,7 +82,7 @@ namespace Shitou.Framework.Demo.Mvc.Controllers
             {
                 info.UpdateBy = LoginUserInfo.ID;
                 info.CreateTime = DateTime.Now;
-                if (_baseService.Update<TableTemplateInfo>(info))
+                if (_baseService.Update(info))
                 {
                     Result.IsOk = true;
                     Result.Msg = "更新成功";
@@ -103,7 +103,7 @@ namespace Shitou.Framework.Demo.Mvc.Controllers
         public IActionResult TableFieldList(string id)
         {
             ViewBag.TableTemplateID = id;
-            List<TableFieldInfo> list = _baseService.GetList<TableFieldInfo>("TableTemplateID", id);
+            List<TableFieldInfo> list = _baseService.GetList<TableFieldInfo>(new { TableTemplateID = id });
             return View(list);
         }
 
@@ -125,7 +125,7 @@ namespace Shitou.Framework.Demo.Mvc.Controllers
                 });
             }
             ViewData["FieldTypeList"] = new SelectList(list, "Value", "Text");
-            TableFieldInfo info = _baseService.GetModel<TableFieldInfo>("ID", id);
+            TableFieldInfo info = _baseService.GetModel<TableFieldInfo>(new { ID = id });
             return View(info ?? new TableFieldInfo());
         }
         /// <summary>
@@ -157,7 +157,7 @@ namespace Shitou.Framework.Demo.Mvc.Controllers
             {
                 info.UpdateBy = LoginUserInfo.ID;
                 info.CreateTime = DateTime.Now;
-                if (_baseService.Update<TableFieldInfo>(info))
+                if (_baseService.Update(info))
                 {
                     Result.IsOk = true;
                     Result.Msg = "更新成功";
@@ -177,7 +177,7 @@ namespace Shitou.Framework.Demo.Mvc.Controllers
         /// <returns></returns>
         public ActionResult TablePreview(string id)
         {
-            List<TableFieldInfo> list = _baseService.GetList<TableFieldInfo>("TableTemplateID", id);
+            List<TableFieldInfo> list = _baseService.GetList<TableFieldInfo>(new { TableTemplateID = id });
             return View(list ?? new List<TableFieldInfo>());
         }
     }

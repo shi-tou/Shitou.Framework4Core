@@ -32,11 +32,11 @@ namespace Shitou.Framework.ORM.Generator
         /// <param name="pageSize">页大小</param>
         /// <param name="orderBy">排序</param>
         /// <returns></returns>
-        public override string GetPageListSql<T, W>(W where, int pageIndex, int pageSize, string orderBy)
+        public override string GetPageListSql<T>(object param, int pageIndex, int pageSize, string orderBy)
         {
             ClassMapper mapT = GetMapper(typeof(T));
-            ClassMapper mapW = GetMapper(where.GetType());
-            string strWhere = mapW.Properties.Select(p => string.Format("{0}={1}{0}", p.Name, ParameterPrefix)).AppendStrings(" and ");
+            Type type = param.GetType();
+            string strWhere = type.GetProperties().Select(p => string.Format("{0}={1}{0}", p.Name, ParameterPrefix)).AppendStrings(" and ");
             return string.Format("SELECT * FROM {0} WHERE {1} ORDER BY {2} LIMIT {3},{4}", mapT.TableName, string.IsNullOrEmpty(strWhere) ? EmptyExpression : strWhere, orderBy, (pageIndex - 1) * pageSize, pageSize);
         }
         /// <summary>

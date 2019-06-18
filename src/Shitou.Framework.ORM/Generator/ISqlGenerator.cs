@@ -45,21 +45,7 @@ namespace Shitou.Framework.ORM.Generator
         /// Select语句
         /// </summary>
         /// <returns></returns>
-        string GetSelectSql<T>(Hashtable hs);
-
-        /// <summary>
-        /// Select语句
-        /// </summary>
-        /// <returns></returns>
-        string GetSelectSql<T>(Dictionary<string, object> dic);
-
-        /// <summary>
-        /// Select语句
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <typeparam name="W">查询对象</typeparam>
-        /// <returns></returns>
-        string GetSelectSql<T, W>(W where);
+        string GetSelectSql<T>(object param);
 
         /// <summary>
         /// Update语句(更新条件为主键)
@@ -67,6 +53,13 @@ namespace Shitou.Framework.ORM.Generator
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         string GetUpdateSql<T>(T t);
+
+        /// <summary>
+        /// Update语句(更新条件为主键)
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        string GetUpdateSql<T>(T t,object param);
 
         /// <summary>
         /// Delete语句
@@ -80,22 +73,7 @@ namespace Shitou.Framework.ORM.Generator
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        string GetDeleteSql<T>(Hashtable hs);
-
-        /// <summary>
-        /// Delete语句
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        string GetDeleteSql<T>(Dictionary<string, object> dic);
-
-        /// <summary>
-        /// Delete语句
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <typeparam name="W">查询对象</typeparam>
-        /// <returns></returns>
-        string GetDeleteSql<T, W>(W where);
+        string GetDeleteSql<T>(object param);
 
         /// <summary>
         /// Count语句
@@ -103,20 +81,14 @@ namespace Shitou.Framework.ORM.Generator
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         string GetCountSql<T>();
-        /// <summary>
-        /// Count语句
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        string GetCountSql<T>(Hashtable hs);
 
         /// <summary>
         /// Count语句
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <typeparam name="W">查询对象</typeparam>
+        /// <param name="param"></param>
         /// <returns></returns>
-        string GetCountSql<T, W>(W where);
+        string GetCountSql<T>(object param);
 
         /// <summary>
         /// 分页语句
@@ -137,7 +109,7 @@ namespace Shitou.Framework.ORM.Generator
         /// <param name="pageSize">页大小</param>
         /// <param name="orderBy">排序</param>
         /// <returns>返回两条sql,string[0]取查询总记录数，string[2]取分页数据</returns>
-        string GetPageListSql<T, W>(W where, int pageIndex, int pageSize, string orderBy);
+        string GetPageListSql<T>(object param, int pageIndex, int pageSize, string orderBy);
 
         /// <summary>
         /// 分页语句(联表查询)

@@ -85,13 +85,11 @@ namespace Shitou.Framework.Demo.Dao
         public List<AuthInfo> GetUserAuth(string userID)
         {
             StringBuilder sbSql = new StringBuilder();
-            var param = new DynamicParameters();
             sbSql.Append(@"select c.* from T_Role_Auth a
                             inner join T_User b on b.RoleID=a.RoleID
                             inner join T_Auth c on c.ID=a.AuthID
                             where b.ID=@UserID");
-            param.Add("UserID", userID);
-            return AdoTemplate.GetList<AuthInfo, DynamicParameters>(sbSql.ToString(), param);
+            return AdoTemplate.GetList<AuthInfo>(sbSql.ToString(), new { UserID = userID });
         }
         #endregion
 

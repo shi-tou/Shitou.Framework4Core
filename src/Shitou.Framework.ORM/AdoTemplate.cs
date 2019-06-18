@@ -185,11 +185,33 @@ namespace Shitou.Framework.ORM
                 Dispose();
             }
         }
+        /// <summary>
+        /// 更新
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="t"></param>
+        /// <returns></returns>
+        public virtual int Update<T>(T t,object param)
+        {
+            try
+            {
+                string sql = SqlGenerator.GetUpdateSql<T>(t, param);
+                return DbConnection.Execute(sql, param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Dispose();
+            }
+        }
         #endregion
 
         #region ---Delete---
         /// <summary>
-        /// 删除
+        /// 全表删除
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
@@ -209,59 +231,19 @@ namespace Shitou.Framework.ORM
                 Dispose();
             }
         }
-
+        
         /// <summary>
-        /// 删除
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="columnName"></param>
-        /// <param name="vlaue"></param>
-        /// <returns></returns>
-        public int Delete<T>(string columnName, object value)
-        {
-            return Delete<T>(new Hashtable
-            {
-                [columnName] = value
-            });
-        }
-
-        /// <summary>
-        /// 删除
+        /// 按指定条件删除
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="hs"></param>
         /// <returns></returns>
-        public int Delete<T>(Hashtable hsWhere)
-        {
-
-            try
-            {
-                string sql = SqlGenerator.GetDeleteSql<T>(hsWhere);
-                return DbConnection.Execute(sql, ConvertToParams(hsWhere));
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                Dispose();
-            }
-        }
-
-        /// <summary>
-        /// 删除
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <typeparam name="W">必须为class类 where T:class</typeparam>
-        /// <param name="where"></param>
-        /// <returns></returns>
-        public virtual int Delete<T, W>(W where)
+        public int Delete<T>(object param)
         {
             try
             {
-                string sql = SqlGenerator.GetDeleteSql<T, W>(where);
-                return DbConnection.Execute(sql, where);
+                string sql = SqlGenerator.GetDeleteSql<T>(param);
+                return DbConnection.Execute(sql, param);
             }
             catch (Exception ex)
             {
@@ -275,79 +257,18 @@ namespace Shitou.Framework.ORM
         #endregion
 
         #region ---GetModel---
-
         /// <summary>
-        /// 查询(单记录)
+        /// 按指定条件查询(单记录)
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="hs"></param>
         /// <returns></returns>
-        public virtual T GetModel<T>(string columnName, object value)
-        {
-            return GetModel<T>(new Hashtable
-            {
-                [columnName] = value
-            });
-        }
-
-        /// <summary>
-        /// 查询(单记录)
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="hs"></param>
-        /// <returns></returns>
-        public virtual T GetModel<T>(Hashtable hsWhere)
+        public virtual T GetModel<T>(object param)
         {
             try
             {
-                string sql = SqlGenerator.GetSelectSql<T>(hsWhere);
-                return DbConnection.QuerySingleOrDefault<T>(sql, ConvertToParams(hsWhere));
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                Dispose();
-            }
-        }
-
-        /// <summary>
-        /// 查询(单记录)
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="hs"></param>
-        /// <returns></returns>
-        public virtual T GetModel<T>(Dictionary<string, object> dicWhere)
-        {
-            try
-            {
-                string sql = SqlGenerator.GetSelectSql<T>(dicWhere);
-                return DbConnection.QuerySingleOrDefault<T>(sql, ConvertToParams(dicWhere));
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                Dispose();
-            }
-        }
-
-        /// <summary>
-        /// 查询(单记录)
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="hs"></param>
-        /// <returns></returns>
-        public virtual T GetModel<T, W>(W where)
-        {
-            try
-            {
-                string sql = SqlGenerator.GetSelectSql<T, W>(where);
-                return DbConnection.QuerySingleOrDefault<T>(sql, where);
+                string sql = SqlGenerator.GetSelectSql<T>(param);
+                return DbConnection.QuerySingleOrDefault<T>(sql, param);
             }
             catch (Exception ex)
             {
@@ -363,7 +284,7 @@ namespace Shitou.Framework.ORM
         #region ---GetList---
 
         /// <summary>
-        /// 查询(多记录)
+        /// 全表查询
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
@@ -385,33 +306,17 @@ namespace Shitou.Framework.ORM
         }
 
         /// <summary>
-        /// 查询(多记录)
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="columnName"></param>
-        /// <param name="vlaue"></param>
-        /// <returns></returns>
-        public List<T> GetList<T>(string columnName, object value)
-        {
-            Hashtable hs = new Hashtable
-            {
-                [columnName] = value
-            };
-            return GetList<T>(hs);
-        }
-
-        /// <summary>
-        /// 查询(单记录)
+        /// 按指定条件查询
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="hs"></param>
         /// <returns></returns>
-        public virtual List<T> GetList<T>(Hashtable hsWhere)
+        public virtual List<T> GetList<T>(object param)
         {
             try
             {
-                string sql = SqlGenerator.GetSelectSql<T>(hsWhere);
-                return DbConnection.Query<T>(sql, ConvertToParams(hsWhere)).ToList();
+                string sql = SqlGenerator.GetSelectSql<T>(param);
+                return DbConnection.Query<T>(sql, param).ToList();
             }
             catch (Exception ex)
             {
@@ -424,41 +329,18 @@ namespace Shitou.Framework.ORM
         }
 
         /// <summary>
-        /// 查询(多记录)
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="where"></param>
-        /// <returns></returns>
-        public virtual List<T> GetList<T, W>(W where)
-        {
-            try
-            {
-                string sql = SqlGenerator.GetSelectSql<T, W>(where);
-                return DbConnection.Query<T>(sql, where).ToList();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                Dispose();
-            }
-        }
-
-        /// <summary>
-        /// 查询(多记录)
+        /// 指定条件联表查询
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <typeparam name="W"></typeparam>
         /// <param name="sql"></param>
         /// <param name="where"></param>
         /// <returns></returns>
-        public virtual List<T> GetList<T, W>(string sql, W where)
+        public virtual List<T> GetList<T>(string sql, object param)
         {
             try
             {
-                return DbConnection.Query<T>(sql, where).ToList();
+                return DbConnection.Query<T>(sql, param).ToList();
             }
             catch (Exception ex)
             {
@@ -510,13 +392,13 @@ namespace Shitou.Framework.ORM
         /// <param name="pageSize">页大小</param>
         /// <param name="orderBy">排序</param>
         /// <returns></returns>
-        public virtual Pager<T> GetPagedList<T, W>(W where, int pageIndex, int pageSize, string orderBy)
+        public virtual Pager<T> GetPagedList<T>(object param, int pageIndex, int pageSize, string orderBy)
         {
             try
             {
-                string sql = SqlGenerator.GetPageListSql<T, W>(where, pageIndex, pageSize, orderBy);
-                int totalCount = GetCount<T, W>(where);
-                List<T> list = DbConnection.Query<T>(sql, where).ToList();
+                string sql = SqlGenerator.GetPageListSql<T>(param, pageIndex, pageSize, orderBy);
+                int totalCount = GetCount<T>(param);
+                List<T> list = DbConnection.Query<T>(sql, param).ToList();
                 return new Pager<T>(list, pageIndex, pageSize, totalCount);
             }
             catch (Exception ex)
@@ -539,14 +421,14 @@ namespace Shitou.Framework.ORM
         /// <param name="pageSize">页大小</param>
         /// <param name="orderBy">排序</param>
         /// <returns></returns>
-        public virtual Pager<T> GetPagedList<T, W>(string sql, W where, int pageIndex, int pageSize, string orderBy)
+        public virtual Pager<T> GetPagedList<T>(string sql, object param, int pageIndex, int pageSize, string orderBy)
         {
             try
             {
                 string getCountSql = string.Format("select count(1) from ({0}) as A", sql);
-                int totalCount = Convert.ToInt32(DbConnection.ExecuteScalar(getCountSql, where));
+                int totalCount = Convert.ToInt32(DbConnection.ExecuteScalar(getCountSql, param));
                 sql = SqlGenerator.GetPageListSql(sql, pageIndex, pageSize, orderBy);
-                List<T> list = DbConnection.Query<T>(sql, where).ToList();
+                List<T> list = DbConnection.Query<T>(sql, param).ToList();
                 return new Pager<T>(list, pageIndex, pageSize, totalCount);
             }
             catch (Exception ex)
@@ -578,7 +460,7 @@ namespace Shitou.Framework.ORM
         #region ---GetCount---
 
         /// <summary>
-        /// 获取计数
+        /// 全表查询计数
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
@@ -599,50 +481,16 @@ namespace Shitou.Framework.ORM
             }
         }
         /// <summary>
-        /// 获取计数
+        /// 按指定条件查询计数
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public int GetCount<T>(string columnName, object value)
-        {
-            Hashtable hs = new Hashtable
-            {
-                [columnName] = value
-            };
-            return GetCount<T>(hs);
-        }
-        /// <summary>
-        /// 获取计数
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        public virtual int GetCount<T>(Hashtable where)
+        public int GetCount<T>(object param)
         {
             try
             {
-                string sql = SqlGenerator.GetCountSql<T>(where);
-                return Convert.ToInt32(DbConnection.ExecuteScalar(sql, where));
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                Dispose();
-            }
-        }
-        /// <summary>
-        /// 获取计数
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        public virtual int GetCount<T, W>(W where)
-        {
-            try
-            {
-                string sql = SqlGenerator.GetCountSql<T, W>(where);
-                return Convert.ToInt32(DbConnection.ExecuteScalar(sql, where));
+                string sql = SqlGenerator.GetCountSql<T>(param);
+                return Convert.ToInt32(DbConnection.ExecuteScalar(sql, param));
             }
             catch (Exception ex)
             {

@@ -52,21 +52,6 @@ namespace Shitou.Framework.ORM.Generator
         }
 
         /// <summary>
-        /// 获取参数串
-        /// </summary>
-        /// <param name="param"></param>
-        /// <returns></returns>
-        public virtual string GetSqlParam(ICollection param)
-        {
-            List<string> list = new List<string>();
-            foreach (string s in param)
-            {
-                list.Add(s);
-            }
-            return list.Select(p => string.Format("{0}={1}{0}", p, ParameterPrefix)).AppendStrings(" and ");
-        }
-
-        /// <summary>
         /// Insert语句
         /// </summary>
         /// <returns></returns>
@@ -107,37 +92,12 @@ namespace Shitou.Framework.ORM.Generator
         /// Select语句
         /// </summary>
         /// <returns></returns>
-        public virtual string GetSelectSql<T>(Hashtable hs)
+        public virtual string GetSelectSql<T>(object param)
         {
             ClassMapper mapT = GetMapper(typeof(T));
-            string strWhere = GetSqlParam(hs.Keys);
-            return string.Format("SELECT * FROM {0} WHERE {1}", mapT.TableName, string.IsNullOrEmpty(strWhere) ? EmptyExpression : strWhere);
-        }
-
-        /// <summary>
-        /// Select语句
-        /// </summary>
-        /// <returns></returns>
-        public virtual string GetSelectSql<T>(Dictionary<string, object> dic)
-        {
-            ClassMapper mapT = GetMapper(typeof(T));
-            string strWhere = GetSqlParam(dic.Keys);
-            return string.Format("SELECT * FROM {0} WHERE {1}", mapT.TableName, string.IsNullOrEmpty(strWhere) ? EmptyExpression : strWhere);
-        }
-
-        /// <summary>
-        /// Select语句
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <typeparam name="W"></typeparam>
-        /// <param name="_params"></param>
-        /// <returns></returns>
-        public virtual string GetSelectSql<T, W>(W where)
-        {
-            ClassMapper mapT = GetMapper(typeof(T));
-            ClassMapper mapW = GetMapper(where.GetType());
-            string strWhere = mapW.Properties.Select(p => string.Format("{0}={1}{0}", p.Name, ParameterPrefix)).AppendStrings(" and ");
-            return string.Format("SELECT * FROM {0} WHERE {1}", mapT.TableName, string.IsNullOrEmpty(strWhere) ? EmptyExpression : strWhere);
+            Type type = param.GetType();
+            string strWhere = type.GetProperties().Select(p => string.Format("{0}={1}{0}", p.Name, ParameterPrefix)).AppendStrings(" and ");
+            return string.Format("SELECT * FROM {0} WHERE {1}", mapT.TableName, strWhere);
         }
 
         /// <summary>
@@ -148,64 +108,57 @@ namespace Shitou.Framework.ORM.Generator
         public string GetUpdateSql<T>(T t)
         {
             ClassMapper mapT = GetMapper(typeof(T));
-            string set = mapT.Properties.Where(p => p.Name.ToLower() != mapT.PrimaryKey.ToLower() && p.GetValue(t, null) != null)
+            string strSet = mapT.Properties.Where(p => p.Name.ToLower() != mapT.PrimaryKey.ToLower() && p.GetValue(t, null) != null)
                 .Select(p => string.Format("{0}={1}{0}", p.Name, ParameterPrefix)).AppendStrings(",");
-            string where = string.Format("{0}={1}{0}", mapT.PrimaryKey, ParameterPrefix);
-            return string.Format("UPDATE {0} SET {1} WHERE {2}", mapT.TableName, set, where);
+            string strWhere = string.Format("{0}={1}{0}", mapT.PrimaryKey, ParameterPrefix);
+            return string.Format("UPDATE {0} SET {1} WHERE {2}", mapT.TableName, strSet, strWhere);
         }
 
         /// <summary>
-        /// Delete语句
+        /// Update语句(指定条件)
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public string GetUpdateSql<T>(T t,object param)
+        {
+            ClassMapper mapT = GetMapper(typeof(T));
+            string set = mapT.Properties.Where(p => p.Name.ToLower() != mapT.PrimaryKey.ToLower() && p.GetValue(t, null) != null)
+                .Select(p => string.Format("{0}={1}{0}", p.Name, ParameterPrefix)).AppendStrings(",");
+
+            Type type = param.GetType();                      
+            string strWhere = type.GetProperties().Select(p => string.Format("{0}={1}{0}", p.Name, ParameterPrefix)).AppendStrings(" and ");
+            return string.Format("UPDATE {0} SET {1} WHERE {2}", mapT.TableName, set, strWhere);
+        }
+
+        /// <summary>
+        /// Delete语句(全表)
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         public virtual string GetDeleteSql<T>()
         {
             ClassMapper mapT = GetMapper(typeof(T));
-            return string.Format("DELETE FROM {0}", mapT.TableName);
+            return string.Format("DELETE FROM {0} ", mapT.TableName);
         }
 
         /// <summary>
-        /// Delete语句
+        /// Delete语句(指定条件)
         /// </summary>
         /// <typeparam name="T"></typeparam>
+        /// <param name="param"></param>
         /// <returns></returns>
-        public virtual string GetDeleteSql<T>(Hashtable hs)
+        public virtual string GetDeleteSql<T>(object param)
         {
             ClassMapper mapT = GetMapper(typeof(T));
-            string strWhere = GetSqlParam(hs.Keys);
-            return string.Format("DELETE FROM {0} WHERE {1}", mapT.TableName, string.IsNullOrEmpty(strWhere) ? EmptyExpression : strWhere);
+            Type type = param.GetType();
+            string strWhere = type.GetProperties().Select(p => string.Format("{0}={1}{0}", p.Name, ParameterPrefix)).AppendStrings(" and ");
+            return string.Format("DELETE FROM {0} WHERE {1}", mapT.TableName, strWhere);
         }
 
         /// <summary>
-        /// Delete语句
+        /// Count语句(全表)
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        public virtual string GetDeleteSql<T>(Dictionary<string, object> dic)
-        {
-            ClassMapper mapT = GetMapper(typeof(T));
-            string strWhere = GetSqlParam(dic.Keys);
-            return string.Format("DELETE FROM {0} WHERE {1}", mapT.TableName, string.IsNullOrEmpty(strWhere) ? EmptyExpression : strWhere);
-        }
-
-        /// <summary>
-        /// Delete语句
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <typeparam name="W">查询对象</typeparam>
-        /// <returns></returns>
-        public virtual string GetDeleteSql<T, W>(W where)
-        {
-            ClassMapper mapT = GetMapper(typeof(T));
-            ClassMapper mapW = GetMapper(where.GetType());
-            string strWhere = mapW.Properties.Select(p => string.Format("{0}={1}{0}", p.Name, ParameterPrefix)).AppendStrings(" and ");
-            return string.Format("DELETE FROM {0} WHERE {1}", mapT.TableName, string.IsNullOrEmpty(strWhere) ? EmptyExpression : strWhere);
-        }
-
-        /// <summary>
-        /// Count语句
-        /// </summary>
         /// <returns></returns>
         public virtual string GetCountSql<T>()
         {
@@ -214,32 +167,21 @@ namespace Shitou.Framework.ORM.Generator
         }
 
         /// <summary>
-        /// Count语句
-        /// </summary>
-        /// <returns></returns>
-        public virtual string GetCountSql<T>(Hashtable hs)
-        {
-            ClassMapper mapT = GetMapper(typeof(T));
-            string strWhere = GetSqlParam(hs.Keys);
-            return string.Format("SELECT COUNT(1) FROM {0} WHERE {1}", mapT.TableName, string.IsNullOrEmpty(strWhere) ? EmptyExpression : strWhere);
-        }
-
-        /// <summary>
-        /// Count语句
+        /// Count语句(指定条件)
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <typeparam name="W">查询对象</typeparam>
+        /// <param name="param"></param>
         /// <returns></returns>
-        public virtual string GetCountSql<T, W>(W where)
+        public virtual string GetCountSql<T>(object param)
         {
             ClassMapper mapT = GetMapper(typeof(T));
-            ClassMapper mapW = GetMapper(where.GetType());
-            string strWhere = mapW.Properties.Select(p => string.Format("{0}={1}{0}", p.Name, ParameterPrefix)).AppendStrings(" and ");
-            return string.Format("SELECT COUNT(1) FROM {0} WHERE {1} ", mapT.TableName, string.IsNullOrEmpty(strWhere) ? EmptyExpression : strWhere);
+            Type type = param.GetType();
+            string strWhere = type.GetProperties().Select(p => string.Format("{0}={1}{0}", p.Name, ParameterPrefix)).AppendStrings(" and ");
+            return string.Format("SELECT COUNT(1) FROM {0} WHERE {1}", mapT.TableName, strWhere);
         }
 
         /// <summary>
-        /// 分页语句
+        /// 分页语句（全表）
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="pageIndex">页索引</param>
@@ -252,7 +194,7 @@ namespace Shitou.Framework.ORM.Generator
         }
 
         /// <summary>
-        /// 分页语句
+        /// 分页语句(指定条件)
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <typeparam name="W">查询对象</typeparam>
@@ -260,7 +202,7 @@ namespace Shitou.Framework.ORM.Generator
         /// <param name="pageSize">页大小</param>
         /// <param name="orderBy">排序</param>
         /// <returns></returns>
-        public virtual string GetPageListSql<T, W>(W where, int pageIndex, int pageSize, string orderBy)
+        public virtual string GetPageListSql<T>(object param, int pageIndex, int pageSize, string orderBy)
         {
             throw new NotImplementedException();
         }

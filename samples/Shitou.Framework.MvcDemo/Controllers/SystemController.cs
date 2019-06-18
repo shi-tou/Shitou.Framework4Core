@@ -46,7 +46,7 @@ namespace Shitou.Framework.Demo.Mvc.Controllers
         public ActionResult UserAdd(string id)
         {
             ViewData["Roles"] = new SelectList(SystemService.GetList<RoleInfo>(), "ID", "RoleName");
-            UserInfo info = SystemService.GetModel<UserInfo>("ID", id);
+            UserInfo info = SystemService.GetModel<UserInfo>(new { ID = id });
             return View(info ?? new UserInfo());
         }
         /// <summary>
@@ -98,7 +98,7 @@ namespace Shitou.Framework.Demo.Mvc.Controllers
         /// <returns></returns>
         public ActionResult UserDelete(string id)
         {
-            if (SystemService.Delete<UserInfo>("ID", id))
+            if (SystemService.Delete<UserInfo>(new { ID = id }))
             {
                 Result.IsOk = true;
                 Result.Msg = "删除成功";
@@ -116,7 +116,7 @@ namespace Shitou.Framework.Demo.Mvc.Controllers
         /// <returns></returns>
         public ActionResult UserPwd(string id)
         {
-            UserInfo info = SystemService.GetModel<UserInfo>("ID", id);
+            UserInfo info = SystemService.GetModel<UserInfo>(new { ID = id });
             return View(info ?? new UserInfo());
         }
         /// <summary>
@@ -127,9 +127,9 @@ namespace Shitou.Framework.Demo.Mvc.Controllers
         [HttpPost]
         public ActionResult UserPwd(UserInfo info)
         {
-            UserInfo user = SystemService.GetModel<UserInfo>("ID", info.ID);
+            UserInfo user = SystemService.GetModel<UserInfo>(new { info.ID });
             user.Password= RSADEncrypt.Encrypt(info.Password);
-            if (SystemService.Update<UserInfo>(user))
+            if (SystemService.Update(user))
             {
                 Result.IsOk = true;
                 Result.Msg = "修改成功";
@@ -160,11 +160,11 @@ namespace Shitou.Framework.Demo.Mvc.Controllers
         /// <returns></returns>
         public ActionResult RoleAdd(string id)
         {
-            RoleInfo info = SystemService.GetModel<RoleInfo>("ID", id);
+            RoleInfo info = SystemService.GetModel<RoleInfo>(new { ID = id });
             //获取所有权限
             List<AuthInfo> allPermission = SystemService.GetList<AuthInfo>();
             //获取角色对应的权限
-            var rolePermission = SystemService.GetList<RoleAuth>("RoleID", id);
+            var rolePermission = SystemService.GetList<RoleAuth>(new { ID = id });
             var ztree = from p in allPermission
                         select new ZTreeData
                         {
@@ -193,10 +193,10 @@ namespace Shitou.Framework.Demo.Mvc.Controllers
                 info.ID = StringUtils.GenerateUniqueID();
                 info.CreateBy = LoginUserInfo.ID;
                 info.CreateTime = DateTime.Now;
-                if (SystemService.Insert<RoleInfo>(info))
+                if (SystemService.Insert(info))
                 {
                     string permissionIDs = form["PermissionIDs"];
-                    SystemService.Insert<RoleAuth>(GetRolePermissionList(info.ID, permissionIDs));
+                    SystemService.Insert(GetRolePermissionList(info.ID, permissionIDs));
                     Result.IsOk = true;
                     Result.Msg = "添加成功";
                 }
@@ -211,7 +211,7 @@ namespace Shitou.Framework.Demo.Mvc.Controllers
                 if (SystemService.Update<RoleInfo>(info))
                 {
                     string permissionIDs = form["PermissionIDs"];
-                    SystemService.Delete<RoleAuth>("RoleID", info.ID);
+                    SystemService.Delete<RoleAuth>(new { RoleID = info.ID });
                     SystemService.Insert<RoleAuth>(GetRolePermissionList(info.ID, permissionIDs));
                     Result.IsOk = true;
                     Result.Msg = "更新成功";
@@ -231,7 +231,7 @@ namespace Shitou.Framework.Demo.Mvc.Controllers
         /// <returns></returns>
         public ActionResult RoleDelete(string id)
         {
-            if (SystemService.Delete<RoleInfo>("ID", id))
+            if (SystemService.Delete<RoleInfo>(new { ID = id }))
             {
                 Result.IsOk = true;
                 Result.Msg = "删除成功";
@@ -292,7 +292,7 @@ namespace Shitou.Framework.Demo.Mvc.Controllers
         /// <returns></returns>
         public ActionResult AuthAdd(string id)
         {
-            AuthInfo info = SystemService.GetModel<AuthInfo>("ID", id) ?? new AuthInfo();
+            AuthInfo info = SystemService.GetModel<AuthInfo>(new { ID = id }) ?? new AuthInfo();
             if (info.AuthType == 0)
                 info.AuthType = (int)AuthType.Module;
             ViewData["AuthTypeList"] = GetAuthTypeForSelect();
@@ -310,7 +310,7 @@ namespace Shitou.Framework.Demo.Mvc.Controllers
             info.ParentID = (string.IsNullOrEmpty(info.ParentID) ? "0" : info.ParentID);
             if (string.IsNullOrEmpty(info.ID))
             {
-                AuthInfo hasInfo = SystemService.GetModel<AuthInfo>("AuthCode", info.AuthCode);
+                AuthInfo hasInfo = SystemService.GetModel<AuthInfo>(new { info.AuthCode });
                 if (hasInfo != null && hasInfo.ID != "")
                 {
                     Result.IsOk = false;
@@ -353,7 +353,7 @@ namespace Shitou.Framework.Demo.Mvc.Controllers
         /// <returns></returns>
         public ActionResult AuthDelete(string id)
         {
-            if (SystemService.Delete<AuthInfo>("ID", id))
+            if (SystemService.Delete<AuthInfo>(new { ID = id }))
             {
                 Result.IsOk = true;
                 Result.Msg = "删除成功";

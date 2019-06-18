@@ -29,9 +29,9 @@ namespace Shitou.Framework.ORM.Generator
         /// <param name="pageSize">页大小</param>
         /// <param name="orderBy">排序</param>
         /// <returns></returns>
-        public override string GetPageListSql<T, W>(W where, int pageIndex, int pageSize, string orderBy)
+        public override string GetPageListSql<T>(object param, int pageIndex, int pageSize, string orderBy)
         {
-            return base.GetPageListSql<T, W>(where, pageIndex, pageSize, orderBy);
+            return base.GetPageListSql<T>(param, pageIndex, pageSize, orderBy);
         }
     }
 }

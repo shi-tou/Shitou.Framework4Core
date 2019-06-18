@@ -65,7 +65,7 @@ namespace Shitou.Framework.Demo.Service
 
         #region ---update---
         /// <summary>
-        /// 更新
+        /// 按主键更新
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="t"></param>
@@ -83,86 +83,85 @@ namespace Shitou.Framework.Demo.Service
                 return false;
             }
         }
+        /// <summary>
+        /// 按指定条件更新
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="t"></param>
+        /// <returns></returns>
+        public bool Update<T>(T t,object param)
+        {
+            try
+            {
+                return adoTemplate.Update<T>(t, param) > 0;
+            }
+            catch (Exception ex)
+            {
+                logger?.LogError(ex, "BaseService.Update->{0}:{1}", typeof(T).Name, JsonConvert.SerializeObject(t));
+                return false;
+            }
+
+        }
         #endregion
 
         #region ---delete---
-
         /// <summary>
-        /// 删除（物理删除）
+        /// 按指定条件删除
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="columnName"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        public bool Delete<T>(string columnName, object value)
+        public bool Delete<T>()
         {
-            
             try
             {
-                return adoTemplate.Delete<T>(columnName, value) > 0;
+                return adoTemplate.Delete<T>() > 0;
             }
             catch (Exception ex)
             {
-                logger?.LogError(ex, "BaseService.Delete->{0}:{1}={2}", typeof(T).Name, columnName, value);
+                logger?.LogError(ex, "BaseService.Delete->{0}", typeof(T).Name);
                 return false;
             }
         }
+
         /// <summary>
-        /// 删除（物理删除）
+        /// 按指定条件删除
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="columnName"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        public bool Delete<T>(Hashtable hs)
+        public bool Delete<T>(object param)
         {
             try
             {
-                return adoTemplate.Delete<T>(hs) > 0;
+                return adoTemplate.Delete<T>(param) > 0;
             }
             catch (Exception ex)
             {
-                logger?.LogError(ex, "BaseService.Delete->{0}:{1}", typeof(T).Name, JsonConvert.SerializeObject(hs));
+                logger?.LogError(ex, "BaseService.Delete->{0}:{1}", typeof(T).Name, JsonConvert.SerializeObject(param));
                 return false;
             }
         }
         #endregion
 
         #region ---GetModel---
-
         /// <summary>
         /// 获取数据
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="t"></param>
         /// <returns></returns>
-        public T GetModel<T>(string columnName, object value)
+        public T GetModel<T>(object param)
         {
             try
             {
-                return adoTemplate.GetModel<T>(columnName, value);
+                return adoTemplate.GetModel<T>(param);
             }
             catch (Exception ex)
             {
-                logger?.LogError(ex, "BaseService.GetModel->{0}:{1}={2}", typeof(T).Name, columnName, value);
-                return default(T);
-            }
-        }
-        /// <summary>
-        /// 获取数据
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="t"></param>
-        /// <returns></returns>
-        public T GetModel<T>(Hashtable hs)
-        {
-            try
-            {
-                return adoTemplate.GetModel<T>(hs);
-            }
-            catch (Exception ex)
-            {
-                logger?.LogError(ex, "BaseService.GetModel->{0}:{1}", typeof(T).Name, JsonConvert.SerializeObject(hs));
+                logger?.LogError(ex, "BaseService.GetModel->{0}:{1}", typeof(T).Name, JsonConvert.SerializeObject(param));
                 return default(T);
             }
         }
@@ -209,26 +208,9 @@ namespace Shitou.Framework.Demo.Service
         #endregion
 
         #region ---GetList---
+        
         /// <summary>
-        /// 获取数据
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="t"></param>
-        /// <returns></returns>
-        public List<T> GetList<T>(string columnName, object value)
-        {
-            try
-            {
-                return adoTemplate.GetList<T>(columnName, value);
-            }
-            catch (Exception ex)
-            {
-                logger?.LogError(ex, "BaseService.GetList->{0}:{1}={2}", typeof(T).Name, columnName, value);
-                return default(List<T>);
-            }
-        }
-        /// <summary>
-        /// 获取数据
+        /// 全表查询
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="t"></param>
@@ -246,20 +228,20 @@ namespace Shitou.Framework.Demo.Service
             }
         }
         /// <summary>
-        /// 获取数据
+        /// 按指定条件查询
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="t"></param>
         /// <returns></returns>
-        public List<T> GetList<T>(Hashtable hs)
+        public List<T> GetList<T>(object param)
         {
             try
             {
-                return adoTemplate.GetList<T>(hs);
+                return adoTemplate.GetList<T>(param);
             }
             catch (Exception ex)
             {
-                logger?.LogError(ex, "BaseService.GetList->{0}:{1}", typeof(T).Name, JsonConvert.SerializeObject(hs));
+                logger?.LogError(ex, "BaseService.GetList->{0}:{1}", typeof(T).Name, JsonConvert.SerializeObject(param));
                 return default(List<T>);
             }
         }
