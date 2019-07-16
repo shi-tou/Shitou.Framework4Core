@@ -36,7 +36,7 @@ namespace Shitou.Framework.Demo.Mvc.Controllers
         /// <returns></returns>
         public ActionResult UserList(GetUserListRequest request)
         {
-            Pager<GetUserListResponse> list = SystemService.GetUserList(request);
+            PagedList<GetUserListResponse> list = SystemService.GetUserList(request);
             return View(list);
         }
         /// <summary>
@@ -151,7 +151,7 @@ namespace Shitou.Framework.Demo.Mvc.Controllers
         /// <returns></returns>
         public ActionResult RoleList(GetRoleListRequest request)
         {
-            Pager<GetRoleListResponse> list = SystemService.GetRoleList(request);
+            PagedList<GetRoleListResponse> list = SystemService.GetRoleList(request);
             return View(list);
         }
         /// <summary>

@@ -18,7 +18,7 @@ namespace Shitou.Framework.Demo.Service
         /// </summary>
         /// <param name="search"></param>
         /// <returns></returns>
-        Pager<GetGoodsListResponse> GetGoodsList(GetGoodsListRequest request);
+        PagedList<GetGoodsListResponse> GetGoodsList(GetGoodsListRequest request);
         #endregion
 
         /// <summary>

@@ -25,13 +25,13 @@ namespace Shitou.Framework.Demo.Service
         /// </summary>
         /// <param name="search"></param>
         /// <returns></returns>
-        Pager<GetUserListResponse> GetUserList(GetUserListRequest request);
+        PagedList<GetUserListResponse> GetUserList(GetUserListRequest request);
         /// <summary>
         /// 角色列表
         /// </summary>
         /// <param name="search"></param>
         /// <returns></returns>
-        Pager<GetRoleListResponse> GetRoleList(GetRoleListRequest request);
+        PagedList<GetRoleListResponse> GetRoleList(GetRoleListRequest request);
         /// <summary>
         /// 获取用户的权限
         /// </summary>

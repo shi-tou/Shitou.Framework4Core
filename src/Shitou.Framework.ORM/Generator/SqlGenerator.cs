@@ -31,6 +31,14 @@ namespace Shitou.Framework.ORM.Generator
         }
 
         /// <summary>
+        /// 返回自增的sql语句
+        /// </summary>
+        public virtual string SelectIdentitySql
+        {
+            get { return string.Empty; }
+        }
+
+        /// <summary>
         /// 获取类映射
         /// </summary>
         /// <param name="t">类型</param>
@@ -61,21 +69,21 @@ namespace Shitou.Framework.ORM.Generator
             ClassMapper map = GetMapper(t);
             string columnNames = string.Empty;
             string parameters = string.Empty;
-            string selectIdentity = string.Empty;
+            string selectIdentitySql = string.Empty;
             if (map.PrimaryKeyType == PrimaryKeyType.Identity)
             {
                 columnNames = map.Properties.Where(p => p.Name.ToLower() != map.PrimaryKey.ToLower())
                     .Select(p => p.Name).AppendStrings(",");
                 parameters = map.Properties.Where(p => p.Name.ToLower() != map.PrimaryKey.ToLower())
                     .Select(p => ParameterPrefix + p.Name).AppendStrings(",");
-                selectIdentity = "SELECT LAST_INSERT_ID();";
+                selectIdentitySql = SelectIdentitySql;
             }
             else
             {
                 columnNames = map.Properties.Select(p => p.Name).AppendStrings(",");
                 parameters = map.Properties.Select(p => ParameterPrefix + p.Name).AppendStrings(",");
             }
-            return string.Format("INSERT INTO {0} ({1}) values ({2});{3}", map.TableName, columnNames, parameters, selectIdentity);
+            return string.Format("INSERT INTO {0} ({1}) values ({2});{3}", map.TableName, columnNames, parameters, selectIdentitySql);
         }
 
         /// <summary>
@@ -119,13 +127,13 @@ namespace Shitou.Framework.ORM.Generator
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public string GetUpdateSql<T>(T t,object param)
+        public string GetUpdateSql<T>(T t, object param)
         {
             ClassMapper mapT = GetMapper(typeof(T));
             string set = mapT.Properties.Where(p => p.Name.ToLower() != mapT.PrimaryKey.ToLower() && p.GetValue(t, null) != null)
                 .Select(p => string.Format("{0}={1}{0}", p.Name, ParameterPrefix)).AppendStrings(",");
 
-            Type type = param.GetType();                      
+            Type type = param.GetType();
             string strWhere = type.GetProperties().Select(p => string.Format("{0}={1}{0}", p.Name, ParameterPrefix)).AppendStrings(" and ");
             return string.Format("UPDATE {0} SET {1} WHERE {2}", mapT.TableName, set, strWhere);
         }
@@ -214,7 +222,7 @@ namespace Shitou.Framework.ORM.Generator
         /// <param name="pageSize">页大小</param>
         /// <param name="orderBy">排序</param>
         /// <returns></returns>
-        public virtual string GetPageListSql(string sql, int pageIndex, int pageSize, string orderBy)
+        public virtual string GetPageListSql<T>(string sql, int pageIndex, int pageSize, string orderBy)
         {
             throw new NotImplementedException();
         }

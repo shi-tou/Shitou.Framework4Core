@@ -22,9 +22,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Shitou.Framework.Demo.Dao
+namespace Shitou.Framework.Demo.Repository
 {
-    public interface IGoodsDao
+    public interface IGoodsRepository:IBaseRepository
     {
         #region 商品管理
         /// <summary>
@@ -32,7 +32,7 @@ namespace Shitou.Framework.Demo.Dao
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        Pager<GetGoodsListResponse> GetGoodsList(GetGoodsListRequest request);
+        PagedList<GetGoodsListResponse> GetGoodsList(GetGoodsListRequest request);
         #endregion
 
         

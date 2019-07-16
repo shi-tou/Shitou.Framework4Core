@@ -6,113 +6,23 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 
-using System.Linq;
-
 namespace Shitou.Framework.ORM
 {
-    public class AdoTemplate : IAdoTemplate
+    public abstract class BaseRepository : IBaseRepository
     {
-        public AdoTemplate(IDbConnection dbConnection, ISqlGenerator sqlGenerator)
-        {
-            DbConnection = dbConnection;
-            SqlGenerator = sqlGenerator;
-        }
-        #region ---property---
         /// <summary>
-        /// 数据库连接对象
+        /// 数据库连接串
         /// </summary>
-        public virtual IDbConnection DbConnection { get; set; }
-
-        /// <summary>
-        /// 当前事务对象
-        /// </summary>
-        public virtual IDbTransaction DbTransaction { get; set; }
-
+        private string _connString { get; set; }
         /// <summary>
         /// sql语句构造器
         /// </summary>
-        public virtual ISqlGenerator SqlGenerator { get; set; }
-        #endregion
-
-        #region ---Transaction---
-        /// <summary>
-        /// 开始事务
-        /// </summary>
-        /// <param name="isolationLevel"></param>
-        public void BeginTransaction(IsolationLevel isolationLevel = IsolationLevel.ReadCommitted)
+        private ISqlGenerator _sqlGenerator { get; set; }
+        public BaseRepository(string connString, ISqlGenerator sqlGenerator)
         {
-            DbTransaction = DbConnection.BeginTransaction(isolationLevel);
+            _connString = connString;
+            _sqlGenerator = sqlGenerator;
         }
-
-        /// <summary>
-        /// 提交事件
-        /// </summary>
-        public void Commit()
-        {
-            DbTransaction.Commit();
-            DbTransaction = null;
-        }
-
-        /// <summary>
-        /// 回滚事务
-        /// </summary>
-        public void Rollback()
-        {
-            DbTransaction.Rollback();
-            DbTransaction = null;
-        }
-
-        /// <summary>
-        /// 委托方式使用事务
-        /// </summary>
-        /// <param name="action"></param>
-        public void RunInTransaction(Action action)
-        {
-            BeginTransaction();
-            try
-            {
-                action();
-                Commit();
-            }
-            catch (Exception ex)
-            {
-                if (DbTransaction != null)
-                {
-                    Rollback();
-                }
-                throw ex;
-            }
-            finally
-            {
-                Dispose();
-            }
-        }
-
-        /// <summary>
-        /// 委托方式使用事务(有返回值)
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="func"></param>
-        /// <returns></returns>
-        public T RunInTransaction<T>(Func<T> func)
-        {
-            BeginTransaction();
-            try
-            {
-                T result = func();
-                Commit();
-                return result;
-            }
-            catch (Exception ex)
-            {
-                if (DbTransaction != null)
-                {
-                    Rollback();
-                }
-                throw ex;
-            }
-        }
-        #endregion
 
         #region ---Insert---
         /// <summary>
@@ -120,21 +30,20 @@ namespace Shitou.Framework.ORM
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="t"></param>
-        /// <returns></returns>
-        public virtual int Insert<T>(T t)
+        /// <returns>返回自增</returns>
+        public virtual long Insert<T>(T t)
         {
             try
             {
-                string sql = SqlGenerator.GetInsertSql<T>();
-                return DbConnection.Execute(sql, t);
+                string sql = _sqlGenerator.GetInsertSql<T>();
+                using(var conn = OpenConnection())
+                {
+                    return Convert.ToInt64(conn.ExecuteScalar(sql, t));
+                }
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                Dispose();
             }
         }
 
@@ -148,16 +57,15 @@ namespace Shitou.Framework.ORM
         {
             try
             {
-                string sql = SqlGenerator.GetInsertSql<T>();
-                return DbConnection.Execute(sql, listT);
+                string sql = _sqlGenerator.GetInsertSql<T>();
+                using (var conn = OpenConnection())
+                {
+                    return conn.Execute(sql, listT);
+                }
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                Dispose();
             }
         }
         #endregion
@@ -173,16 +81,15 @@ namespace Shitou.Framework.ORM
         {
             try
             {
-                string sql = SqlGenerator.GetUpdateSql<T>(t);
-                return DbConnection.Execute(sql, t);
+                string sql = _sqlGenerator.GetUpdateSql<T>(t);
+                using (var conn = OpenConnection())
+                {
+                    return conn.Execute(sql, t);
+                }
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                Dispose();
             }
         }
         /// <summary>
@@ -195,16 +102,15 @@ namespace Shitou.Framework.ORM
         {
             try
             {
-                string sql = SqlGenerator.GetUpdateSql<T>(t, param);
-                return DbConnection.Execute(sql, param);
+                string sql = _sqlGenerator.GetUpdateSql<T>(t, param);
+                using (var conn = OpenConnection())
+                {
+                    return conn.Execute(sql, param);
+                }
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                Dispose();
             }
         }
         #endregion
@@ -219,16 +125,15 @@ namespace Shitou.Framework.ORM
         {
             try
             {
-                string sql = SqlGenerator.GetDeleteSql<T>();
-                return DbConnection.Execute(sql);
+                string sql = _sqlGenerator.GetDeleteSql<T>();
+                using (var conn = OpenConnection())
+                {
+                    return conn.Execute(sql);
+                }
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                Dispose();
             }
         }
         
@@ -242,16 +147,15 @@ namespace Shitou.Framework.ORM
         {
             try
             {
-                string sql = SqlGenerator.GetDeleteSql<T>(param);
-                return DbConnection.Execute(sql, param);
+                string sql = _sqlGenerator.GetDeleteSql<T>(param);
+                using (var conn = OpenConnection())
+                {
+                    return conn.Execute(sql, param);
+                }
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                Dispose();
             }
         }
         #endregion
@@ -267,16 +171,15 @@ namespace Shitou.Framework.ORM
         {
             try
             {
-                string sql = SqlGenerator.GetSelectSql<T>(param);
-                return DbConnection.QuerySingleOrDefault<T>(sql, param);
+                string sql = _sqlGenerator.GetSelectSql<T>(param);
+                using (var conn = OpenConnection())
+                {
+                    return conn.QuerySingleOrDefault<T>(sql, param);
+                }
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                Dispose();
             }
         }
         #endregion
@@ -292,16 +195,15 @@ namespace Shitou.Framework.ORM
         {
             try
             {
-                string sql = SqlGenerator.GetSelectSql<T>();
-                return DbConnection.Query<T>(sql).ToList();
+                string sql = _sqlGenerator.GetSelectSql<T>();
+                using (var conn = OpenConnection())
+                {
+                    return conn.Query<T>(sql).AsList();
+                }
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                Dispose();
             }
         }
 
@@ -315,16 +217,15 @@ namespace Shitou.Framework.ORM
         {
             try
             {
-                string sql = SqlGenerator.GetSelectSql<T>(param);
-                return DbConnection.Query<T>(sql, param).ToList();
+                string sql = _sqlGenerator.GetSelectSql<T>(param);
+                using (var conn = OpenConnection())
+                {
+                    return conn.Query<T>(sql, param).AsList();
+                }
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                Dispose();
             }
         }
 
@@ -340,15 +241,14 @@ namespace Shitou.Framework.ORM
         {
             try
             {
-                return DbConnection.Query<T>(sql, param).ToList();
+                using (var conn = OpenConnection())
+                {
+                    return conn.Query<T>(sql, param).AsList();
+                }
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                Dispose();
             }
         }
         #endregion
@@ -363,22 +263,21 @@ namespace Shitou.Framework.ORM
         /// <param name="pageSize">页大小</param>
         /// <param name="orderBy">排序</param>
         /// <returns></returns>
-        public virtual Pager<T> GetPagedList<T>(int pageIndex, int pageSize, string orderBy)
+        public virtual PagedList<T> GetPagedList<T>(int pageIndex, int pageSize, string orderBy)
         {
             try
             {
-                string sql = SqlGenerator.GetPageListSql<T>(pageIndex, pageSize, orderBy);
-                int totalCount = GetCount<T>();
-                List<T> list = DbConnection.Query<T>(sql).ToList();
-                return new Pager<T>(list, pageIndex, pageSize, totalCount);
+                string sql = _sqlGenerator.GetPageListSql<T>(pageIndex, pageSize, orderBy);
+                using (var conn = OpenConnection())
+                {
+                    int totalCount = GetCount<T>();
+                    List<T> list = conn.Query<T>(sql).AsList();
+                    return new PagedList<T>(list, pageIndex, pageSize, totalCount);
+                }
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                Dispose();
             }
         }
 
@@ -392,22 +291,21 @@ namespace Shitou.Framework.ORM
         /// <param name="pageSize">页大小</param>
         /// <param name="orderBy">排序</param>
         /// <returns></returns>
-        public virtual Pager<T> GetPagedList<T>(object param, int pageIndex, int pageSize, string orderBy)
+        public virtual PagedList<T> GetPagedList<T>(object param, int pageIndex, int pageSize, string orderBy)
         {
             try
             {
-                string sql = SqlGenerator.GetPageListSql<T>(param, pageIndex, pageSize, orderBy);
-                int totalCount = GetCount<T>(param);
-                List<T> list = DbConnection.Query<T>(sql, param).ToList();
-                return new Pager<T>(list, pageIndex, pageSize, totalCount);
+                string sql = _sqlGenerator.GetPageListSql<T>(param, pageIndex, pageSize, orderBy);
+                using (var conn = OpenConnection())
+                {
+                    int totalCount = GetCount<T>(param);
+                    List<T> list = conn.Query<T>(sql, param).AsList();
+                    return new PagedList<T>(list, pageIndex, pageSize, totalCount);
+                }
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                Dispose();
             }
         }
 
@@ -421,38 +319,23 @@ namespace Shitou.Framework.ORM
         /// <param name="pageSize">页大小</param>
         /// <param name="orderBy">排序</param>
         /// <returns></returns>
-        public virtual Pager<T> GetPagedList<T>(string sql, object param, int pageIndex, int pageSize, string orderBy)
+        public virtual PagedList<T> GetPagedList<T>(string sql, object param, int pageIndex, int pageSize, string orderBy)
         {
             try
             {
                 string getCountSql = string.Format("select count(1) from ({0}) as A", sql);
-                int totalCount = Convert.ToInt32(DbConnection.ExecuteScalar(getCountSql, param));
-                sql = SqlGenerator.GetPageListSql(sql, pageIndex, pageSize, orderBy);
-                List<T> list = DbConnection.Query<T>(sql, param).ToList();
-                return new Pager<T>(list, pageIndex, pageSize, totalCount);
+                using (var conn = OpenConnection())
+                {
+                    int totalCount = Convert.ToInt32(conn.ExecuteScalar(getCountSql, param));
+                    sql = _sqlGenerator.GetPageListSql<T>(sql, pageIndex, pageSize, orderBy);
+                    List<T> list = conn.Query<T>(sql, param).AsList();
+                    return new PagedList<T>(list, pageIndex, pageSize, totalCount);
+                }
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            finally
-            {
-                Dispose();
-            }
-        }
-        /// <summary>
-        /// 分页查询
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="sql">sql查询语句</param>
-        /// <param name="param">sql参数</param>
-        /// <param name="pageIndex">页索引</param>
-        /// <param name="pageSize">页大小</param>
-        /// <param name="orderBy">排序</param>
-        /// <returns></returns>
-        public virtual Pager<T> GetPagedList<T>(string sql, DynamicParameters where, int pageIndex, int pageSize, string orderBy)
-        {
-            return GetPagedList<T, DynamicParameters>(sql, where, pageIndex, pageSize, orderBy);
         }
 
         #endregion
@@ -468,16 +351,15 @@ namespace Shitou.Framework.ORM
         {
             try
             {
-                string sql = SqlGenerator.GetCountSql<T>();
-                return Convert.ToInt32(DbConnection.ExecuteScalar(sql));
+                string sql = _sqlGenerator.GetCountSql<T>();
+                using (var conn = OpenConnection())
+                {
+                    return Convert.ToInt32(conn.ExecuteScalar(sql));
+                }
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                Dispose();
             }
         }
         /// <summary>
@@ -489,16 +371,15 @@ namespace Shitou.Framework.ORM
         {
             try
             {
-                string sql = SqlGenerator.GetCountSql<T>(param);
-                return Convert.ToInt32(DbConnection.ExecuteScalar(sql, param));
+                string sql = _sqlGenerator.GetCountSql<T>(param);
+                using (var conn = OpenConnection())
+                {
+                    return Convert.ToInt32(conn.ExecuteScalar(sql, param));
+                }
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                Dispose();
             }
         }
         #endregion
@@ -535,7 +416,10 @@ namespace Shitou.Framework.ORM
         /// <returns>返回影响的行数</returns>
         public int ExecuteNonQuery(CommandType commandType, string commandText, object parms)
         {
-            return DbConnection.Execute(commandText, parms, null, null, commandType);
+            using (var conn = OpenConnection())
+            {
+                return conn.Execute(commandText, parms, null, null, commandType);
+            }
         }
         /// <summary>
         /// 执行SQL语句,返回结果集中的第一行第一列
@@ -568,7 +452,10 @@ namespace Shitou.Framework.ORM
         /// <returns>返回结果集中的第一行第一列</returns>
         public object ExecuteScalar(CommandType commandType, string commandText, object parms)
         {
-            return DbConnection.ExecuteScalar(commandText, parms, null, null, commandType);
+            using (var conn = OpenConnection())
+            {
+                return conn.ExecuteScalar(commandText, parms, null, null, commandType);
+            }
         }
         /// <summary>
         /// 执行SQL语句,返回结果集中的第一行
@@ -607,44 +494,14 @@ namespace Shitou.Framework.ORM
         }
         #endregion
 
-        #region---private method---
-        private DynamicParameters ConvertToParams(Hashtable hs)
-        {
-            var param = new DynamicParameters();
-            foreach (string key in hs.Keys)
-            {
-                param.Add(key, hs[key]);
-            }
-            return param;
-        }
-        private DynamicParameters ConvertToParams(Dictionary<string, object> dic)
-        {
-            var param = new DynamicParameters();
-            foreach (string key in dic.Keys)
-            {
-                param.Add(key, dic[key]);
-            }
-            return param;
-        }
-        #endregion------
+        #region---open connection---
 
-        #region ---Dispose---
         /// <summary>
-        /// 释放资源
-        /// 1-如果事务异常，则回滚事务
-        /// 2-释放数据库连接
+        /// OpenDbConnection（不同数据库驱动需要重写该方法）
         /// </summary>
-        public void Dispose()
-        {
-            if (DbConnection.State != ConnectionState.Closed)
-            {
-                if (DbTransaction != null)
-                {
-                    DbTransaction.Rollback();
-                }
-                DbConnection.Close();
-            }
-        }
+        /// <returns></returns>
+        public abstract IDbConnection OpenConnection();
         #endregion
+
     }
 }

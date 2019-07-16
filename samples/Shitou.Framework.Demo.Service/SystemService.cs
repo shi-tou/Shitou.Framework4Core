@@ -1,5 +1,5 @@
 ﻿
-using Shitou.Framework.Demo.Dao;
+using Shitou.Framework.Demo.Repository;
 using Shitou.Framework.Demo.DataContract.Base;
 using Shitou.Framework.Demo.DataContract.Request;
 using Shitou.Framework.Demo.DataContract.Response;
@@ -21,14 +21,12 @@ namespace Shitou.Framework.Demo.Service
     /// </summary>
     public class SystemService : BaseService, ISystemService
     {
-        public IAdoTemplate AdoTemplate { get; set; }
-        public ISystemDao SystemDao { get; set;}
+        public ISystemRepository SystemDao { get; set; }
         public ILogger Logger { get; set; }
-        public SystemService(ISystemDao systemDao, IAdoTemplate adoTemplate, ILogger<SystemService> logger)
-            : base(adoTemplate, logger)
+        public SystemService(ISystemRepository systemDao, ILogger<SystemService> logger)
+            : base(systemDao, logger)
         {
             SystemDao = systemDao;
-            AdoTemplate = adoTemplate;
             Logger = logger;
         }
 
@@ -73,7 +71,7 @@ namespace Shitou.Framework.Demo.Service
         /// </summary>
         /// <param name="search"></param>
         /// <returns></returns>
-        public Pager<GetUserListResponse> GetUserList(GetUserListRequest request)
+        public PagedList<GetUserListResponse> GetUserList(GetUserListRequest request)
         {
             return SystemDao.GetUserList(request);
         }
@@ -82,7 +80,7 @@ namespace Shitou.Framework.Demo.Service
         /// </summary>
         /// <param name="search"></param>
         /// <returns></returns>
-        public Pager<GetRoleListResponse> GetRoleList(GetRoleListRequest request)
+        public PagedList<GetRoleListResponse> GetRoleList(GetRoleListRequest request)
         {
             return SystemDao.GetRoleList(request);
         }

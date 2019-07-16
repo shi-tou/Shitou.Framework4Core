@@ -4,21 +4,12 @@ using Shitou.Framework.ORM;
 using Shitou.Framework.Demo.DataContract.Response;
 using Shitou.Framework.Demo.DataContract.Request;
 
-namespace Shitou.Framework.Demo.Dao
+namespace Shitou.Framework.Demo.Repository
 {
-    public class GoodsDao : IGoodsDao
+    public class GoodsRepository : SQLServerRepository, IGoodsRepository
     {
-        public IAdoTemplate AdoTemplate { get; set; }
-
-        /// <summary>
-        /// 构造函数
-        /// </summary>
-        /// <param name="dbConnection">数据库链接</param>
-        /// <param name="sqlGenerator"> sq语句构造器</param>
-        public GoodsDao(IAdoTemplate adoTemplate)
-        {
-            AdoTemplate = adoTemplate;
-        }
+        public GoodsRepository(string connString)
+           : base(connString) { }
 
         #region 商品管理
         /// <summary>
@@ -26,7 +17,7 @@ namespace Shitou.Framework.Demo.Dao
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public Pager<GetGoodsListResponse> GetGoodsList(GetGoodsListRequest request)
+        public PagedList<GetGoodsListResponse> GetGoodsList(GetGoodsListRequest request)
         {
             StringBuilder sbSql = new StringBuilder();
             sbSql.Append(@"select a.*,b.GoodsTypeName from T_Goods a
@@ -44,7 +35,7 @@ namespace Shitou.Framework.Demo.Dao
                 param.Add("GoodsTypeID", request.GoodsTypeID);
             }
             request.OrderBy = "a.CreateTime desc";
-            return AdoTemplate.GetPagedList<GetGoodsListResponse>(sbSql.ToString(), param, request.PageIndex, request.PageSize, request.OrderBy);
+            return GetPagedList<GetGoodsListResponse>(sbSql.ToString(), param, request.PageIndex, request.PageSize, request.OrderBy);
         }
 
         #endregion

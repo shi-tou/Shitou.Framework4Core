@@ -35,10 +35,8 @@ namespace Shitou.Framework.Demo.WebApp
                 //权限验证过滤
                 //options.Filters.Add(typeof(AuthFilterAttribute));
             });
-            //add mysql
-            services.AddMySql(new MySqlConnection(Configuration.GetConnectionString("Mysql")));
             //add bussiness service
-            services.AddBusinessService();
+            services.AddBusinessService(Configuration);
             
         }
 

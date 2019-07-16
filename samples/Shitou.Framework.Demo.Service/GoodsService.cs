@@ -1,5 +1,5 @@
 ﻿
-using Shitou.Framework.Demo.Dao;
+using Shitou.Framework.Demo.Repository;
 using Shitou.Framework.Demo.DataContract.Request;
 using Shitou.Framework.Demo.DataContract.Response;
 using Shitou.Framework.ORM;
@@ -15,10 +15,10 @@ namespace Shitou.Framework.Demo.Service
     /// </summary>
     public class GoodsService : BaseService, IGoodsService
     {
-        public IGoodsDao GoodsDao { get; set;}
+        public IGoodsRepository GoodsDao { get; set; }
         public ILogger Logger { get; set; }
-        public GoodsService(IGoodsDao goodsDao, IAdoTemplate adoTemplate, ILogger<SystemService> logger)
-            : base(adoTemplate, logger)
+        public GoodsService(IGoodsRepository goodsDao, ILogger<SystemService> logger)
+            : base(goodsDao, logger)
         {
             GoodsDao = goodsDao;
             Logger = logger;
@@ -31,7 +31,7 @@ namespace Shitou.Framework.Demo.Service
         /// </summary>
         /// <param name="search"></param>
         /// <returns></returns>
-        public Pager<GetGoodsListResponse> GetGoodsList(GetGoodsListRequest request)
+        public PagedList<GetGoodsListResponse> GetGoodsList(GetGoodsListRequest request)
         {
             return GoodsDao.GetGoodsList(request);
         }

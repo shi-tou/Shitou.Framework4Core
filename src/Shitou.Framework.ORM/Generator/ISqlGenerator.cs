@@ -118,6 +118,6 @@ namespace Shitou.Framework.ORM.Generator
         /// <param name="pageSize">页大小</param>
         /// <param name="orderBy">排序</param>
         /// <returns>返回两条sql,string[0]取查询总记录数，string[2]取分页数据</returns>
-        string GetPageListSql(string sql, int pageIndex, int pageSize, string orderBy);
+        string GetPageListSql<T>(string sql, int pageIndex, int pageSize, string orderBy);
     }
 }

@@ -30,7 +30,7 @@ namespace Shitou.Framework.Demo.Mvc.Controllers
         /// <returns></returns>
         public IActionResult TableTemplateList(PageRequest request)
         {
-            Pager<TableTemplateInfo> list = _baseService.GetPageList<TableTemplateInfo>(request);
+            PagedList<TableTemplateInfo> list = _baseService.GetPageList<TableTemplateInfo>(request);
             return View(list);
         }
         /// <summary>

@@ -23,9 +23,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Shitou.Framework.Demo.Dao
+namespace Shitou.Framework.Demo.Repository
 {
-    public interface ISystemDao
+    public interface ISystemRepository:IBaseRepository
     {
         #region 用户管理
         /// <summary>
@@ -33,13 +33,13 @@ namespace Shitou.Framework.Demo.Dao
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        Pager<GetUserListResponse> GetUserList(GetUserListRequest request);
+        PagedList<GetUserListResponse> GetUserList(GetUserListRequest request);
         /// <summary>
         /// 角色列表
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        Pager<GetRoleListResponse> GetRoleList(GetRoleListRequest request);
+        PagedList<GetRoleListResponse> GetRoleList(GetRoleListRequest request);
         /// <summary>
         /// 获取用户权限
         /// </summary>

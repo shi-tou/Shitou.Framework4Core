@@ -15,11 +15,11 @@ namespace Shitou.Framework.Demo.Service
     /// </summary>
     public class BaseService : IBaseService
     {
-        private IAdoTemplate adoTemplate { get; set; }
+        private IBaseRepository _baseRepository { get; set; }
         private ILogger logger { get; set; }
-        public BaseService(IAdoTemplate adoTemplate, ILogger<BaseService> logger = null)
+        public BaseService(IBaseRepository baseRepository, ILogger<BaseService> logger = null)
         {
-            this.adoTemplate = adoTemplate;
+            this._baseRepository = baseRepository;
             this.logger = logger;
         }
 
@@ -34,7 +34,7 @@ namespace Shitou.Framework.Demo.Service
         {
             try
             {
-                return adoTemplate.Insert<T>(t) > 0;
+                return _baseRepository.Insert(t) > 0;
             }
             catch(Exception ex)
             {
@@ -53,7 +53,7 @@ namespace Shitou.Framework.Demo.Service
         {
             try
             {
-                return adoTemplate.Insert<T>(listT) > 0;
+                return _baseRepository.Insert(listT) > 0;
             }
             catch (Exception ex)
             {
@@ -75,7 +75,7 @@ namespace Shitou.Framework.Demo.Service
             
             try
             {
-                return adoTemplate.Update<T>(t) > 0;
+                return _baseRepository.Update(t) > 0;
             }
             catch (Exception ex)
             {
@@ -93,7 +93,7 @@ namespace Shitou.Framework.Demo.Service
         {
             try
             {
-                return adoTemplate.Update<T>(t, param) > 0;
+                return _baseRepository.Update(t, param) > 0;
             }
             catch (Exception ex)
             {
@@ -116,7 +116,7 @@ namespace Shitou.Framework.Demo.Service
         {
             try
             {
-                return adoTemplate.Delete<T>() > 0;
+                return _baseRepository.Delete<T>() > 0;
             }
             catch (Exception ex)
             {
@@ -136,7 +136,7 @@ namespace Shitou.Framework.Demo.Service
         {
             try
             {
-                return adoTemplate.Delete<T>(param) > 0;
+                return _baseRepository.Delete<T>(param) > 0;
             }
             catch (Exception ex)
             {
@@ -157,7 +157,7 @@ namespace Shitou.Framework.Demo.Service
         {
             try
             {
-                return adoTemplate.GetModel<T>(param);
+                return _baseRepository.GetModel<T>(param);
             }
             catch (Exception ex)
             {
@@ -174,37 +174,19 @@ namespace Shitou.Framework.Demo.Service
         /// <typeparam name="T"></typeparam>
         /// <param name="t"></param>
         /// <returns></returns>
-        public int GetCount<T>(string columnName, object value)
+        public int GetCount<T>(object param)
         {
             try
             {
-                return adoTemplate.GetCount<T>(columnName, value);
+                return _baseRepository.GetCount<T>(param);
             }
             catch (Exception ex)
             {
-                logger?.LogError(ex, "BaseService.GetList->{0}:{1}={2}", typeof(T).Name, columnName, value);
+                logger?.LogError(ex, "BaseService.GetList->{0}:{1}", typeof(T).Name, JsonConvert.SerializeObject(param));
                 return 0;
             }
         }
 
-        /// <summary>
-        /// 获取数据
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="t"></param>
-        /// <returns></returns>
-        public int GetCount<T>(Hashtable hs)
-        {
-            try
-            {
-                return adoTemplate.GetCount<T>(hs);
-            }
-            catch (Exception ex)
-            {
-                logger?.LogError(ex, "BaseService.GetList->{0}:{1}", typeof(T).Name, JsonConvert.SerializeObject(hs));
-                return 0;
-            }
-        }
         #endregion
 
         #region ---GetList---
@@ -219,7 +201,7 @@ namespace Shitou.Framework.Demo.Service
         {
             try
             {
-                return adoTemplate.GetList<T>();
+                return _baseRepository.GetList<T>();
             }
             catch (Exception ex)
             {
@@ -237,7 +219,7 @@ namespace Shitou.Framework.Demo.Service
         {
             try
             {
-                return adoTemplate.GetList<T>(param);
+                return _baseRepository.GetList<T>(param);
             }
             catch (Exception ex)
             {
@@ -254,16 +236,16 @@ namespace Shitou.Framework.Demo.Service
         /// <typeparam name="T"></typeparam>
         /// <param name="t"></param>
         /// <returns></returns>
-        public Pager<T> GetPageList<T>(PageRequest request)
+        public PagedList<T> GetPageList<T>(PageRequest request)
         {
             try
             {
-                return adoTemplate.GetPagedList<T>(request.PageIndex, request.PageSize, request.OrderBy);
+                return _baseRepository.GetPagedList<T>(request.PageIndex, request.PageSize, request.OrderBy);
             }
             catch (Exception ex)
             {
                 logger?.LogError(ex, "BaseService.GetPageList->{0}:{1}", typeof(T).Name, JsonConvert.SerializeObject(request));
-                return default(Pager<T>);
+                return default(PagedList<T>);
             }
         }
         #endregion

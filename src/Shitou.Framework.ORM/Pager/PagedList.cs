@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Shitou.Framework.ORM
 {
-    public class Pager<T> : List<T>, IPager<T>
+    public class PagedList<T> : List<T>, IPagedList<T>
     {
         /// <summary>
         /// 当前页索引
@@ -34,7 +34,7 @@ namespace Shitou.Framework.ORM
         /// <param name="pageIndex"></param>
         /// <param name="pageSize"></param>
         /// <param name="totalItemCount"></param>
-        public Pager(IEnumerable<T> currentPageItems, int pageIndex, int pageSize, int totalItemCount)
+        public PagedList(IEnumerable<T> currentPageItems, int pageIndex, int pageSize, int totalItemCount)
         {
             AddRange(currentPageItems);
             PageIndex = pageIndex;

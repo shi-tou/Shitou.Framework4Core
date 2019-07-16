@@ -1,5 +1,4 @@
 ﻿using Dapper;
-using Shitou.Framework.ORM.Generator;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,56 +12,13 @@ namespace Shitou.Framework.ORM
     /// <summary>
     /// 通用数据库操作接口
     /// </summary>
-    public interface IAdoTemplate : IDisposable
+    public interface IBaseRepository
     {
-        #region ---property---
         /// <summary>
-        /// 数据库连接对象
+        ///  OpenDbConnection
         /// </summary>
-        IDbConnection DbConnection { get; }
-
-        /// <summary>
-        /// 当前事务对象
-        /// </summary>
-        IDbTransaction DbTransaction { get; }
-
-        /// <summary>
-        /// sql语句构造器
-        /// </summary>
-        ISqlGenerator SqlGenerator { get; set; }
-        #endregion
-
-        #region ---Transaction---
-        /// <summary>
-        /// 开始事务
-        /// </summary>
-        /// <param name="isolationLevel"></param>
-        void BeginTransaction(IsolationLevel isolationLevel = IsolationLevel.ReadCommitted);
-
-        /// <summary>
-        /// 提交事件
-        /// </summary>
-        void Commit();
-
-        /// <summary>
-        /// 回滚事务
-        /// </summary>
-        void Rollback();
-
-        /// <summary>
-        /// 委托方式使用事务
-        /// </summary>
-        /// <param name="action"></param>
-        void RunInTransaction(Action action);
-
-        /// <summary>
-        /// 委托方式使用事务(有返回值)
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="func"></param>
         /// <returns></returns>
-        T RunInTransaction<T>(Func<T> func);
-        #endregion
+        IDbConnection OpenConnection();
 
         #region ---Insert---
         /// <summary>
@@ -71,7 +27,7 @@ namespace Shitou.Framework.ORM
         /// <typeparam name="T"></typeparam>
         /// <param name="t"></param>
         /// <returns></returns>
-        int Insert<T>(T t);
+        long Insert<T>(T t);
 
         /// <summary>
         /// 插入
@@ -162,7 +118,7 @@ namespace Shitou.Framework.ORM
         /// <param name="pageSize">页大小</param>
         /// <param name="orderBy">排序</param>
         /// <returns></returns>
-        Pager<T> GetPagedList<T>(int pageIndex, int pageSize, string orderBy);
+        PagedList<T> GetPagedList<T>(int pageIndex, int pageSize, string orderBy);
 
         /// <summary>
         /// 分页查询
@@ -174,7 +130,7 @@ namespace Shitou.Framework.ORM
         /// <param name="pageSize">页大小</param>
         /// <param name="orderBy">排序</param>
         /// <returns></returns>
-        Pager<T> GetPagedList<T>(object param, int pageIndex, int pageSize, string orderBy);
+        PagedList<T> GetPagedList<T>(object param, int pageIndex, int pageSize, string orderBy);
 
         /// <summary>
         /// 分页查询
@@ -186,19 +142,7 @@ namespace Shitou.Framework.ORM
         /// <param name="pageSize">页大小</param>
         /// <param name="orderBy">排序</param>
         /// <returns></returns>
-        Pager<T> GetPagedList<T>(string sql, object param, int pageIndex, int pageSize, string orderBy);
-
-        /// <summary>
-        /// 分页查询
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="sql">sql查询语句</param>
-        /// <param name="param">sql参数</param>
-        /// <param name="pageIndex">页索引</param>
-        /// <param name="pageSize">页大小</param>
-        /// <param name="orderBy">排序</param>
-        /// <returns></returns>
-        Pager<T> GetPagedList<T>(string sql, DynamicParameters where, int pageIndex, int pageSize, string orderBy);
+        PagedList<T> GetPagedList<T>(string sql, object param, int pageIndex, int pageSize, string orderBy);
         #endregion
 
         #region ---GetCount---
@@ -213,19 +157,7 @@ namespace Shitou.Framework.ORM
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        int GetCount<T>(string columnName, object value);
-        /// <summary>
-        /// 获取计数
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        int GetCount<T>(object  where);
-        /// <summary>
-        /// 获取计数
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        int GetCount<T, W>(W where);
+        int GetCount<T>(object  param);
         #endregion
     }
 }

@@ -90,14 +90,8 @@ namespace Shitou.Framework.Demo.Mvc
 
             //add log4net service
             services.AddLog4Net();
-            //add mysql
-            services.AddMySql(new MySqlConnection(Configuration.GetConnectionString("Mysql")));
             //add bussiness service
-            services.AddBusinessService();
-
-            //add Steeltoe Discovery Client service
-            //services.AddDiscoveryClient(Configuration);
-            
+            services.AddBusinessService(Configuration);
             
         }
 

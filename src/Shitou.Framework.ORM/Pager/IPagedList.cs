@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Shitou.Framework.ORM
 {
-    public interface IPager : IEnumerable
+    public interface IPagedList : IEnumerable
     {
         /// <summary>
         /// 当前页索引
@@ -29,5 +29,5 @@ namespace Shitou.Framework.ORM
         /// </summary>
         int TotalPageCount { get; }
     }
-    public interface IPager<T> : IEnumerable<T>, IPager { }
+    public interface IPagedList<T> : IEnumerable<T>, IPagedList { }
 }

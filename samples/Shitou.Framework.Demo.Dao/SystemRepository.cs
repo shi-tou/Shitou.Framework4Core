@@ -12,21 +12,12 @@ using Shitou.Framework.Demo.DataContract.Response;
 using Shitou.Framework.Demo.DataContract.Request;
 using Shitou.Framework.Demo.Model;
 
-namespace Shitou.Framework.Demo.Dao
+namespace Shitou.Framework.Demo.Repository
 {
-    public class SystemDao : ISystemDao
+    public class SystemRepository : SQLServerRepository, ISystemRepository
     {
-        public IAdoTemplate AdoTemplate { get; set; }
-
-        /// <summary>
-        /// 构造函数
-        /// </summary>
-        /// <param name="dbConnection">数据库链接</param>
-        /// <param name="sqlGenerator"> sq语句构造器</param>
-        public SystemDao(IAdoTemplate adoTemplate)
-        {
-            AdoTemplate = adoTemplate;
-        }
+        public SystemRepository(string connString)
+           : base(connString) { }
 
         #region 用户管理
         /// <summary>
@@ -34,7 +25,7 @@ namespace Shitou.Framework.Demo.Dao
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public Pager<GetUserListResponse> GetUserList(GetUserListRequest request)
+        public PagedList<GetUserListResponse> GetUserList(GetUserListRequest request)
         {
             StringBuilder sbSql = new StringBuilder();
             sbSql.Append(@"select a.*,b.RoleName,c.RealName as CreateUser from T_User a
@@ -55,14 +46,14 @@ namespace Shitou.Framework.Demo.Dao
                 param.Add("RealName", "%" + request.Name + "%");
             }
             request.OrderBy = "a.CreateTime desc";
-            return AdoTemplate.GetPagedList<GetUserListResponse>(sbSql.ToString(), param, request.PageIndex, request.PageSize, request.OrderBy);
+            return GetPagedList<GetUserListResponse>(sbSql.ToString(), param, request.PageIndex, request.PageSize, request.OrderBy);
         }
         /// <summary>
         /// 角色列表
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public Pager<GetRoleListResponse> GetRoleList(GetRoleListRequest request)
+        public PagedList<GetRoleListResponse> GetRoleList(GetRoleListRequest request)
         {
             StringBuilder sbSql = new StringBuilder();
             sbSql.Append(@"select a.*,b.RealName as CreateUser from T_Role a
@@ -75,7 +66,7 @@ namespace Shitou.Framework.Demo.Dao
                 param.Add("RoleName", "%" + request.RoleName + "%");
             }
             request.OrderBy = "a.CreateTime desc";
-            return AdoTemplate.GetPagedList<GetRoleListResponse>(sbSql.ToString(), param, request.PageIndex, request.PageSize, request.OrderBy);
+            return GetPagedList<GetRoleListResponse>(sbSql.ToString(), param, request.PageIndex, request.PageSize, request.OrderBy);
         }
         /// <summary>
         /// 获取用户权限
@@ -89,7 +80,7 @@ namespace Shitou.Framework.Demo.Dao
                             inner join T_User b on b.RoleID=a.RoleID
                             inner join T_Auth c on c.ID=a.AuthID
                             where b.ID=@UserID");
-            return AdoTemplate.GetList<AuthInfo>(sbSql.ToString(), new { UserID = userID });
+            return GetList<AuthInfo>(sbSql.ToString(), new { UserID = userID });
         }
         #endregion
 

@@ -37,11 +37,8 @@ namespace Shitou.Framework.Demo.WebApi
                 //options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 
             });
-
-            //add mysql
-            services.AddMySql(new MySqlConnection(Configuration.GetConnectionString("Mysql")));
             //add bussiness service
-            services.AddBusinessService();
+            services.AddBusinessService(Configuration);
             //add swagger
             services.AddSwaggerGen(config =>
             {

@@ -32,7 +32,7 @@ namespace Shitou.Framework.Demo.Mvc.Controllers
         {
             List<GoodsTypeInfo> typeList = GoodsService.GetGoodsTypeList();
             ViewData["GoodsType"] = new SelectList(typeList, "ID", "GoodsTypeName");
-            Pager<GetGoodsListResponse> list = GoodsService.GetGoodsList(request);
+            PagedList<GetGoodsListResponse> list = GoodsService.GetGoodsList(request);
             return View(list);
         }
         /// <summary>
@@ -178,13 +178,13 @@ namespace Shitou.Framework.Demo.Mvc.Controllers
         /// <returns></returns>
         public ActionResult GoodsTypeDelete(string id)
         {
-            if(GoodsService.GetCount<GoodsTypeInfo>("ParentID",id)>0)
+            if (GoodsService.GetCount<GoodsTypeInfo>(new { ParentID = id }) > 0)
             {
                 Result.IsOk = false;
                 Result.Msg = "不可删除,该类别下包含子类别";
                 return Json(Result);
             }
-            if (GoodsService.GetCount<GoodsInfo>("GoodsTypeID", id) > 0)
+            if (GoodsService.GetCount<GoodsInfo>(new { GoodsTypeID = id }) > 0)
             {
                 Result.IsOk = false;
                 Result.Msg = "不可删除,该类别有关联的商品";

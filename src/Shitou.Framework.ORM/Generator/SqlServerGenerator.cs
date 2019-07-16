@@ -61,7 +61,7 @@ namespace Shitou.Framework.ORM.Generator
         /// <param name="pageSize">页大小</param>
         /// <param name="orderBy">排序</param>
         /// <returns></returns>
-        public override string GetPageListSql(string sql, int pageIndex, int pageSize, string orderBy)
+        public override string GetPageListSql<T>(string sql, int pageIndex, int pageSize, string orderBy)
         {
             string PageSql = @"select * from (
 	                                    select *, ROW_NUMBER() OVER(Order by {0} ) AS RowId from ({1}) as A

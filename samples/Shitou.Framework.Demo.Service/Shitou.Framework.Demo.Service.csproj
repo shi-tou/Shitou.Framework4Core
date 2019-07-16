@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Shitou.Framework.Demo.Dao\Shitou.Framework.Demo.Dao.csproj" />
+    <ProjectReference Include="..\Shitou.Framework.Demo.Dao\Shitou.Framework.Demo.Repository.csproj" />
     <ProjectReference Include="..\Shitou.Framework.Demo.DataContract\Shitou.Framework.Demo.DataContract.csproj" />
     <ProjectReference Include="..\Shitou.Framework.Demo.Utils\Shitou.Framework.Demo.Utils.csproj" />
   </ItemGroup>
